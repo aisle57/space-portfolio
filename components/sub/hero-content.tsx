@@ -44,8 +44,8 @@ export const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          From laser isotope enrichment to targeted cancer therapies —
-          the technologies reshaping energy, quantum systems, and medicine.
+          From laser isotope enrichment to targeted cancer therapies. 
+          The technologies reshaping energy, quantum systems, and medicine.
         </motion.p>
 
         <motion.a
