@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const Skills = () => {
   return (
     <section
@@ -14,14 +16,19 @@ export const Skills = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-10 w-full max-w-6xl z-10">
-        <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition">
-          <h3 className="text-2xl font-semibold text-white mb-4">Isotope Directory</h3>
-          <p className="text-gray-400 text-sm leading-relaxed mb-6">
-            Searchable list of isotopes with proper nomenclature, properties, and key applications.
-          </p>
-          <span className="text-sky-400 text-sm font-medium">Coming Soon</span>
-        </div>
+        
+        {/* Isotope Directory - now linked */}
+        <Link href="/isotopes" className="block">
+          <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition h-full">
+            <h3 className="text-2xl font-semibold text-white mb-4">Isotope Directory</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              Searchable list of isotopes with proper nomenclature, properties, and key applications.
+            </p>
+            <span className="text-sky-400 text-sm font-medium">Explore →</span>
+          </div>
+        </Link>
 
+        {/* Research Facilities */}
         <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition">
           <h3 className="text-2xl font-semibold text-white mb-4">Research Facilities</h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -30,6 +37,7 @@ export const Skills = () => {
           <span className="text-sky-400 text-sm font-medium">Coming Soon</span>
         </div>
 
+        {/* Companies */}
         <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition">
           <h3 className="text-2xl font-semibold text-white mb-4">Companies</h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
