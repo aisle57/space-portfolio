@@ -18,7 +18,7 @@ const SECTIONS = [
   {
     title: "Precision Medicine",
     description:
-      "From diagnostic imaging to theranostics (Lu-177, Ac-225, Tb-161). Targeted therapies that seek and destroy disease.",
+      "From diagnostic imaging to theranostics to targeted therapies that seek and destroy disease.",
     image: "/projects/space-website.png",
     link: "#medical",
   },
