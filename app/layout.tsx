@@ -19,9 +19,9 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   ...siteConfig,
   icons: {
-    icon: "/Favicon-new.jpg",
-    shortcut: "/Favicon-new.jpg",
-    apple: "/Favicon-new.jpg",
+    icon: "/favicon.jpg",
+    shortcut: "/favicon.jpg",
+    apple: "/favicon.jpg",
   },
 };
 
