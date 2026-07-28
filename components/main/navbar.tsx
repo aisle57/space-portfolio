@@ -8,10 +8,10 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const NAV_LINKS = [
-    { title: "Nuclear", link: "#nuclear" },
-    { title: "Quantum", link: "#quantum" },
-    { title: "Medical", link: "#medical" },
-    { title: "Hub", link: "#hub" },
+    { title: "Isotopes", link: "/isotopes" },
+    { title: "Facilities", link: "/facilities" },
+    { title: "Companies", link: "/companies" },
+    { title: "Hub", link: "/#hub" },
   ];
 
   return (
