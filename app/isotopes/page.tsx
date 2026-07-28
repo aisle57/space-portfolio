@@ -9,13 +9,36 @@ export default function IsotopesPage() {
             Isotope Directory
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl">
-            A curated foundation of the isotopes that matter most for energy, medicine, quantum technologies, advanced materials, and the emerging technological supply chain. Links to complete official datasets are provided for the full set of known isotopes.
+            A starting point for understanding isotopes and a growing resource for the technologies and supply chains they enable.
           </p>
         </div>
 
+        {/* Beginner Section */}
+        <section className="mb-20 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Start Here
+          </h2>
+          <div className="space-y-5 text-gray-300 leading-relaxed">
+            <p>
+              Most elements exist in more than one form. These different forms are called isotopes. They have the same number of protons (so they are the same element) but different numbers of neutrons.
+            </p>
+            <p>
+              Some isotopes are stable. Others are unstable and release energy as they change. That energy and those nuclear properties are what make certain isotopes extraordinarily useful.
+            </p>
+            <p>
+              Isotopes power medical imaging and cancer therapy. They enable nuclear energy systems. They are becoming critical to quantum technologies and advanced materials. They also form an increasingly strategic part of global supply chains.
+            </p>
+            <p>
+              This directory begins with the isotopes that matter most right now, and points you toward complete data for every known isotope.
+            </p>
+          </div>
+        </section>
+
         {/* Medical & Theranostics */}
         <section className="mb-20">
-          <h2 className="text-2xl font-semibold text-sky-400 mb-6">Medical & Theranostics</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Medical & Theranostics
+          </h2>
           <div className="space-y-4">
             {[
               ["Tc-99m", "The dominant isotope in diagnostic nuclear medicine. Used in tens of millions of procedures annually."],
@@ -41,7 +64,9 @@ export default function IsotopesPage() {
 
         {/* Energy & Nuclear */}
         <section className="mb-20">
-          <h2 className="text-2xl font-semibold text-amber-400 mb-6">Energy & Nuclear</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Energy & Nuclear
+          </h2>
           <div className="space-y-4">
             {[
               ["U-235", "Primary fissile isotope used in the majority of commercial nuclear reactors."],
@@ -63,7 +88,9 @@ export default function IsotopesPage() {
 
         {/* Quantum & Advanced Materials */}
         <section className="mb-20">
-          <h2 className="text-2xl font-semibold text-violet-400 mb-6">Quantum & Advanced Materials</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Quantum & Advanced Materials
+          </h2>
           <div className="space-y-4">
             {[
               ["B-11", "Preferred boron isotope for many quantum and advanced materials applications due to its nuclear properties."],
@@ -82,7 +109,9 @@ export default function IsotopesPage() {
 
         {/* Industrial & Research */}
         <section className="mb-20">
-          <h2 className="text-2xl font-semibold text-emerald-400 mb-6">Industrial & Research Staples</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Industrial & Research Staples
+          </h2>
           <div className="space-y-4">
             {[
               ["C-14", "Essential for radiocarbon dating, tracing, and various research applications."],
@@ -101,7 +130,9 @@ export default function IsotopesPage() {
 
         {/* Full datasets */}
         <section className="mt-10 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
-          <h2 className="text-2xl font-semibold mb-4">Complete Isotope Data</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Complete Isotope Data
+          </h2>
           <p className="text-gray-400 mb-6">
             This directory focuses on the isotopes that currently matter most for technological and economic systems. For the full set of all known isotopes, including the newest discoveries, use these authoritative sources:
           </p>
