@@ -41,7 +41,7 @@ export default function CompaniesPage() {
               ["Telix Pharmaceuticals", "Developing targeted radiation therapies and imaging agents."],
               ["NorthStar Medical Radioisotopes", "Focused on non-uranium based Mo-99 / Tc-99m production technology."],
               ["Shine Technologies", "Developing advanced production methods for medical isotopes."],
-              ["Nusano", "Building large scale radioisotope production capacity."],
+              ["Nusano", "Building large scale accelerator based radioisotope production capacity."],
             ].map(([name, desc]) => (
               <div key={name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
                 <h3 className="font-semibold text-lg">{name}</h3>
@@ -79,9 +79,11 @@ export default function CompaniesPage() {
           </h2>
           <div className="space-y-4">
             {[
-              ["Companies developing accelerator based production", "A growing group focused on alternative production routes for medical and strategic isotopes."],
-              ["Stable isotope specialists", "Organizations focused on enriched stable isotopes for research, quantum, and industrial uses."],
-              ["Quantum and advanced materials related firms", "Companies working with highly enriched or specialized isotopes such as Si-28 and B-11."],
+              ["Nusano", "Accelerator based radioisotope production platform aimed at large scale medical and industrial supply."],
+              ["Shine Technologies", "Developing alternative production routes for medical isotopes."],
+              ["NorthStar Medical Radioisotopes", "Advancing non traditional production methods for Mo-99 and related isotopes."],
+              ["ASP Isotopes", "Focused on stable isotope enrichment, including silicon-28 for quantum and advanced materials applications."],
+              ["DOE National Isotope Development Center network", "Coordinates production and distribution of many research and specialty isotopes across U.S. national laboratories."],
             ].map(([name, desc]) => (
               <div key={name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
                 <h3 className="font-semibold text-lg">{name}</h3>
