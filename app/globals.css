@@ -1,74 +1,71 @@
-"use client";
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 
-import { SparklesIcon } from "@heroicons/react/24/solid";
-import { motion } from "framer-motion";
-import Image from "next/image";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/lib/motion";
+.cursive {
+  font-family: "Cedarville Cursive", cursive;
+}
 
-export const HeroContent = () => {
-  return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
-    >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        <motion.div
-          variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
-        >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            The Isotope Economy
-          </h1>
-        </motion.div>
+.Welcome-text {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    linear-gradient(90.01deg, #38bdf8 0.01%, #fbbf24 50.01%, #38bdf8 100%);
+  background-blend-mode: normal, screen;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-        <motion.div
-          variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
-        >
-          <span>
-            Precision at the{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-              Atomic Scale
-            </span>
-          </span>
-        </motion.div>
+.Welcome-box {
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 32px;
+  box-shadow: inset 0 -7px 11px #38bdf83d;
+  display: flex;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+}
 
-        <motion.p
-          variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
-        >
-          From laser isotope enrichment to targeted cancer therapies —
-          the technologies reshaping energy, quantum systems, and medicine.
-        </motion.p>
+.button-primary {
+  background: linear-gradient(
+      180deg,
+      rgba(14, 165, 233, 0) 0%,
+      rgba(14, 165, 233, 0.32) 100%
+    ),
+    rgba(251, 191, 36, 0.12);
+  box-shadow: inset 0 0 12px #fbbf243d;
+}
 
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-        >
-          Explore the Hub
-        </motion.a>
-      </div>
+.button-primary:hover {
+  background: linear-gradient(
+      180deg,
+      rgba(14, 165, 233, 0) 0%,
+      rgba(14, 165, 233, 0.42) 100%
+    ),
+    rgba(251, 191, 36, 0.24);
+  box-shadow: inset 0 0 12px #fbbf2470;
+}
 
-      <motion.div
-        variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
-      >
-        <Image
-          src="/hero-bg.svg"
-          alt="Isotope visual"
-          height={650}
-          width={650}
-          draggable={false}
-          className="select-none"
-        />
-      </motion.div>
-    </motion.div>
-  );
-};
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
