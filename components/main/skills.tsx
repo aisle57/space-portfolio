@@ -1,85 +1,48 @@
-import { SkillDataProvider } from "@/components/sub/skill-data-provider";
-import { SkillText } from "@/components/sub/skill-text";
-
-import {
-  BACKEND_SKILL,
-  FRONTEND_SKILL,
-  FULLSTACK_SKILL,
-  OTHER_SKILL,
-  SKILL_DATA,
-} from "@/constants";
-
 export const Skills = () => {
   return (
     <section
-      id="skills"
-      style={{ transform: "scale(0.9)" }}
+      id="hub"
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
     >
-      <SkillText />
-
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {SKILL_DATA.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
+      <div className="text-center mb-12 z-10">
+        <h2 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+          The Isotope Resource Hub
+        </h2>
+        <p className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto px-4">
+          A growing public resource for isotopes, research facilities, and the companies advancing the field.
+        </p>
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {FRONTEND_SKILL.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {BACKEND_SKILL.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {FULLSTACK_SKILL.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {OTHER_SKILL.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-10 w-full max-w-6xl z-10">
+        {/* Isotope Directory */}
+        <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition">
+          <h3 className="text-2xl font-semibold text-white mb-4">Isotope Directory</h3>
+          <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            Searchable list of isotopes with proper nomenclature, properties, and key applications.
+          </p>
+          <span className="text-sky-400 text-sm font-medium">Coming Soon</span>
+        </div>
+
+        {/* Research Facilities */}
+        <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition">
+          <h3 className="text-2xl font-semibold text-white mb-4">Research Facilities</h3>
+          <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            Reactors, accelerators, and laboratories producing the critical isotopes of the modern economy.
+          </p>
+          <span className="text-sky-400 text-sm font-medium">Coming Soon</span>
+        </div>
+
+        {/* Companies */}
+        <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition">
+          <h3 className="text-2xl font-semibold text-white mb-4">Companies</h3>
+          <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            Producers and companies advancing isotope technology, supply chains, and applications worldwide.
+          </p>
+          <span className="text-sky-400 text-sm font-medium">Coming Soon</span>
+        </div>
       </div>
 
+      {/* Background video */}
       <div className="w-full h-full absolute">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
           <video
