@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { SOCIALS } from "@/constants";
@@ -18,17 +17,9 @@ export const Navbar = () => {
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
       <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
-        {/* Logo + Name */}
-        <Link href="#about-me" className="flex items-center">
-          <Image
-            src="/logo.jpg"
-            alt="Isotope Economy"
-            width={70}
-            height={70}
-            draggable={false}
-            className="cursor-pointer"
-          />
-          <div className="hidden md:flex font-bold ml-[10px] text-gray-300">
+        {/* Brand Name */}
+        <Link href="/" className="flex items-center">
+          <div className="font-bold text-gray-200 text-lg tracking-wide">
             Isotope Economy
           </div>
         </Link>
