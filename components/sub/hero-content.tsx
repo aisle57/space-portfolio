@@ -34,7 +34,7 @@ export const HeroContent = () => {
         >
           <span>
             Precision at the{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
               Atomic Scale
             </span>
           </span>
