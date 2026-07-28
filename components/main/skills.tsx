@@ -14,7 +14,6 @@ export const Skills = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-10 w-full max-w-6xl z-10">
-        {/* Isotope Directory */}
         <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition">
           <h3 className="text-2xl font-semibold text-white mb-4">Isotope Directory</h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -23,7 +22,6 @@ export const Skills = () => {
           <span className="text-sky-400 text-sm font-medium">Coming Soon</span>
         </div>
 
-        {/* Research Facilities */}
         <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition">
           <h3 className="text-2xl font-semibold text-white mb-4">Research Facilities</h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -32,7 +30,6 @@ export const Skills = () => {
           <span className="text-sky-400 text-sm font-medium">Coming Soon</span>
         </div>
 
-        {/* Companies */}
         <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-sky-500/40 transition">
           <h3 className="text-2xl font-semibold text-white mb-4">Companies</h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -42,7 +39,6 @@ export const Skills = () => {
         </div>
       </div>
 
-      {/* Background video */}
       <div className="w-full h-full absolute">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
           <video
