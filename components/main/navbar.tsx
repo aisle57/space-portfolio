@@ -17,12 +17,11 @@ export const Navbar = () => {
 
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
-      {/* Navbar Container */}
       <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
         {/* Logo + Name */}
         <Link href="#about-me" className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/logo.jpg"
             alt="Isotope Economy"
             width={70}
             height={70}
@@ -49,7 +48,7 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Social Icons (Web) */}
+        {/* Social Icons */}
         <div className="hidden md:flex flex-row gap-5">
           {SOCIALS.map(({ link, name, icon: Icon }) => (
             <Link
@@ -63,7 +62,7 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* Hamburger Menu */}
+        {/* Hamburger */}
         <button
           className="md:hidden text-white focus:outline-none text-4xl"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
