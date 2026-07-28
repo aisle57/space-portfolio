@@ -93,17 +93,27 @@ export default function FacilitiesPage() {
             Further Resources
           </h2>
           <p className="text-gray-400 mb-6">
-            For deeper information on isotope production facilities and nuclear data:
+            Key sources for research reactors, isotope production facilities, and related programs:
           </p>
           <ul className="space-y-3 text-sky-400">
             <li>
-              <a href="https://www.iaea.org/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                International Atomic Energy Agency (IAEA)
+              <a href="https://nucleus.iaea.org/rrdb/#/home" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                IAEA Research Reactor Database (RRDB)
               </a>
             </li>
             <li>
-              <a href="https://www.nndc.bnl.gov/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                National Nuclear Data Center
+              <a href="https://www.isotopes.gov/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                National Isotope Development Center (NIDC)
+              </a>
+            </li>
+            <li>
+              <a href="https://science.osti.gov/Isotope-Research-Development-and-Production/Facilities" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                DOE Isotope Program Facilities
+              </a>
+            </li>
+            <li>
+              <a href="https://www.iaea.org/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                International Atomic Energy Agency (IAEA)
               </a>
             </li>
           </ul>
