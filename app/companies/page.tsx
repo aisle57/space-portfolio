@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CompaniesPage() {
   return (
     <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
@@ -110,13 +112,42 @@ export default function CompaniesPage() {
           </div>
         </section>
 
-        <section className="mt-10 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+        <section className="mb-16 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Growing Directory
           </h2>
           <p className="text-gray-400">
             This is a working foundation. The company landscape around isotopes is expanding quickly, especially in medical theranostics, alternative production technologies, stable isotope enrichment, and advanced materials supply chains. Additional companies and categories will be added over time.
           </p>
+        </section>
+
+        <section className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+          <h2 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Where to go next
+          </h2>
+          <p className="text-gray-400 mb-6">
+            Continue through the resource hub:
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/isotopes"
+              className="py-3 px-6 button-primary text-center text-white rounded-lg"
+            >
+              Isotope Directory
+            </Link>
+            <Link
+              href="/facilities"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Research Facilities
+            </Link>
+            <Link
+              href="/learn"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Back to Learn
+            </Link>
+          </div>
         </section>
 
       </div>
