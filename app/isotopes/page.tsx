@@ -31,6 +31,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
+        {/* Medical */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Medical & Theranostics
@@ -72,11 +73,28 @@ export default function IsotopesPage() {
               </p>
             </div>
 
+            <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <h3 className="font-semibold text-xl">Ac-225</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Medical</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Alpha therapy</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Emerging</span>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                Actinium-225 is one of the most important emerging alpha-emitting isotopes in targeted cancer therapy. Alpha particles deposit a large amount of energy over a very short distance, which makes them attractive for selectively destroying cancer cells while limiting damage to surrounding tissue.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-2">
+                <span className="text-white">Main uses:</span> targeted alpha therapy research and development, especially in oncology applications where highly localized cell killing is desired.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                <span className="text-white">Supply note:</span> Production is constrained and technically demanding. Expanding Ac-225 availability is one of the central challenges in the growth of alpha therapy.
+              </p>
+            </div>
+
             {[
               { name: "F-18", tags: ["Medical", "PET"], desc: "Primary PET imaging isotope, most commonly used as FDG in oncology." },
               { name: "I-131", tags: ["Medical", "Therapy"], desc: "Established therapeutic and diagnostic isotope, especially in thyroid treatment." },
               { name: "I-123", tags: ["Medical", "Diagnostics"], desc: "Preferred iodine isotope for many diagnostic imaging applications." },
-              { name: "Ac-225", tags: ["Medical", "Alpha therapy"], desc: "High-value alpha emitter under rapid development for targeted cancer therapy." },
               { name: "Tb-161", tags: ["Medical", "Theranostics"], desc: "Emerging theranostic isotope with promising therapeutic properties." },
               { name: "Y-90", tags: ["Medical", "Therapy"], desc: "Widely used therapeutic isotope for liver cancer and other targeted applications." },
               { name: "Ga-68", tags: ["Medical", "PET"], desc: "Important generator-produced PET isotope used in multiple diagnostic agents." },
@@ -99,6 +117,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
+        {/* Energy */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Energy & Nuclear
@@ -123,6 +142,24 @@ export default function IsotopesPage() {
               </p>
             </div>
 
+            <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <h3 className="font-semibold text-xl">Li-6</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Fusion</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Strategic</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Energy</span>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                Lithium-6 is strategically important for fusion energy concepts that rely on tritium breeding. In many reactor designs, lithium-containing materials are used in blankets to produce tritium when exposed to neutrons.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-2">
+                <span className="text-white">Main uses:</span> tritium breeding materials for fusion systems, specialized nuclear applications, and related energy research.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                <span className="text-white">Strategic relevance:</span> As fusion research advances, control over lithium isotope composition becomes more important to reactor design and fuel-cycle planning.
+              </p>
+            </div>
+
             {[
               { name: "U-235", tags: ["Energy", "Fissile"], desc: "Primary fissile isotope used in most commercial nuclear reactors." },
               { name: "U-238", tags: ["Energy", "Fertile"], desc: "Fertile isotope that makes up the bulk of natural and depleted uranium." },
@@ -130,7 +167,6 @@ export default function IsotopesPage() {
               { name: "Pu-238", tags: ["Space", "Power"], desc: "Critical isotope for radioisotope thermoelectric generators used in space systems." },
               { name: "Th-232", tags: ["Energy", "Fertile"], desc: "Fertile isotope central to thorium fuel cycle research." },
               { name: "H-3 (Tritium)", tags: ["Energy", "Fusion"], desc: "Important for certain fusion approaches and specialized applications." },
-              { name: "Li-6", tags: ["Fusion", "Strategic"], desc: "Important for tritium breeding in many fusion reactor designs." },
               { name: "He-4", tags: ["Industrial", "Cryogenics"], desc: "The common isotope of helium. Foundational for cryogenics and many industrial uses." },
             ].map((item) => (
               <div key={item.name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
@@ -148,6 +184,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
+        {/* Quantum */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Quantum & Advanced Materials
@@ -189,10 +226,26 @@ export default function IsotopesPage() {
               </p>
             </div>
 
+            <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <h3 className="font-semibold text-xl">Ge-70</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Quantum</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Semiconductors</span>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                Germanium-70 is a spin-free germanium isotope of growing interest for quantum devices and advanced semiconductor research. Like Si-28, isotopic purification can reduce nuclear-spin-related noise and improve the quality of the material environment for certain quantum architectures.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-2">
+                <span className="text-white">Main uses:</span> quantum device research, silicon-germanium systems, and advanced semiconductor materials work.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                <span className="text-white">Strategic relevance:</span> As quantum hardware explores germanium-based and hybrid material systems, access to isotopically controlled germanium becomes more important.
+              </p>
+            </div>
+
             {[
               { name: "B-10", tags: ["Nuclear", "Control materials"], desc: "High neutron absorption cross section. Important for control materials and specialized nuclear applications." },
               { name: "C-13", tags: ["Quantum", "Research"], desc: "Important in quantum sensing, NMR, and advanced materials research." },
-              { name: "Ge-70", tags: ["Quantum", "Semiconductors"], desc: "Spin-free germanium isotope relevant to quantum devices and advanced semiconductor research." },
               { name: "C-12", tags: ["Quantum", "Materials"], desc: "Highly purified carbon-12 is relevant to certain quantum and precision materials applications." },
             ].map((item) => (
               <div key={item.name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
@@ -210,6 +263,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
+        {/* Industrial */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Industrial & Research Staples
