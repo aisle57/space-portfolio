@@ -9,7 +9,7 @@ export default function FacilitiesPage() {
             Research Facilities
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl">
-            The reactors, accelerators, and specialized laboratories that produce the isotopes powering medicine, energy, quantum technologies, and advanced industry.
+            The reactors, accelerators, and specialized laboratories that produce the isotopes used in medicine, energy, quantum technologies, and advanced industry.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export default function FacilitiesPage() {
               Most useful isotopes do not exist in large quantities in nature. They have to be made.
             </p>
             <p>
-              This happens primarily in nuclear reactors and particle accelerators. A smaller number of isotopes are produced through other specialized methods. The availability of these facilities directly determines which isotopes can be supplied at scale.
+              This happens primarily in nuclear reactors and particle accelerators. A smaller number are produced through other specialized methods. The availability of these facilities directly shapes which isotopes can be supplied at scale.
             </p>
             <p>
               Understanding where isotopes come from is essential to understanding the isotope economy itself.
@@ -38,51 +38,69 @@ export default function FacilitiesPage() {
           </h2>
           <div className="space-y-4">
             {[
-              ["High Flux Isotope Reactor (HFIR)", "Oak Ridge National Laboratory, USA. One of the most important sources of medical and research isotopes, including heavy actinides."],
-              ["National Research Universal (NRU) / Successor efforts", "Canada has long been a major supplier of medical isotopes. Current and future Canadian reactor capacity remains strategically important."],
-              ["BR2", "Belgian research reactor. Significant producer of medical isotopes including Mo-99 / Tc-99m related supply."],
-              ["HFR Petten", "Netherlands. Major European supplier of medical isotopes."],
-              ["OPAL", "Australia. Important regional producer of medical and industrial isotopes."],
-              ["SAFARI-1", "South Africa. Key supplier of medical isotopes, particularly Mo-99."],
-            ].map(([name, desc]) => (
-              <div key={name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
-                <h3 className="font-semibold text-lg">{name}</h3>
-                <p className="text-gray-400 text-sm mt-1">{desc}</p>
+              ["High Flux Isotope Reactor (HFIR)", ["USA", "Medical", "Actinides"], "Oak Ridge National Laboratory. One of the most important U.S. sources of medical and research isotopes, including heavy actinides."],
+              ["Advanced Test Reactor (ATR)", ["USA", "Research"], "Idaho National Laboratory. Major materials test reactor with important isotope production roles."],
+              ["University of Missouri Research Reactor (MURR)", ["USA", "Medical"], "One of the most significant university-based producers of medical isotopes in North America."],
+              ["BR2", ["Belgium", "Medical"], "Belgian research reactor and an important European source of medical isotopes."],
+              ["HFR Petten", ["Netherlands", "Medical"], "Major European supplier of medical isotopes."],
+              ["OPAL", ["Australia", "Medical", "Industrial"], "Australian research reactor producing medical and industrial isotopes for the region."],
+              ["SAFARI-1", ["South Africa", "Medical"], "Key producer of medical isotopes, including Mo-99."],
+              ["Canadian research reactor capacity", ["Canada", "Medical"], "Canada has long been a major supplier of medical isotopes. Current and future reactor capacity remains strategically important."],
+            ].map(([name, tags, desc]) => (
+              <div key={name as string} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="font-semibold text-lg">{name as string}</h3>
+                  {(tags as string[]).map((tag) => (
+                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-400 text-sm mt-1">{desc as string}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Accelerators */}
+        {/* Accelerators & Cyclotrons */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Accelerators & Cyclotrons
           </h2>
           <div className="space-y-4">
             {[
-              ["Medical cyclotrons", "Widely distributed systems used to produce PET isotopes such as F-18, and increasingly other medical isotopes."],
-              ["Linear accelerators & specialized facilities", "Used for research isotopes and certain emerging medical and industrial isotopes that are difficult to produce in reactors."],
-              ["National accelerator laboratories", "Facilities that support both research and the development of new isotope production methods."],
-            ].map(([name, desc]) => (
-              <div key={name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
-                <h3 className="font-semibold text-lg">{name}</h3>
-                <p className="text-gray-400 text-sm mt-1">{desc}</p>
+              ["Medical cyclotrons", ["Medical", "PET"], "Widely distributed systems used to produce PET isotopes such as F-18, and increasingly other medical isotopes."],
+              ["Brookhaven Linac Isotope Producer (BLIP)", ["USA", "Medical", "Research"], "Important U.S. accelerator-based isotope production facility."],
+              ["Los Alamos Isotope Production Facility (IPF)", ["USA", "Medical", "Research"], "Accelerator-based production facility supporting medical and research isotopes."],
+              ["Specialized linear accelerators", ["Emerging", "Medical"], "Used for research isotopes and certain emerging medical and industrial isotopes that are difficult to produce in reactors."],
+              ["National accelerator laboratories", ["Research"], "Support both research and the development of new isotope production methods."],
+            ].map(([name, tags, desc]) => (
+              <div key={name as string} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="font-semibold text-lg">{name as string}</h3>
+                  {(tags as string[]).map((tag) => (
+                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-400 text-sm mt-1">{desc as string}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Strategic Notes */}
+        {/* Strategic Context */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Strategic Context
           </h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              A relatively small number of facilities currently underpin large parts of the global medical isotope supply chain. This concentration creates both vulnerability and opportunity.
+              A relatively small number of facilities currently underpin large parts of the global medical isotope supply chain. That concentration creates both vulnerability and opportunity.
             </p>
             <p>
-              New production routes, including advanced reactors, accelerator based methods, and alternative target technologies, are being developed to expand and secure supply.
+              New production routes are being developed, including advanced reactors, accelerator-based methods, and alternative target technologies. These efforts matter because isotope availability is ultimately constrained by real physical infrastructure.
             </p>
           </div>
         </section>
