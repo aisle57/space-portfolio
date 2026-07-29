@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function IsotopesPage() {
   return (
     <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
@@ -150,7 +152,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
-        <section className="mt-10 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+        <section className="mb-16 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Complete Isotope Data
           </h2>
@@ -169,6 +171,35 @@ export default function IsotopesPage() {
               </a>
             </li>
           </ul>
+        </section>
+
+        <section className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+          <h2 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Where to go next
+          </h2>
+          <p className="text-gray-400 mb-6">
+            Continue through the resource hub:
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/facilities"
+              className="py-3 px-6 button-primary text-center text-white rounded-lg"
+            >
+              Research Facilities
+            </Link>
+            <Link
+              href="/companies"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Companies
+            </Link>
+            <Link
+              href="/learn"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Back to Learn
+            </Link>
+          </div>
         </section>
 
       </div>
