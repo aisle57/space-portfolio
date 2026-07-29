@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
 
 import {
   slideInFromLeft,
@@ -13,13 +13,13 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="flex flex-row items-center justify-center px-6 md:px-20 mt-32 md:mt-40 w-full z-[20]"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start max-w-3xl">
         
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-2 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-4 text-5xl md:text-6xl font-bold text-white"
         >
           <span>
             Precision at the{" "}
@@ -31,33 +31,30 @@ export const HeroContent = () => {
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
+          className="text-lg text-gray-400 my-4 max-w-[600px] leading-relaxed"
         >
-          From laser isotope enrichment to targeted cancer therapies. 
-          The technologies reshaping energy, quantum systems, and medicine.
+          Isotopes power medicine, energy systems, quantum technologies, and advanced industry. 
+          This is a public resource for understanding them and the infrastructure behind them.
         </motion.p>
 
-        <motion.a
+        <motion.div
           variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          className="flex flex-col sm:flex-row gap-4 mt-2"
         >
-          Explore the Hub
-        </motion.a>
+          <Link
+            href="/#hub"
+            className="py-3 px-6 button-primary text-center text-white cursor-pointer rounded-lg"
+          >
+            Enter the Hub
+          </Link>
+          <Link
+            href="/isotopes"
+            className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+          >
+            Start with Isotopes
+          </Link>
+        </motion.div>
       </div>
-
-      <motion.div
-        variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
-      >
-        <Image
-          src="/hero-bg.svg"
-          alt="Isotope visual"
-          height={650}
-          width={650}
-          draggable={false}
-          className="select-none"
-        />
-      </motion.div>
     </motion.div>
   );
 };
