@@ -40,12 +40,12 @@ export const HeroContent = () => {
           variants={slideInFromLeft(1)}
           className="flex flex-col sm:flex-row gap-4 mt-4"
         >
-          <Link
-            href="/#hub"
+          <a
+            href="#hub"
             className="py-3 px-6 button-primary text-center text-white cursor-pointer rounded-lg"
           >
             Enter the Hub
-          </Link>
+          </a>
           <Link
             href="/isotopes"
             className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
