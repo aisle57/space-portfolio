@@ -31,18 +31,54 @@ export default function IsotopesPage() {
           </div>
         </section>
 
+        {/* Medical & Theranostics */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Medical & Theranostics
           </h2>
           <div className="space-y-4">
+
+            {/* Deepened: Mo-99 / Tc-99m */}
+            <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <h3 className="font-semibold text-xl">Mo-99 / Tc-99m</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Medical</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Diagnostics</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Supply chain critical</span>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                Technetium-99m is the workhorse of diagnostic nuclear medicine, used in tens of millions of imaging procedures each year. It is produced from molybdenum-99, making the Mo-99 → Tc-99m chain one of the most important medical isotope supply systems in the world.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-2">
+                <span className="text-white">Main uses:</span> cardiac imaging, bone scans, oncology imaging, and a wide range of diagnostic procedures.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                <span className="text-white">Supply note:</span> Global availability depends on a relatively small number of research reactors and production routes. Supply security has been a recurring strategic concern.
+              </p>
+            </div>
+
+            {/* Deepened: Lu-177 */}
+            <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <h3 className="font-semibold text-xl">Lu-177</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Medical</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Theranostics</span>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                Lutetium-177 is one of the most important therapeutic isotopes in modern radiopharmaceutical medicine. It is central to targeted radioligand therapy, where a radioactive isotope is delivered selectively to cancer cells.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-2">
+                <span className="text-white">Main uses:</span> prostate cancer and neuroendocrine tumor therapies, with broader oncology applications expanding.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                <span className="text-white">Strategic relevance:</span> Rising clinical demand has made reliable Lu-177 supply a major focus for producers and healthcare systems.
+              </p>
+            </div>
+
             {[
-              { name: "Tc-99m", tags: ["Medical", "Diagnostics"], desc: "The dominant isotope in diagnostic nuclear medicine. Used in tens of millions of procedures each year." },
-              { name: "Mo-99", tags: ["Medical", "Parent isotope"], desc: "Parent isotope for Tc-99m. Central to the global diagnostic imaging supply chain." },
               { name: "F-18", tags: ["Medical", "PET"], desc: "Primary PET imaging isotope, most commonly used as FDG in oncology." },
               { name: "I-131", tags: ["Medical", "Therapy"], desc: "Established therapeutic and diagnostic isotope, especially in thyroid treatment." },
               { name: "I-123", tags: ["Medical", "Diagnostics"], desc: "Preferred iodine isotope for many diagnostic imaging applications." },
-              { name: "Lu-177", tags: ["Medical", "Theranostics"], desc: "Leading therapeutic isotope for targeted radiopharmaceutical therapy." },
               { name: "Ac-225", tags: ["Medical", "Alpha therapy"], desc: "High-value alpha emitter under rapid development for targeted cancer therapy." },
               { name: "Tb-161", tags: ["Medical", "Theranostics"], desc: "Emerging theranostic isotope with promising therapeutic properties." },
               { name: "Y-90", tags: ["Medical", "Therapy"], desc: "Widely used therapeutic isotope for liver cancer and other targeted applications." },
@@ -66,11 +102,32 @@ export default function IsotopesPage() {
           </div>
         </section>
 
+        {/* Energy & Nuclear */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Energy & Nuclear
           </h2>
           <div className="space-y-4">
+
+            {/* Deepened: He-3 */}
+            <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <h3 className="font-semibold text-xl">He-3</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Strategic</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Quantum</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Cryogenics</span>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                Helium-3 is a rare and strategically important isotope with applications in quantum research, ultra-low temperature physics, neutron detection, and specialized national security systems.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-2">
+                <span className="text-white">Main uses:</span> dilution refrigerators, quantum computing infrastructure, neutron detection, and specialized research.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                <span className="text-white">Supply note:</span> He-3 is scarce and historically tied to limited production pathways, making availability a recurring strategic issue.
+              </p>
+            </div>
+
             {[
               { name: "U-235", tags: ["Energy", "Fissile"], desc: "Primary fissile isotope used in most commercial nuclear reactors." },
               { name: "U-238", tags: ["Energy", "Fertile"], desc: "Fertile isotope that makes up the bulk of natural and depleted uranium." },
@@ -79,7 +136,6 @@ export default function IsotopesPage() {
               { name: "Th-232", tags: ["Energy", "Fertile"], desc: "Fertile isotope central to thorium fuel cycle research." },
               { name: "H-3 (Tritium)", tags: ["Energy", "Fusion"], desc: "Important for certain fusion approaches and specialized applications." },
               { name: "Li-6", tags: ["Fusion", "Strategic"], desc: "Important for tritium breeding in many fusion reactor designs." },
-              { name: "He-3", tags: ["Quantum", "Strategic"], desc: "Strategic isotope used in quantum research, cryogenics, neutron detection, and specialized applications." },
               { name: "He-4", tags: ["Industrial", "Cryogenics"], desc: "The common isotope of helium. Foundational for cryogenics and many industrial uses." },
             ].map((item) => (
               <div key={item.name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
@@ -97,14 +153,51 @@ export default function IsotopesPage() {
           </div>
         </section>
 
+        {/* Quantum & Advanced Materials */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Quantum & Advanced Materials
           </h2>
           <div className="space-y-4">
+
+            {/* Deepened: Si-28 */}
+            <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <h3 className="font-semibold text-xl">Si-28</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Quantum</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Semiconductors</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Advanced materials</span>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                Silicon-28 is one of the most important stable isotopes for quantum computing and advanced semiconductor research. Natural silicon contains isotopes that introduce nuclear spin noise. Highly enriched Si-28 reduces that noise and enables much cleaner quantum environments.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-2">
+                <span className="text-white">Main uses:</span> silicon-based quantum devices, spin qubits, high-purity semiconductor research, and advanced materials development.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                <span className="text-white">Strategic relevance:</span> Control over high-purity Si-28 supply is increasingly important as quantum hardware and precision semiconductor applications scale.
+              </p>
+            </div>
+
+            {/* Deepened: B-11 */}
+            <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <h3 className="font-semibold text-xl">B-11</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Quantum</span>
+                <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">Materials</span>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                Boron-11 is the preferred boron isotope for many quantum and advanced materials applications because of its nuclear properties. It is the more abundant stable isotope of boron and is favored where reduced neutron-related complications or cleaner material behavior are required.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-2">
+                <span className="text-white">Main uses:</span> advanced materials, quantum-related research, and specialized industrial applications.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                <span className="text-white">Note:</span> B-10, by contrast, is valued for its high neutron absorption and is used in nuclear control and shielding contexts.
+              </p>
+            </div>
+
             {[
-              { name: "Si-28", tags: ["Quantum", "Semiconductors"], desc: "Highly enriched silicon-28 is critical for certain quantum computing approaches and ultra-pure materials research." },
-              { name: "B-11", tags: ["Quantum", "Materials"], desc: "Preferred boron isotope for many quantum and advanced materials applications because of its nuclear properties." },
               { name: "B-10", tags: ["Nuclear", "Control materials"], desc: "High neutron absorption cross section. Important for control materials and specialized nuclear applications." },
               { name: "C-13", tags: ["Quantum", "Research"], desc: "Important in quantum sensing, NMR, and advanced materials research." },
               { name: "Ge-70", tags: ["Quantum", "Semiconductors"], desc: "Spin-free germanium isotope relevant to quantum devices and advanced semiconductor research." },
@@ -125,6 +218,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
+        {/* Industrial */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Industrial & Research Staples
@@ -181,22 +275,13 @@ export default function IsotopesPage() {
             Continue through the resource hub:
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/facilities"
-              className="py-3 px-6 button-primary text-center text-white rounded-lg"
-            >
+            <Link href="/facilities" className="py-3 px-6 button-primary text-center text-white rounded-lg">
               Research Facilities
             </Link>
-            <Link
-              href="/companies"
-              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
-            >
+            <Link href="/companies" className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg">
               Companies
             </Link>
-            <Link
-              href="/learn"
-              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
-            >
+            <Link href="/learn" className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg">
               Back to Learn
             </Link>
           </div>
