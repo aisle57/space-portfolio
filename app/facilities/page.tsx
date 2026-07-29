@@ -1,9 +1,10 @@
+import Link from "next/link";
+
 export default function FacilitiesPage() {
   return (
     <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
       <div className="max-w-5xl mx-auto">
 
-        {/* Header */}
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Research Facilities
@@ -13,7 +14,6 @@ export default function FacilitiesPage() {
           </p>
         </div>
 
-        {/* Beginner Section */}
         <section className="mb-20 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Why Facilities Matter
@@ -31,66 +31,63 @@ export default function FacilitiesPage() {
           </div>
         </section>
 
-        {/* Research Reactors */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Research Reactors
           </h2>
           <div className="space-y-4">
             {[
-              ["High Flux Isotope Reactor (HFIR)", ["USA", "Medical", "Actinides"], "Oak Ridge National Laboratory. One of the most important U.S. sources of medical and research isotopes, including heavy actinides."],
-              ["Advanced Test Reactor (ATR)", ["USA", "Research"], "Idaho National Laboratory. Major materials test reactor with important isotope production roles."],
-              ["University of Missouri Research Reactor (MURR)", ["USA", "Medical"], "One of the most significant university-based producers of medical isotopes in North America."],
-              ["BR2", ["Belgium", "Medical"], "Belgian research reactor and an important European source of medical isotopes."],
-              ["HFR Petten", ["Netherlands", "Medical"], "Major European supplier of medical isotopes."],
-              ["OPAL", ["Australia", "Medical", "Industrial"], "Australian research reactor producing medical and industrial isotopes for the region."],
-              ["SAFARI-1", ["South Africa", "Medical"], "Key producer of medical isotopes, including Mo-99."],
-              ["Canadian research reactor capacity", ["Canada", "Medical"], "Canada has long been a major supplier of medical isotopes. Current and future reactor capacity remains strategically important."],
-            ].map(([name, tags, desc]) => (
-              <div key={name as string} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
+              { name: "High Flux Isotope Reactor (HFIR)", tags: ["USA", "Medical", "Actinides"], desc: "Oak Ridge National Laboratory. One of the most important U.S. sources of medical and research isotopes, including heavy actinides." },
+              { name: "Advanced Test Reactor (ATR)", tags: ["USA", "Research"], desc: "Idaho National Laboratory. Major materials test reactor with important isotope production roles." },
+              { name: "University of Missouri Research Reactor (MURR)", tags: ["USA", "Medical"], desc: "One of the most significant university-based producers of medical isotopes in North America." },
+              { name: "BR2", tags: ["Belgium", "Medical"], desc: "Belgian research reactor and an important European source of medical isotopes." },
+              { name: "HFR Petten", tags: ["Netherlands", "Medical"], desc: "Major European supplier of medical isotopes." },
+              { name: "OPAL", tags: ["Australia", "Medical", "Industrial"], desc: "Australian research reactor producing medical and industrial isotopes for the region." },
+              { name: "SAFARI-1", tags: ["South Africa", "Medical"], desc: "Key producer of medical isotopes, including Mo-99." },
+              { name: "Canadian research reactor capacity", tags: ["Canada", "Medical"], desc: "Canada has long been a major supplier of medical isotopes. Current and future reactor capacity remains strategically important." },
+            ].map((item) => (
+              <div key={item.name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <h3 className="font-semibold text-lg">{name as string}</h3>
-                  {(tags as string[]).map((tag) => (
+                  <h3 className="font-semibold text-lg">{item.name}</h3>
+                  {item.tags.map((tag) => (
                     <span key={tag} className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-400 text-sm mt-1">{desc as string}</p>
+                <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Accelerators & Cyclotrons */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Accelerators & Cyclotrons
           </h2>
           <div className="space-y-4">
             {[
-              ["Medical cyclotrons", ["Medical", "PET"], "Widely distributed systems used to produce PET isotopes such as F-18, and increasingly other medical isotopes."],
-              ["Brookhaven Linac Isotope Producer (BLIP)", ["USA", "Medical", "Research"], "Important U.S. accelerator-based isotope production facility."],
-              ["Los Alamos Isotope Production Facility (IPF)", ["USA", "Medical", "Research"], "Accelerator-based production facility supporting medical and research isotopes."],
-              ["Specialized linear accelerators", ["Emerging", "Medical"], "Used for research isotopes and certain emerging medical and industrial isotopes that are difficult to produce in reactors."],
-              ["National accelerator laboratories", ["Research"], "Support both research and the development of new isotope production methods."],
-            ].map(([name, tags, desc]) => (
-              <div key={name as string} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
+              { name: "Medical cyclotrons", tags: ["Medical", "PET"], desc: "Widely distributed systems used to produce PET isotopes such as F-18, and increasingly other medical isotopes." },
+              { name: "Brookhaven Linac Isotope Producer (BLIP)", tags: ["USA", "Medical", "Research"], desc: "Important U.S. accelerator-based isotope production facility." },
+              { name: "Los Alamos Isotope Production Facility (IPF)", tags: ["USA", "Medical", "Research"], desc: "Accelerator-based production facility supporting medical and research isotopes." },
+              { name: "Specialized linear accelerators", tags: ["Emerging", "Medical"], desc: "Used for research isotopes and certain emerging medical and industrial isotopes that are difficult to produce in reactors." },
+              { name: "National accelerator laboratories", tags: ["Research"], desc: "Support both research and the development of new isotope production methods." },
+            ].map((item) => (
+              <div key={item.name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <h3 className="font-semibold text-lg">{name as string}</h3>
-                  {(tags as string[]).map((tag) => (
+                  <h3 className="font-semibold text-lg">{item.name}</h3>
+                  {item.tags.map((tag) => (
                     <span key={tag} className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-400 text-sm mt-1">{desc as string}</p>
+                <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Strategic Context */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Strategic Context
@@ -105,8 +102,7 @@ export default function FacilitiesPage() {
           </div>
         </section>
 
-        {/* Further Resources */}
-        <section className="mt-10 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+        <section className="mb-16 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Further Resources
           </h2>
@@ -117,27 +113,4 @@ export default function FacilitiesPage() {
             <li>
               <a href="https://nucleus.iaea.org/rrdb/#/home" target="_blank" rel="noopener noreferrer" className="hover:underline">
                 IAEA Research Reactor Database (RRDB)
-              </a>
-            </li>
-            <li>
-              <a href="https://www.isotopes.gov/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                National Isotope Development Center (NIDC)
-              </a>
-            </li>
-            <li>
-              <a href="https://science.osti.gov/Isotope-Research-Development-and-Production/Facilities" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                DOE Isotope Program Facilities
-              </a>
-            </li>
-            <li>
-              <a href="https://www.iaea.org/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                International Atomic Energy Agency (IAEA)
-              </a>
-            </li>
-          </ul>
-        </section>
-
-      </div>
-    </main>
-  );
-}
+              </a
