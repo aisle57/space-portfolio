@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import {
   slideInFromLeft,
-  slideInFromRight,
 } from "@/lib/motion";
 
 export const HeroContent = () => {
@@ -13,13 +12,13 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-6 md:px-20 mt-32 md:mt-40 w-full z-[20]"
+      className="flex flex-col justify-end min-h-[85vh] md:min-h-[80vh] px-6 md:px-20 pb-16 md:pb-24 w-full z-[20]"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start max-w-3xl">
+      <div className="w-full max-w-3xl">
         
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-4 text-5xl md:text-6xl font-bold text-white"
+          className="flex flex-col gap-4 text-4xl md:text-6xl font-bold text-white"
         >
           <span>
             Precision at the{" "}
@@ -31,15 +30,15 @@ export const HeroContent = () => {
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-4 max-w-[600px] leading-relaxed"
+          className="text-base md:text-lg text-gray-400 my-5 max-w-[600px] leading-relaxed"
         >
-          Isotopes power medicine, energy systems, quantum technologies, and advanced industry. 
+          Isotopes power medicine, energy systems, quantum technologies, and advanced industry.
           This is a public resource for understanding them and the infrastructure behind them.
         </motion.p>
 
         <motion.div
           variants={slideInFromLeft(1)}
-          className="flex flex-col sm:flex-row gap-4 mt-2"
+          className="flex flex-col sm:flex-row gap-4 mt-4"
         >
           <Link
             href="/#hub"
