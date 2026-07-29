@@ -5,7 +5,6 @@ export default function LearnPage() {
     <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
       <div className="max-w-3xl mx-auto">
 
-        {/* Header */}
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             What is an isotope?
@@ -15,7 +14,6 @@ export default function LearnPage() {
           </p>
         </div>
 
-        {/* Core explanation */}
         <section className="mb-16 space-y-6 text-gray-300 leading-relaxed">
           <p>
             Every element is defined by the number of protons in its atoms. Carbon always has 6 protons. Uranium always has 92. That number is fixed for each element.
@@ -28,7 +26,6 @@ export default function LearnPage() {
           </p>
         </section>
 
-        {/* Stable vs unstable */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Stable and unstable isotopes
@@ -46,21 +43,20 @@ export default function LearnPage() {
           </div>
         </section>
 
-        {/* Why they matter */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Why isotopes matter
           </h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              Isotopes are not just a scientific curiosity. They are embedded in critical systems:
+              Isotopes are embedded in critical systems:
             </p>
             <ul className="list-disc list-inside space-y-3 text-gray-300">
               <li>Medical imaging and cancer therapy</li>
               <li>Nuclear energy and advanced reactor systems</li>
               <li>Quantum computing and precision materials</li>
               <li>Industrial measurement, tracing, and sterilization</li>
-              <li>Space power systems and national security applications</li>
+              <li>Space power systems and strategic applications</li>
             </ul>
             <p>
               In many of these areas, specific isotopes are irreplaceable. Their availability depends on specialized production facilities and supply chains.
@@ -68,7 +64,6 @@ export default function LearnPage() {
           </div>
         </section>
 
-        {/* How they are made */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             How isotopes are made
@@ -89,37 +84,36 @@ export default function LearnPage() {
               </li>
             </ul>
             <p>
-              A smaller number of isotopes are obtained through other specialized processes.
+              A smaller number of isotopes are obtained through other specialized processes, including enrichment of stable isotopes.
             </p>
           </div>
         </section>
 
-        {/* Next steps */}
         <section className="mt-10 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Where to go next
           </h2>
           <p className="text-gray-400 mb-8">
-            Once you understand the basics, you can explore the resource hub:
+            Once the basics are clear, move into the resource hub:
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col gap-4">
             <Link
               href="/isotopes"
               className="py-3 px-6 button-primary text-center text-white rounded-lg"
             >
-              Isotope Directory
+              1. Isotope Directory
             </Link>
             <Link
               href="/facilities"
               className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
             >
-              Research Facilities
+              2. Research Facilities
             </Link>
             <Link
               href="/companies"
               className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
             >
-              Companies
+              3. Companies
             </Link>
           </div>
         </section>
