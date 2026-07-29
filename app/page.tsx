@@ -1,6 +1,7 @@
 import { Hero } from "@/components/main/hero";
 import { Projects } from "@/components/main/projects";
 import { Skills } from "@/components/main/skills";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,25 +20,31 @@ export default function Home() {
               This hub exists to make the landscape visible: the isotopes that matter, 
               the facilities that produce them, and the companies turning them into real world capability.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/isotopes"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+              <Link
+                href="/learn"
                 className="py-3 px-6 button-primary text-center text-white rounded-lg"
               >
+                Start Learning
+              </Link>
+              <Link
+                href="/isotopes"
+                className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+              >
                 Isotope Directory
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/facilities"
                 className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
               >
                 Research Facilities
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/companies"
                 className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
               >
                 Companies
-              </a>
+              </Link>
             </div>
           </div>
         </section>
