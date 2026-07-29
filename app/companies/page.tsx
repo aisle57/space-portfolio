@@ -54,6 +54,15 @@ export default function CompaniesPage() {
         "Laser isotope separation technology and related enrichment development.",
     },
     {
+      name: "Centrus Energy",
+      tags: ["Public", "Enrichment", "HALEU"],
+      about:
+        "Centrus Energy is a major U.S. enrichment company and a central player in the development of domestic High-Assay Low-Enriched Uranium production capacity.",
+      focus:
+        "Uranium enrichment, including HALEU production for advanced reactors and related nuclear fuel infrastructure.",
+      note: "One of the most important publicly traded companies in the U.S. enrichment rebuild.",
+    },
+    {
       name: "BWX Technologies",
       tags: ["Public", "Nuclear", "Production"],
       about:
@@ -76,6 +85,15 @@ export default function CompaniesPage() {
         "IBA provides cyclotron systems and radiopharma production infrastructure used in medical isotope and radiopharmaceutical manufacturing environments.",
       focus:
         "Production infrastructure for radiopharmaceutical and medical isotope systems.",
+    },
+    {
+      name: "China Isotope & Radiation",
+      tags: ["Public", "Isotope production", "Radiopharma"],
+      about:
+        "China Isotope & Radiation is a major listed company involved in the research, manufacture, and sale of nuclides, radiopharmaceuticals, and radioactive source products.",
+      focus:
+        "Isotope production, radiopharmaceuticals, and radioactive source products for medical and industrial applications.",
+      note: "An important public company in the broader global isotope production landscape.",
     },
   ];
 
