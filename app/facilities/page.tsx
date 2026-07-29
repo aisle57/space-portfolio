@@ -113,4 +113,56 @@ export default function FacilitiesPage() {
             <li>
               <a href="https://nucleus.iaea.org/rrdb/#/home" target="_blank" rel="noopener noreferrer" className="hover:underline">
                 IAEA Research Reactor Database (RRDB)
-              </a
+              </a>
+            </li>
+            <li>
+              <a href="https://www.isotopes.gov/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                National Isotope Development Center (NIDC)
+              </a>
+            </li>
+            <li>
+              <a href="https://science.osti.gov/Isotope-Research-Development-and-Production/Facilities" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                DOE Isotope Program Facilities
+              </a>
+            </li>
+            <li>
+              <a href="https://www.iaea.org/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                International Atomic Energy Agency (IAEA)
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+          <h2 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Where to go next
+          </h2>
+          <p className="text-gray-400 mb-6">
+            Continue through the resource hub:
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/companies"
+              className="py-3 px-6 button-primary text-center text-white rounded-lg"
+            >
+              Companies
+            </Link>
+            <Link
+              href="/isotopes"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Isotope Directory
+            </Link>
+            <Link
+              href="/learn"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Back to Learn
+            </Link>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  );
+}
