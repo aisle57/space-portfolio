@@ -10,17 +10,19 @@ export default function Home() {
         <Hero />
 
         {/* Bridge Section */}
-        <section className="relative z-10 py-24 px-6">
+        <section className="relative z-10 py-20 md:py-28 px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400 mb-6">
               A public resource for the isotope age
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-10">
-              Most people encounter isotopes only in specialized fields. 
-              This hub exists to make the landscape visible: the isotopes that matter, 
-              the facilities that produce them, and the companies turning them into real world capability.
+              Most people encounter isotopes only in specialized fields.
+              This hub makes the landscape visible: the isotopes that matter,
+              the facilities that produce them, and the companies turning them
+              into real capability.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap mb-6">
               <Link
                 href="/learn"
                 className="py-3 px-6 button-primary text-center text-white rounded-lg"
@@ -33,15 +35,18 @@ export default function Home() {
               >
                 Isotope Directory
               </Link>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
               <Link
                 href="/facilities"
-                className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+                className="py-3 px-6 border border-white/10 text-center text-gray-300 hover:border-sky-400 hover:text-sky-400 transition rounded-lg text-sm"
               >
                 Research Facilities
               </Link>
               <Link
                 href="/companies"
-                className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+                className="py-3 px-6 border border-white/10 text-center text-gray-300 hover:border-sky-400 hover:text-sky-400 transition rounded-lg text-sm"
               >
                 Companies
               </Link>
