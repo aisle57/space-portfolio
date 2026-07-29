@@ -1,103 +1,14 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 
-type IsotopeItem = {
-  name: string;
-  tags: string[];
-  desc: string;
-  detail?: string;
-};
-
-function ExpandableIsotope({ item }: { item: IsotopeItem }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.03] overflow-hidden">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full text-left p-5 flex items-start justify-between gap-4 hover:bg-white/[0.02] transition"
-      >
-        <div>
-          <div className="flex flex-wrap items-center gap-2 mb-1">
-            <h3 className="font-semibold text-lg text-white">{item.name}</h3>
-            {item.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          {!open && (
-            <p className="text-gray-400 text-sm mt-1 line-clamp-1">{item.desc}</p>
-          )}
-        </div>
-        <span className="text-sky-400 text-lg leading-none mt-1 shrink-0">
-          {open ? "−" : "+"}
-        </span>
-      </button>
-
-      {open && (
-        <div className="px-5 pb-5 pt-0">
-          <p className="text-gray-300 text-sm leading-relaxed mb-2">{item.desc}</p>
-          {item.detail && (
-            <p className="text-gray-400 text-sm leading-relaxed">{item.detail}</p>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
 export default function IsotopesPage() {
-  const medical: IsotopeItem[] = [
-    { name: "F-18", tags: ["Medical", "PET"], desc: "Primary PET imaging isotope, most commonly used as FDG in oncology." },
-    { name: "I-131", tags: ["Medical", "Therapy"], desc: "Established therapeutic and diagnostic isotope, especially in thyroid treatment." },
-    { name: "I-123", tags: ["Medical", "Diagnostics"], desc: "Preferred iodine isotope for many diagnostic imaging applications." },
-    { name: "Ac-225", tags: ["Medical", "Alpha therapy"], desc: "High-value alpha emitter under rapid development for targeted cancer therapy.", detail: "Rising clinical interest is driving new production routes and supply chain attention." },
-    { name: "Tb-161", tags: ["Medical", "Theranostics"], desc: "Emerging theranostic isotope with promising therapeutic properties." },
-    { name: "Y-90", tags: ["Medical", "Therapy"], desc: "Widely used therapeutic isotope for liver cancer and other targeted applications." },
-    { name: "Ga-68", tags: ["Medical", "PET"], desc: "Important generator-produced PET isotope used in multiple diagnostic agents." },
-    { name: "Cu-64", tags: ["Medical", "Imaging", "Therapy"], desc: "Versatile isotope used in both imaging and therapeutic research." },
-    { name: "Zr-89", tags: ["Medical", "PET"], desc: "Growing PET isotope particularly useful for antibody-based imaging." },
-    { name: "Ra-223", tags: ["Medical", "Alpha therapy"], desc: "Alpha-emitting therapeutic isotope used in bone metastases treatment." },
-  ];
-
-  const energy: IsotopeItem[] = [
-    { name: "U-235", tags: ["Energy", "Fissile"], desc: "Primary fissile isotope used in most commercial nuclear reactors." },
-    { name: "U-238", tags: ["Energy", "Fertile"], desc: "Fertile isotope that makes up the bulk of natural and depleted uranium." },
-    { name: "Pu-239", tags: ["Energy", "Fissile"], desc: "Key fissile isotope produced in reactors and used in certain fuel cycles." },
-    { name: "Pu-238", tags: ["Space", "Power"], desc: "Critical isotope for radioisotope thermoelectric generators used in space systems." },
-    { name: "Th-232", tags: ["Energy", "Fertile"], desc: "Fertile isotope central to thorium fuel cycle research." },
-    { name: "H-3 (Tritium)", tags: ["Energy", "Fusion"], desc: "Important for certain fusion approaches and specialized applications." },
-    { name: "Li-6", tags: ["Fusion", "Strategic"], desc: "Important for tritium breeding in many fusion reactor designs." },
-    { name: "He-4", tags: ["Industrial", "Cryogenics"], desc: "The common isotope of helium. Foundational for cryogenics and many industrial uses." },
-  ];
-
-  const quantum: IsotopeItem[] = [
-    { name: "B-10", tags: ["Nuclear", "Control materials"], desc: "High neutron absorption cross section. Important for control materials and specialized nuclear applications." },
-    { name: "C-13", tags: ["Quantum", "Research"], desc: "Important in quantum sensing, NMR, and advanced materials research." },
-    { name: "Ge-70", tags: ["Quantum", "Semiconductors"], desc: "Spin-free germanium isotope relevant to quantum devices and advanced semiconductor research." },
-    { name: "C-12", tags: ["Quantum", "Materials"], desc: "Highly purified carbon-12 is relevant to certain quantum and precision materials applications." },
-  ];
-
-  const industrial: IsotopeItem[] = [
-    { name: "C-14", tags: ["Research", "Tracing"], desc: "Essential for radiocarbon dating, tracing, and a wide range of research applications." },
-    { name: "Co-60", tags: ["Industrial", "Medical"], desc: "Widely used in industrial radiography, sterilization, and medical applications." },
-    { name: "Ir-192", tags: ["Industrial"], desc: "Important industrial radiography isotope." },
-    { name: "Am-241", tags: ["Industrial", "Instrumentation"], desc: "Used in smoke detectors, industrial gauges, and specialized applications." },
-    { name: "Cf-252", tags: ["Research", "Neutron source"], desc: "Powerful neutron source used in research, industry, and specialized nuclear applications." },
-  ];
-
   return (
     <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
       <div className="max-w-5xl mx-auto">
 
         <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Isotope Directory</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Isotope Directory
+          </h1>
           <p className="text-gray-400 text-lg max-w-3xl">
             A curated foundation of the isotopes that matter most for medicine, energy, quantum technologies, advanced materials, and strategic supply chains.
           </p>
@@ -115,18 +26,17 @@ export default function IsotopesPage() {
               Some isotopes are stable. Others are unstable and release energy as they change. That energy and those nuclear properties are what make certain isotopes useful in medicine, energy systems, quantum technologies, and industry.
             </p>
             <p>
-              Featured isotopes below are expanded for deeper context. The rest can be opened as needed.
+              This directory focuses on the isotopes that currently matter most, and points to complete data sources for every known isotope.
             </p>
           </div>
         </section>
 
-        {/* Medical */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Medical & Theranostics
           </h2>
           <div className="space-y-4">
-            {/* Featured */}
+
             <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <h3 className="font-semibold text-xl">Mo-99 / Tc-99m</h3>
@@ -162,18 +72,39 @@ export default function IsotopesPage() {
               </p>
             </div>
 
-            {medical.map((item) => (
-              <ExpandableIsotope key={item.name} item={item} />
+            {[
+              { name: "F-18", tags: ["Medical", "PET"], desc: "Primary PET imaging isotope, most commonly used as FDG in oncology." },
+              { name: "I-131", tags: ["Medical", "Therapy"], desc: "Established therapeutic and diagnostic isotope, especially in thyroid treatment." },
+              { name: "I-123", tags: ["Medical", "Diagnostics"], desc: "Preferred iodine isotope for many diagnostic imaging applications." },
+              { name: "Ac-225", tags: ["Medical", "Alpha therapy"], desc: "High-value alpha emitter under rapid development for targeted cancer therapy." },
+              { name: "Tb-161", tags: ["Medical", "Theranostics"], desc: "Emerging theranostic isotope with promising therapeutic properties." },
+              { name: "Y-90", tags: ["Medical", "Therapy"], desc: "Widely used therapeutic isotope for liver cancer and other targeted applications." },
+              { name: "Ga-68", tags: ["Medical", "PET"], desc: "Important generator-produced PET isotope used in multiple diagnostic agents." },
+              { name: "Cu-64", tags: ["Medical", "Imaging", "Therapy"], desc: "Versatile isotope used in both imaging and therapeutic research." },
+              { name: "Zr-89", tags: ["Medical", "PET"], desc: "Growing PET isotope particularly useful for antibody-based imaging." },
+              { name: "Ra-223", tags: ["Medical", "Alpha therapy"], desc: "Alpha-emitting therapeutic isotope used in bone metastases treatment." },
+            ].map((item) => (
+              <div key={item.name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="font-semibold text-lg">{item.name}</h3>
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* Energy */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Energy & Nuclear
           </h2>
           <div className="space-y-4">
+
             <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <h3 className="font-semibold text-xl">He-3</h3>
@@ -192,18 +123,37 @@ export default function IsotopesPage() {
               </p>
             </div>
 
-            {energy.map((item) => (
-              <ExpandableIsotope key={item.name} item={item} />
+            {[
+              { name: "U-235", tags: ["Energy", "Fissile"], desc: "Primary fissile isotope used in most commercial nuclear reactors." },
+              { name: "U-238", tags: ["Energy", "Fertile"], desc: "Fertile isotope that makes up the bulk of natural and depleted uranium." },
+              { name: "Pu-239", tags: ["Energy", "Fissile"], desc: "Key fissile isotope produced in reactors and used in certain fuel cycles." },
+              { name: "Pu-238", tags: ["Space", "Power"], desc: "Critical isotope for radioisotope thermoelectric generators used in space systems." },
+              { name: "Th-232", tags: ["Energy", "Fertile"], desc: "Fertile isotope central to thorium fuel cycle research." },
+              { name: "H-3 (Tritium)", tags: ["Energy", "Fusion"], desc: "Important for certain fusion approaches and specialized applications." },
+              { name: "Li-6", tags: ["Fusion", "Strategic"], desc: "Important for tritium breeding in many fusion reactor designs." },
+              { name: "He-4", tags: ["Industrial", "Cryogenics"], desc: "The common isotope of helium. Foundational for cryogenics and many industrial uses." },
+            ].map((item) => (
+              <div key={item.name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="font-semibold text-lg">{item.name}</h3>
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* Quantum */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Quantum & Advanced Materials
           </h2>
           <div className="space-y-4">
+
             <div className="p-6 rounded-xl border border-sky-500/20 bg-white/[0.04]">
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <h3 className="font-semibold text-xl">Si-28</h3>
@@ -239,20 +189,50 @@ export default function IsotopesPage() {
               </p>
             </div>
 
-            {quantum.map((item) => (
-              <ExpandableIsotope key={item.name} item={item} />
+            {[
+              { name: "B-10", tags: ["Nuclear", "Control materials"], desc: "High neutron absorption cross section. Important for control materials and specialized nuclear applications." },
+              { name: "C-13", tags: ["Quantum", "Research"], desc: "Important in quantum sensing, NMR, and advanced materials research." },
+              { name: "Ge-70", tags: ["Quantum", "Semiconductors"], desc: "Spin-free germanium isotope relevant to quantum devices and advanced semiconductor research." },
+              { name: "C-12", tags: ["Quantum", "Materials"], desc: "Highly purified carbon-12 is relevant to certain quantum and precision materials applications." },
+            ].map((item) => (
+              <div key={item.name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="font-semibold text-lg">{item.name}</h3>
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* Industrial */}
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Industrial & Research Staples
           </h2>
           <div className="space-y-4">
-            {industrial.map((item) => (
-              <ExpandableIsotope key={item.name} item={item} />
+            {[
+              { name: "C-14", tags: ["Research", "Tracing"], desc: "Essential for radiocarbon dating, tracing, and a wide range of research applications." },
+              { name: "Co-60", tags: ["Industrial", "Medical"], desc: "Widely used in industrial radiography, sterilization, and medical applications." },
+              { name: "Ir-192", tags: ["Industrial"], desc: "Important industrial radiography isotope." },
+              { name: "Am-241", tags: ["Industrial", "Instrumentation"], desc: "Used in smoke detectors, industrial gauges, and specialized applications." },
+              { name: "Cf-252", tags: ["Research", "Neutron source"], desc: "Powerful neutron source used in research, industry, and specialized nuclear applications." },
+            ].map((item) => (
+              <div key={item.name} className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="font-semibold text-lg">{item.name}</h3>
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-sky-400/90">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
+              </div>
             ))}
           </div>
         </section>
@@ -282,7 +262,9 @@ export default function IsotopesPage() {
           <h2 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Where to go next
           </h2>
-          <p className="text-gray-400 mb-6">Continue through the resource hub:</p>
+          <p className="text-gray-400 mb-6">
+            Continue through the resource hub:
+          </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/facilities" className="py-3 px-6 button-primary text-center text-white rounded-lg">
               Research Facilities
