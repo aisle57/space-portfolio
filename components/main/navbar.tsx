@@ -8,10 +8,10 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const NAV_LINKS = [
+    { title: "Learn", link: "/learn" },
     { title: "Isotopes", link: "/isotopes" },
     { title: "Facilities", link: "/facilities" },
     { title: "Companies", link: "/companies" },
-    { title: "Hub", link: "/#hub" },
   ];
 
   return (
@@ -25,7 +25,7 @@ export const Navbar = () => {
         </Link>
 
         {/* Web Navbar */}
-        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
+        <div className="hidden md:flex w-[520px] h-full flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border-[rgba(56,189,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             {NAV_LINKS.map((link) => (
               <Link
