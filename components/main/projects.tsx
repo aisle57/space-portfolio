@@ -4,20 +4,20 @@ const SECTIONS = [
   {
     title: "Nuclear Production",
     description:
-      "Research reactors and advanced systems that convert neutron flux into critical isotopes for medicine, industry, and science.",
-    link: "/facilities",
+      "Fissile materials, enrichment, fusion-related isotopes, and the nuclear infrastructure that underpins energy and strategic systems.",
+    link: "/applications/nuclear",
   },
   {
     title: "Quantum Technologies",
     description:
-      "Ultra-pure and rare isotopes enabling next-generation quantum computing, sensing, and advanced materials.",
-    link: "/isotopes",
+      "Isotopically engineered materials for quantum computing, sensing, and advanced devices where nuclear properties shape performance.",
+    link: "/applications/quantum",
   },
   {
     title: "Precision Medicine",
     description:
-      "From diagnostic imaging to theranostics (Lu-177, Ac-225, Tb-161) and targeted therapies that seek and destroy disease.",
-    link: "/companies",
+      "Diagnostic imaging, theranostics, and targeted radiopharmaceutical therapies built around medical isotopes.",
+    link: "/applications/medicine",
   },
 ];
 
@@ -38,7 +38,6 @@ export const Projects = () => {
             href={section.link}
             className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] hover:border-sky-500/40 transition group"
           >
-            {/* Animated background */}
             <div className="absolute inset-0 z-0">
               <video
                 autoPlay
@@ -52,7 +51,6 @@ export const Projects = () => {
               <div className="absolute inset-0 bg-black/50" />
             </div>
 
-            {/* Content */}
             <div className="relative z-10 p-8 min-h-[280px] flex flex-col justify-end">
               <h3 className="text-2xl font-semibold text-white mb-3">
                 {section.title}
