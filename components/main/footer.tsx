@@ -82,7 +82,19 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 text-[14px] text-center text-gray-500">
+        <div className="mt-10 text-sm text-center text-gray-400">
+          Questions, corrections, or additions:{" "}
+          <Link
+            href="https://x.com/IsotopeEconomy"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-sky-400 hover:underline"
+          >
+            @IsotopeEconomy on X
+          </Link>
+        </div>
+
+        <div className="mt-4 text-[14px] text-center text-gray-500">
           © {new Date().getFullYear()} Isotope Economy. All rights reserved.
         </div>
       </div>
