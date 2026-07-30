@@ -20,6 +20,9 @@ export const Footer = () => {
             <div className="flex flex-col items-center sm:items-start">
               <h3 className="font-bold text-[16px] mb-3">Learn</h3>
               <div className="flex flex-col gap-2 text-sm text-gray-400">
+                <Link href="/" className="hover:text-sky-400 transition">
+                  Home
+                </Link>
                 <Link href="/learn" className="hover:text-sky-400 transition">
                   Start Learning
                 </Link>
