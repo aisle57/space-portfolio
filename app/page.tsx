@@ -9,43 +9,65 @@ export default function Home() {
       <div className="flex flex-col">
         <Hero />
 
-        {/* Bridge Section — reduced on mobile */}
-        <section className="relative z-10 py-10 md:py-28 px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="hidden md:block text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400 mb-6">
-              A public resource for the isotope age
+        {/* Hub navigation map */}
+        <section className="relative z-10 py-16 md:py-24 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400 mb-6">
+              How to use this hub
             </h2>
-            <p className="hidden md:block text-gray-400 text-lg leading-relaxed mb-10">
-              Most people encounter isotopes only in specialized fields.
-              This hub makes the landscape visible: the isotopes that matter,
-              the facilities that produce them, and the companies turning them
-              into real capability.
+            <p className="text-gray-400 text-lg leading-relaxed mb-12 max-w-2xl mx-auto">
+              Start with the basics, move into the major application areas, then
+              use the resource maps to explore isotopes, facilities, companies,
+              and external sources.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
               <Link
                 href="/learn"
-                className="py-3 px-6 button-primary text-center text-white rounded-lg"
+                className="p-6 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-sky-400/40 transition"
               >
-                Start Learning
+                <p className="text-sky-400 text-sm mb-2 tracking-wide uppercase">
+                  Path 1
+                </p>
+                <h3 className="text-white text-xl font-semibold mb-3">
+                  Learn
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Clear starting point for anyone new to isotopes and why they
+                  matter.
+                </p>
               </Link>
+
               <Link
-                href="/isotopes"
-                className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+                href="#projects"
+                className="p-6 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-sky-400/40 transition"
               >
-                Isotope Directory
+                <p className="text-sky-400 text-sm mb-2 tracking-wide uppercase">
+                  Path 2
+                </p>
+                <h3 className="text-white text-xl font-semibold mb-3">
+                  Applications
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Field gateways into medicine, quantum technologies, and
+                  nuclear production.
+                </p>
               </Link>
+
               <Link
-                href="/facilities"
-                className="py-3 px-6 border border-white/10 text-center text-gray-300 hover:border-sky-400 hover:text-sky-400 transition rounded-lg text-sm"
+                href="#hub"
+                className="p-6 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-sky-400/40 transition"
               >
-                Research Facilities
-              </Link>
-              <Link
-                href="/companies"
-                className="py-3 px-6 border border-white/10 text-center text-gray-300 hover:border-sky-400 hover:text-sky-400 transition rounded-lg text-sm"
-              >
-                Companies
+                <p className="text-sky-400 text-sm mb-2 tracking-wide uppercase">
+                  Path 3
+                </p>
+                <h3 className="text-white text-xl font-semibold mb-3">
+                  Resources
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Curated maps of isotopes, facilities, companies, and external
+                  reference sources.
+                </p>
               </Link>
             </div>
           </div>
