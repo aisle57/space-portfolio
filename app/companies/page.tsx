@@ -67,8 +67,7 @@ export default function CompaniesPage() {
       tags: ["Public", "Nuclear", "Production"],
       about:
         "BWX Technologies is involved in nuclear technologies and medical isotope production related capabilities.",
-      focus:
-        "Nuclear systems and isotope production related activities.",
+      focus: "Nuclear systems and isotope production related activities.",
     },
     {
       name: "Eckert & Ziegler",
@@ -103,40 +102,35 @@ export default function CompaniesPage() {
       tags: ["Theranostics", "Lu-177"],
       about:
         "Novartis is a major force in radioligand therapy and theranostics, with significant activity around targeted radiopharmaceutical treatments.",
-      focus:
-        "Radioligand therapy and commercial theranostic applications.",
+      focus: "Radioligand therapy and commercial theranostic applications.",
     },
     {
       name: "Bayer",
       tags: ["Alpha therapy", "Radiopharma"],
       about:
         "Bayer is active in targeted alpha therapies and broader radiopharmaceutical development.",
-      focus:
-        "Targeted alpha therapy and radiopharmaceutical innovation.",
+      focus: "Targeted alpha therapy and radiopharmaceutical innovation.",
     },
     {
       name: "Lantheus",
       tags: ["Diagnostics", "Therapy"],
       about:
         "Lantheus is an important company in diagnostic and therapeutic radiopharmaceuticals.",
-      focus:
-        "Imaging agents and therapeutic radiopharmaceutical products.",
+      focus: "Imaging agents and therapeutic radiopharmaceutical products.",
     },
     {
       name: "Telix Pharmaceuticals",
       tags: ["Theranostics", "Imaging"],
       about:
         "Telix develops targeted radiation therapies and imaging agents across oncology-focused radiopharmaceutical applications.",
-      focus:
-        "Targeted radiopharmaceutical therapy and diagnostic agents.",
+      focus: "Targeted radiopharmaceutical therapy and diagnostic agents.",
     },
     {
       name: "Curium",
       tags: ["Supply", "Medical isotopes"],
       about:
         "Curium is one of the largest global suppliers of medical isotopes and radiopharmaceuticals.",
-      focus:
-        "Medical isotope supply and radiopharmaceutical manufacturing.",
+      focus: "Medical isotope supply and radiopharmaceutical manufacturing.",
     },
     {
       name: "NorthStar Medical Radioisotopes",
@@ -151,16 +145,14 @@ export default function CompaniesPage() {
       tags: ["Production tech", "Medical"],
       about:
         "Shine is developing advanced production methods intended to expand medical isotope supply.",
-      focus:
-        "Next-generation medical isotope production technology.",
+      focus: "Next-generation medical isotope production technology.",
     },
     {
       name: "Nusano",
       tags: ["Accelerator", "Production"],
       about:
         "Nusano is building large-scale accelerator-based radioisotope production capacity.",
-      focus:
-        "Accelerator-based radioisotope production infrastructure.",
+      focus: "Accelerator-based radioisotope production infrastructure.",
     },
   ];
 
@@ -170,40 +162,35 @@ export default function CompaniesPage() {
       tags: ["Enrichment", "Stable isotopes"],
       about:
         "Urenco Stable Isotopes is a major established player in commercial stable isotope enrichment.",
-      focus:
-        "Commercial enrichment and supply of stable isotopes.",
+      focus: "Commercial enrichment and supply of stable isotopes.",
     },
     {
       name: "Orano Stable Isotopes",
       tags: ["Enrichment", "Materials"],
       about:
         "Orano is active in stable isotope production and advanced materials related supply.",
-      focus:
-        "Stable isotope production and materials-linked isotope supply.",
+      focus: "Stable isotope production and materials-linked isotope supply.",
     },
     {
       name: "Cambridge Isotope Laboratories",
       tags: ["Research supply", "Stable isotopes"],
       about:
         "Cambridge Isotope Laboratories is an important supplier of stable isotopes for research and specialized applications.",
-      focus:
-        "Research and specialty stable isotope products.",
+      focus: "Research and specialty stable isotope products.",
     },
     {
       name: "Trace Sciences International",
       tags: ["Stable isotopes"],
       about:
         "Trace Sciences supplies enriched stable isotopes for research and industry.",
-      focus:
-        "Enriched stable isotope supply for scientific and commercial users.",
+      focus: "Enriched stable isotope supply for scientific and commercial users.",
     },
     {
       name: "Isoflex",
       tags: ["Stable isotopes"],
       about:
         "Isoflex provides enriched stable isotopes for scientific and commercial use.",
-      focus:
-        "Specialty enriched stable isotope products.",
+      focus: "Specialty enriched stable isotope products.",
     },
   ];
 
@@ -213,16 +200,14 @@ export default function CompaniesPage() {
       tags: ["Nuclear", "Fuel cycle"],
       about:
         "Framatome is active in nuclear fuel and related isotope-linked nuclear technology activities.",
-      focus:
-        "Nuclear fuel cycle and related nuclear technology services.",
+      focus: "Nuclear fuel cycle and related nuclear technology services.",
     },
     {
       name: "NTP Radioisotopes",
       tags: ["Medical", "Mo-99"],
       about:
         "NTP is a major South African producer of medical isotopes and an important part of global supply for selected diagnostic isotopes.",
-      focus:
-        "Medical isotope production, including Mo-99 related supply.",
+      focus: "Medical isotope production, including Mo-99 related supply.",
     },
     {
       name: "DOE National Isotope Development Center network",
@@ -237,7 +222,6 @@ export default function CompaniesPage() {
   return (
     <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
       <div className="max-w-5xl mx-auto">
-
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Companies</h1>
           <p className="text-gray-400 text-lg max-w-3xl">
@@ -305,11 +289,17 @@ export default function CompaniesPage() {
 
         <section className="mb-16 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Growing Directory
+            Wider Isotope World
           </h2>
-          <p className="text-gray-400">
-            This is a working foundation. The company landscape around isotopes is expanding quickly, especially in medical theranostics, alternative production technologies, stable isotope enrichment, and advanced materials supply chains. Additional companies will be added over time.
+          <p className="text-gray-400 mb-6">
+            For official databases, institutions, public companies, and private companies across the broader isotope landscape, visit the Links page.
           </p>
+          <Link
+            href="/links"
+            className="inline-block py-3 px-6 button-primary text-center text-white rounded-lg"
+          >
+            Open Links
+          </Link>
         </section>
 
         <section className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
@@ -318,18 +308,26 @@ export default function CompaniesPage() {
           </h2>
           <p className="text-gray-400 mb-6">Continue through the resource hub:</p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/isotopes" className="py-3 px-6 button-primary text-center text-white rounded-lg">
+            <Link
+              href="/isotopes"
+              className="py-3 px-6 button-primary text-center text-white rounded-lg"
+            >
               Isotope Directory
             </Link>
-            <Link href="/facilities" className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg">
+            <Link
+              href="/facilities"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
               Research Facilities
             </Link>
-            <Link href="/advanced" className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg">
+            <Link
+              href="/advanced"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
               Advanced
             </Link>
           </div>
         </section>
-
       </div>
     </main>
   );
