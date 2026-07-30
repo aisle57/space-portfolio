@@ -50,6 +50,13 @@ export const Navbar = () => {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-2">
           <div className="flex items-center gap-1 border border-sky-400/30 bg-[rgba(3,0,20,0.37)] px-3 py-2 rounded-full text-gray-200 text-sm">
+            <Link
+              href="/"
+              className="px-3 py-1 hover:text-sky-400 transition"
+            >
+              Home
+            </Link>
+
             {NAV_GROUPS.map((group) => (
               <div
                 key={group.title}
@@ -114,6 +121,14 @@ export const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="absolute top-[65px] left-0 w-full bg-[#030014] border-t border-white/10 p-5 md:hidden">
           <div className="flex flex-col gap-3">
+            <Link
+              href="/"
+              className="text-gray-200 font-medium py-2 hover:text-sky-400 transition"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+
             {NAV_GROUPS.map((group) => (
               <div key={group.title}>
                 <button
