@@ -56,12 +56,9 @@ export default function MedicineApplicationPage() {
               <p>
                 Diagnostic isotopes make biological processes visible. PET and
                 SPECT imaging use radiotracers to map blood flow, metabolism,
-                receptor expression, and disease burden. Fluorine-18,
-                gallium-68, technetium-99m, and related isotopes dominate this
-                layer.
+                receptor expression, and disease burden.
               </p>
             </div>
-
             <div className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
               <h3 className="font-semibold text-white text-lg mb-2">
                 Therapy
@@ -69,33 +66,27 @@ export default function MedicineApplicationPage() {
               <p>
                 Therapeutic isotopes deliver radiation directly to target
                 tissue. Depending on the isotope, that energy may come from
-                beta particles or alpha particles. The goal is local biological
-                effect with limited damage to surrounding healthy tissue.
+                beta particles or alpha particles.
               </p>
             </div>
-
             <div className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
               <h3 className="font-semibold text-white text-lg mb-2">
                 Theranostics
               </h3>
               <p>
                 Theranostics pairs imaging and therapy around the same target.
-                A diagnostic version identifies patients who express the
-                target. A therapeutic version then delivers treatment to that
-                same target. Lutetium-177 systems are the clearest current
-                commercial example.
+                Lutetium-177 systems are the clearest current commercial
+                example.
               </p>
             </div>
-
             <div className="p-5 rounded-xl border border-white/10 bg-white/[0.03]">
               <h3 className="font-semibold text-white text-lg mb-2">
                 Alpha therapy
               </h3>
               <p>
                 Alpha-emitting isotopes deposit large amounts of energy over a
-                very short distance. That makes them attractive for selective
-                cell killing. Actinium-225, radium-223, and related alpha
-                systems are among the most closely watched areas in the field.
+                very short distance. Actinium-225 and radium-223 are among the
+                most watched systems in this area.
               </p>
             </div>
           </div>
@@ -107,60 +98,77 @@ export default function MedicineApplicationPage() {
             {[
               {
                 name: "Mo-99 / Tc-99m",
+                href: "/isotopes#mo-99-tc-99m",
                 about:
-                  "The backbone of diagnostic nuclear medicine. Technetium-99m is used in tens of millions of procedures each year and is produced from molybdenum-99.",
+                  "The backbone of diagnostic nuclear medicine.",
               },
               {
                 name: "F-18",
+                href: "/isotopes#f-18",
                 about:
-                  "The primary PET imaging isotope, most commonly used as FDG in oncology and broader diagnostic imaging.",
+                  "The primary PET imaging isotope, most commonly used as FDG.",
               },
               {
                 name: "Ga-68",
+                href: "/isotopes#ga-68",
                 about:
-                  "A generator-produced PET isotope central to several targeted diagnostic agents.",
+                  "A generator-produced PET isotope used in targeted diagnostics.",
               },
               {
                 name: "Lu-177",
+                href: "/isotopes#lu-177",
                 about:
-                  "One of the most important therapeutic isotopes in modern radioligand therapy and theranostics.",
+                  "Central therapeutic isotope in radioligand therapy and theranostics.",
               },
               {
                 name: "Ac-225",
+                href: "/isotopes#ac-225",
                 about:
-                  "A high-value alpha emitter under rapid development for targeted cancer therapy. Production remains constrained.",
+                  "High-value alpha emitter for targeted cancer therapy. Production remains constrained.",
               },
               {
                 name: "I-131",
+                href: "/isotopes#i-131",
                 about:
-                  "A long-established therapeutic and diagnostic isotope, especially important in thyroid medicine.",
+                  "Established therapeutic and diagnostic isotope, especially in thyroid medicine.",
               },
               {
                 name: "Y-90",
+                href: "/isotopes#y-90",
                 about:
-                  "A therapeutic isotope widely used in liver-directed and other targeted treatment settings.",
+                  "Therapeutic isotope used in liver-directed and other targeted treatments.",
               },
               {
                 name: "Ra-223",
+                href: "/isotopes#ra-223",
                 about:
-                  "An alpha-emitting therapy used in the treatment of bone metastases.",
+                  "Alpha-emitting therapy used for bone metastases.",
               },
               {
                 name: "Zr-89",
+                href: "/isotopes#zr-89",
                 about:
-                  "A longer-lived PET isotope useful for antibody-based imaging.",
+                  "Longer-lived PET isotope useful for antibody-based imaging.",
               },
               {
-                name: "Cu-64 / Cu-67",
+                name: "Cu-64",
+                href: "/isotopes#cu-64",
                 about:
-                  "Copper isotopes used across imaging and therapeutic research, with growing interest in paired systems.",
+                  "Versatile copper isotope used across imaging and therapeutic research.",
               },
             ].map((item) => (
               <div
                 key={item.name}
                 className="p-5 rounded-xl border border-white/10 bg-white/[0.03]"
               >
-                <h3 className="font-semibold text-white mb-2">{item.name}</h3>
+                <h3 className="font-semibold text-white mb-2">
+                  <Link
+                    href={item.href}
+                    className="hover:text-sky-400 transition"
+                  >
+                    {item.name}
+                  </Link>
+                </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
                   {item.about}
                 </p>
@@ -169,8 +177,11 @@ export default function MedicineApplicationPage() {
           </div>
           <p className="text-gray-400 text-sm mt-6">
             Full curated entries live in the{" "}
-            <Link href="/isotopes" className="text-sky-400 hover:underline">
-              Isotope Directory
+            <Link
+              href="/isotopes#medical"
+              className="text-sky-400 hover:underline"
+            >
+              Medical & Theranostics section
             </Link>
             .
           </p>
@@ -180,27 +191,18 @@ export default function MedicineApplicationPage() {
           <h2 className={titleClass}>Production and supply</h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              Medical isotope supply is not a simple commodity market. It
-              depends on reactors, accelerators, generators, target materials,
-              radiochemical processing, logistics, and regulatory release.
+              Medical isotope supply depends on reactors, accelerators,
+              generators, processing, logistics, and regulatory release.
             </p>
             <p>
-              Short-lived PET isotopes such as fluorine-18 are often produced
-              close to the clinic because they cannot travel far. Other
-              isotopes can move through regional or global supply chains, but
-              those chains are often concentrated in a small number of
-              production sites.
+              Short-lived PET isotopes are often produced close to the clinic.
+              Other isotopes move through concentrated regional or global
+              supply chains.
             </p>
             <p>
-              That concentration is why Mo-99 / Tc-99m has remained
-              strategically visible for years, and why rising demand for
-              Lu-177 and Ac-225 is forcing new investment in production
-              capacity.
-            </p>
-            <p>
-              The medical isotope system is therefore both a clinical system
-              and an infrastructure system. Treatment access ultimately depends
-              on whether production can keep up.
+              That concentration is why Mo-99 / Tc-99m remains strategically
+              visible, and why rising demand for Lu-177 and Ac-225 is forcing
+              new production investment.
             </p>
           </div>
         </section>
@@ -212,28 +214,8 @@ export default function MedicineApplicationPage() {
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
               Research reactors remain central for several major medical
-              isotopes. Accelerator and cyclotron systems are increasingly
-              important for PET isotopes and for alternative production routes.
-              Processing and generator systems turn raw production into
-              clinically usable material.
-            </p>
-            <p>On the commercial side, the landscape includes:</p>
-            <ul className="list-disc list-inside space-y-3">
-              <li>
-                Large radiopharmaceutical companies commercializing therapy and
-                imaging agents
-              </li>
-              <li>Specialist isotope suppliers and manufacturers</li>
-              <li>Companies building alternative production technologies</li>
-              <li>
-                Infrastructure providers such as cyclotron and radiopharma
-                system companies
-              </li>
-            </ul>
-            <p>
-              Medicine does not only depend on drug development. It depends on
-              whether the underlying isotope can be produced, processed, and
-              delivered at the required quality and scale.
+              isotopes. Accelerators and cyclotrons are increasingly important
+              for PET isotopes and alternative production routes.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
@@ -256,36 +238,24 @@ export default function MedicineApplicationPage() {
           <h2 className={titleClass}>Where the field is heading</h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              Diagnostic nuclear medicine is already mature. The faster-moving
-              frontier is therapy.
+              Diagnostic nuclear medicine is mature. The faster-moving frontier
+              is therapy, especially radioligand therapy and alpha emitters.
             </p>
             <p>
-              Radioligand therapy, alpha emitters, and broader theranostic
-              platforms are expanding the medical role of isotopes from imaging
-              into treatment at scale. That shift is increasing demand for
-              isotopes that were once relatively niche and forcing new
-              attention on production resilience.
-            </p>
-            <p>
-              The next phase of the field will be shaped less by the idea of
-              targeted radiation and more by whether supply chains,
-              manufacturing capacity, and clinical infrastructure can support
-              wider use.
+              The next phase will be shaped by whether supply chains and
+              manufacturing capacity can support wider clinical use.
             </p>
           </div>
         </section>
 
         <section className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className={titleClass}>Continue in the hub</h2>
-          <p className="text-gray-400 mb-6">
-            Move from this field overview into the curated resource layers:
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+          <div className="flex flex-col sm:flex-row gap-4 flex-wrap mt-6">
             <Link
-              href="/isotopes"
+              href="/isotopes#medical"
               className="py-3 px-6 button-primary text-center text-white rounded-lg"
             >
-              Isotope Directory
+              Medical Isotopes
             </Link>
             <Link
               href="/facilities"
@@ -304,12 +274,6 @@ export default function MedicineApplicationPage() {
               className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
             >
               Links
-            </Link>
-            <Link
-              href="/advanced"
-              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
-            >
-              Advanced
             </Link>
           </div>
         </section>
