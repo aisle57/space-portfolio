@@ -9,10 +9,18 @@ type Iso = {
   featured?: boolean;
 };
 
+function toId(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 function IsoCard({ item }: { item: Iso }) {
   return (
     <div
-      className={`p-5 rounded-xl border ${
+      id={toId(item.name)}
+      className={`p-5 rounded-xl border scroll-mt-28 ${
         item.featured
           ? "border-sky-500/20 bg-white/[0.04]"
           : "border-white/10 bg-white/[0.03]"
@@ -492,7 +500,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
-        <section className="mb-20">
+        <section id="medical" className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Medical & Theranostics
           </h2>
@@ -503,7 +511,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
-        <section className="mb-20">
+        <section id="energy" className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Energy & Nuclear
           </h2>
@@ -514,7 +522,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
-        <section className="mb-20">
+        <section id="quantum" className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Quantum & Advanced Materials
           </h2>
@@ -525,7 +533,7 @@ export default function IsotopesPage() {
           </div>
         </section>
 
-        <section className="mb-20">
+        <section id="industrial" className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Industrial & Research Staples
           </h2>
