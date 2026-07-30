@@ -71,6 +71,9 @@ export const Footer = () => {
                 >
                   Companies
                 </Link>
+                <Link href="/capital" className="hover:text-sky-400 transition">
+                  Capital & Markets
+                </Link>
                 <Link href="/links" className="hover:text-sky-400 transition">
                   Links
                 </Link>
