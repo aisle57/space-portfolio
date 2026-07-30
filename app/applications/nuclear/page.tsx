@@ -3,7 +3,7 @@ import Link from "next/link";
 const titleClass =
   "text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400";
 
-export default function QuantumApplicationPage() {
+export default function NuclearApplicationPage() {
   return (
     <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
       <div className="max-w-3xl mx-auto">
@@ -12,81 +12,106 @@ export default function QuantumApplicationPage() {
             Application Area
           </p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Quantum Technologies
+            Nuclear Production
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Quantum systems are extremely sensitive to their material
-            environment. In several important hardware approaches, that
-            sensitivity depends on isotopes.
+            Nuclear systems depend on specific isotopes, not generic elements.
+            Fissile materials, fertile materials, fusion-related isotopes, and
+            specialized nuclear products form the backbone of energy, research,
+            and strategic infrastructure.
           </p>
         </div>
 
         <section className="mb-20">
-          <h2 className={titleClass}>Why isotopes matter in quantum</h2>
+          <h2 className={titleClass}>Why isotopes matter in nuclear systems</h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              Nuclear spins in host materials can disrupt coherence. Isotopic
-              engineering reduces that noise and creates cleaner environments
-              for qubits and related systems.
+              Reactors run because certain nuclei can sustain fission. Fuel
+              cycles matter because some isotopes can be converted into others.
+              Fusion concepts depend on specific hydrogen and lithium isotopes.
             </p>
             <p>
-              As quantum hardware moves toward scale, access to high-purity
-              isotopic materials becomes a supply-chain issue.
+              The difference between U-235 and U-238 is not academic. It
+              determines whether a fuel system works.
             </p>
           </div>
         </section>
 
         <section className="mb-20">
-          <h2 className={titleClass}>Key quantum-relevant isotopes</h2>
+          <h2 className={titleClass}>Key nuclear isotopes</h2>
           <div className="space-y-4">
             {[
               {
-                name: "Si-28",
-                href: "/isotopes#si-28",
+                name: "U-235",
+                href: "/isotopes#u-235",
                 about:
-                  "High-purity silicon-28 reduces nuclear spin noise in silicon-based quantum devices.",
+                  "Primary fissile isotope used in most commercial nuclear reactors.",
               },
               {
-                name: "Si-29",
-                href: "/isotopes#si-29",
+                name: "U-238",
+                href: "/isotopes#u-238",
                 about:
-                  "Spin-bearing silicon isotope often reduced when making quantum-grade Si-28 materials.",
+                  "Dominant natural uranium isotope and a fertile material in fuel cycles.",
               },
               {
-                name: "Ge-70",
-                href: "/isotopes#ge-70",
+                name: "Pu-239",
+                href: "/isotopes#pu-239",
                 about:
-                  "Spin-free germanium isotope of growing interest for quantum devices.",
+                  "Key fissile isotope produced in reactors and used in certain fuel-cycle strategies.",
               },
               {
-                name: "B-11",
-                href: "/isotopes#b-11",
+                name: "Pu-238",
+                href: "/isotopes#pu-238",
                 about:
-                  "Preferred boron isotope for many quantum and advanced materials contexts.",
+                  "Critical for long-lived space power systems.",
               },
               {
-                name: "B-10",
-                href: "/isotopes#b-10",
+                name: "Th-232",
+                href: "/isotopes#th-232",
                 about:
-                  "Important where high neutron absorption is required.",
+                  "Fertile isotope at the center of thorium fuel cycle research.",
               },
               {
-                name: "C-12",
-                href: "/isotopes#c-12",
+                name: "U-233",
+                href: "/isotopes#u-233",
                 about:
-                  "High-purity carbon-12 for selected quantum and precision materials uses.",
+                  "Fissile isotope relevant to thorium-based pathways.",
               },
               {
-                name: "C-13",
-                href: "/isotopes#c-13",
+                name: "H-2 (Deuterium)",
+                href: "/isotopes#h-2-deuterium",
                 about:
-                  "Used in quantum sensing, NMR, and research contexts.",
+                  "Stable heavy hydrogen isotope used in fusion research.",
+              },
+              {
+                name: "H-3 (Tritium)",
+                href: "/isotopes#h-3-tritium",
+                about:
+                  "Radioactive hydrogen isotope important to certain fusion approaches.",
+              },
+              {
+                name: "Li-6",
+                href: "/isotopes#li-6",
+                about:
+                  "Strategically important for tritium breeding concepts.",
+              },
+              {
+                name: "Li-7",
+                href: "/isotopes#li-7",
+                about:
+                  "Relevant in some nuclear system chemistries.",
               },
               {
                 name: "He-3",
                 href: "/isotopes#he-3",
                 about:
-                  "Strategic isotope for ultra-low temperature quantum infrastructure.",
+                  "Scarce strategic isotope with specialized nuclear-related roles.",
+              },
+              {
+                name: "He-4",
+                href: "/isotopes#he-4",
+                about:
+                  "Common helium isotope foundational to cryogenics and industrial systems.",
               },
             ].map((item) => (
               <div
@@ -110,10 +135,10 @@ export default function QuantumApplicationPage() {
           <p className="text-gray-400 text-sm mt-6">
             Full curated entries live in the{" "}
             <Link
-              href="/isotopes#quantum"
+              href="/isotopes#energy"
               className="text-sky-400 hover:underline"
             >
-              Quantum & Advanced Materials section
+              Energy & Nuclear section
             </Link>
             .
           </p>
@@ -123,12 +148,14 @@ export default function QuantumApplicationPage() {
           <h2 className={titleClass}>Production and supply</h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              Quantum-relevant isotopes often require enrichment, not just
-              chemical purity. Silicon-28 is the clearest example.
+              Nuclear isotope supply is inseparable from the fuel cycle and
+              national nuclear infrastructure: enrichment, reactors, and
+              specialized production facilities.
             </p>
             <p>
-              Helium-3 adds another strategic constraint because of limited
-              production routes and importance to cryogenic infrastructure.
+              For advanced reactors, HALEU and related enrichment pathways have
+              become strategically important. Fusion adds pressure around
+              tritium and lithium isotope management.
             </p>
           </div>
         </section>
@@ -137,10 +164,10 @@ export default function QuantumApplicationPage() {
           <h2 className={titleClass}>Continue in the hub</h2>
           <div className="flex flex-col sm:flex-row gap-4 flex-wrap mt-6">
             <Link
-              href="/isotopes#quantum"
+              href="/isotopes#energy"
               className="py-3 px-6 button-primary text-center text-white rounded-lg"
             >
-              Quantum Isotopes
+              Nuclear Isotopes
             </Link>
             <Link
               href="/facilities"
