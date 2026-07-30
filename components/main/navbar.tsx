@@ -27,6 +27,7 @@ const NAV_GROUPS = [
       { title: "Isotope Directory", link: "/isotopes" },
       { title: "Facilities", link: "/facilities" },
       { title: "Companies", link: "/companies" },
+      { title: "Capital & Markets", link: "/capital" },
       { title: "Links", link: "/links" },
     ],
   },
