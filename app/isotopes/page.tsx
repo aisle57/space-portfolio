@@ -71,8 +71,7 @@ export default function IsotopesPage() {
       tags: ["Alpha therapy", "Emerging"],
       about:
         "Actinium-225 is one of the most important emerging alpha-emitting isotopes for targeted cancer therapy. Alpha particles deposit high energy over a very short distance.",
-      uses:
-        "Targeted alpha therapy research and development in oncology.",
+      uses: "Targeted alpha therapy research and development in oncology.",
       note: "Production is constrained and technically demanding, which currently limits broader clinical scale-up.",
       featured: true,
     },
@@ -81,16 +80,14 @@ export default function IsotopesPage() {
       tags: ["PET", "Diagnostics"],
       about:
         "Fluorine-18 is the primary PET imaging isotope used in modern diagnostic oncology and related imaging.",
-      uses:
-        "FDG PET scans and other fluorine-18 based diagnostic agents.",
+      uses: "FDG PET scans and other fluorine-18 based diagnostic agents.",
     },
     {
       name: "Ga-68",
       tags: ["PET", "Diagnostics"],
       about:
         "Gallium-68 is a generator-produced PET isotope widely used in targeted diagnostic imaging.",
-      uses:
-        "PET imaging agents for oncology and specialized diagnostic applications.",
+      uses: "PET imaging agents for oncology and specialized diagnostic applications.",
     },
     {
       name: "I-131",
@@ -105,112 +102,98 @@ export default function IsotopesPage() {
       tags: ["Diagnostics"],
       about:
         "Iodine-123 is preferred for many diagnostic iodine imaging applications because of its favorable imaging characteristics.",
-      uses:
-        "Thyroid imaging and other diagnostic nuclear medicine procedures.",
+      uses: "Thyroid imaging and other diagnostic nuclear medicine procedures.",
     },
     {
       name: "I-124",
       tags: ["PET", "Research"],
       about:
         "Iodine-124 is a longer-lived PET-relevant iodine isotope used mainly in research and selected imaging contexts.",
-      uses:
-        "PET research and specialized iodine-based imaging studies.",
+      uses: "PET research and specialized iodine-based imaging studies.",
     },
     {
       name: "Y-90",
       tags: ["Therapy"],
       about:
         "Yttrium-90 is a widely used therapeutic radioisotope in targeted cancer treatment.",
-      uses:
-        "Liver cancer therapies and other targeted radiotherapeutic applications.",
+      uses: "Liver cancer therapies and other targeted radiotherapeutic applications.",
     },
     {
       name: "Ra-223",
       tags: ["Alpha therapy"],
       about:
         "Radium-223 is an alpha-emitting therapeutic isotope used in the treatment of bone metastases.",
-      uses:
-        "Targeted treatment of bone metastases, particularly in prostate cancer care.",
+      uses: "Targeted treatment of bone metastases, particularly in prostate cancer care.",
     },
     {
       name: "Tb-161",
       tags: ["Theranostics", "Emerging"],
       about:
         "Terbium-161 is an emerging theranostic isotope with promising therapeutic properties and growing research interest.",
-      uses:
-        "Experimental and developing radiopharmaceutical therapy applications.",
+      uses: "Experimental and developing radiopharmaceutical therapy applications.",
     },
     {
       name: "Cu-64",
       tags: ["Imaging", "Therapy"],
       about:
         "Copper-64 is a versatile isotope used in both imaging and therapeutic research.",
-      uses:
-        "PET imaging research and radiopharmaceutical development.",
+      uses: "PET imaging research and radiopharmaceutical development.",
     },
     {
       name: "Cu-67",
       tags: ["Therapy", "Emerging"],
       about:
         "Copper-67 is a therapeutic copper isotope of growing interest for radiopharmaceutical applications.",
-      uses:
-        "Targeted radiotherapy research and emerging clinical development.",
+      uses: "Targeted radiotherapy research and emerging clinical development.",
     },
     {
       name: "Zr-89",
       tags: ["PET"],
       about:
         "Zirconium-89 is increasingly used in antibody-based PET imaging because of its longer half-life.",
-      uses:
-        "Immuno-PET and antibody imaging applications.",
+      uses: "Immuno-PET and antibody imaging applications.",
     },
     {
       name: "In-111",
       tags: ["Diagnostics"],
       about:
         "Indium-111 is an established diagnostic isotope used in specialized nuclear medicine procedures.",
-      uses:
-        "Infection imaging, labeled white-cell studies, and other diagnostic applications.",
+      uses: "Infection imaging, labeled white-cell studies, and other diagnostic applications.",
     },
     {
       name: "Tl-201",
       tags: ["Diagnostics"],
       about:
         "Thallium-201 is a historically important cardiac imaging isotope that remains in use in some clinical settings.",
-      uses:
-        "Myocardial perfusion imaging and related diagnostic procedures.",
+      uses: "Myocardial perfusion imaging and related diagnostic procedures.",
     },
     {
       name: "Sm-153",
       tags: ["Therapy"],
       about:
         "Samarium-153 is used therapeutically for pain palliation in patients with bone metastases.",
-      uses:
-        "Bone pain palliation and selected therapeutic nuclear medicine applications.",
+      uses: "Bone pain palliation and selected therapeutic nuclear medicine applications.",
     },
     {
       name: "Re-186 / Re-188",
       tags: ["Therapy"],
       about:
         "Rhenium-186 and rhenium-188 are therapeutic isotopes used in selected nuclear medicine applications.",
-      uses:
-        "Targeted therapy and palliative treatment research or specialized clinical use.",
+      uses: "Targeted therapy and palliative treatment research or specialized clinical use.",
     },
     {
       name: "At-211",
       tags: ["Alpha therapy", "Research"],
       about:
         "Astatine-211 is an alpha-emitting isotope of strong research interest for targeted radiotherapy.",
-      uses:
-        "Experimental targeted alpha therapy.",
+      uses: "Experimental targeted alpha therapy.",
     },
     {
       name: "Pb-212 / Bi-212",
       tags: ["Alpha therapy", "Emerging"],
       about:
         "Lead-212 and bismuth-212 are important isotopes in emerging targeted alpha therapy approaches.",
-      uses:
-        "Alpha therapy development and related radiopharmaceutical research.",
+      uses: "Alpha therapy development and related radiopharmaceutical research.",
     },
   ];
 
@@ -240,8 +223,7 @@ export default function IsotopesPage() {
       tags: ["Fissile", "Energy"],
       about:
         "Uranium-235 is the primary fissile isotope used in most commercial nuclear reactors.",
-      uses:
-        "Nuclear fuel for commercial and research reactors.",
+      uses: "Nuclear fuel for commercial and research reactors.",
     },
     {
       name: "U-238",
@@ -256,16 +238,14 @@ export default function IsotopesPage() {
       tags: ["Fissile", "Thorium cycle"],
       about:
         "Uranium-233 is a fissile isotope relevant to thorium-based fuel cycle concepts.",
-      uses:
-        "Thorium fuel cycle research and advanced reactor concepts.",
+      uses: "Thorium fuel cycle research and advanced reactor concepts.",
     },
     {
       name: "Pu-239",
       tags: ["Fissile", "Energy"],
       about:
         "Plutonium-239 is a key fissile isotope produced in reactors and used in certain fuel-cycle strategies.",
-      uses:
-        "Nuclear fuel cycles and specialized nuclear applications.",
+      uses: "Nuclear fuel cycles and specialized nuclear applications.",
     },
     {
       name: "Pu-238",
@@ -304,8 +284,7 @@ export default function IsotopesPage() {
       tags: ["Nuclear", "Coolant systems"],
       about:
         "Lithium-7 is important in some nuclear system chemistries and related industrial contexts.",
-      uses:
-        "Nuclear coolant chemistry and specialized lithium applications.",
+      uses: "Nuclear coolant chemistry and specialized lithium applications.",
     },
     {
       name: "He-4",
@@ -361,48 +340,42 @@ export default function IsotopesPage() {
       tags: ["Quantum", "Materials"],
       about:
         "Highly purified carbon-12 is relevant to certain quantum and precision materials applications where isotopic uniformity matters.",
-      uses:
-        "Precision materials research and selected quantum-related applications.",
+      uses: "Precision materials research and selected quantum-related applications.",
     },
     {
       name: "C-13",
       tags: ["Quantum", "Research"],
       about:
         "Carbon-13 is important in quantum sensing, NMR, and advanced materials research.",
-      uses:
-        "NMR, tracing, quantum sensing, and specialized research applications.",
+      uses: "NMR, tracing, quantum sensing, and specialized research applications.",
     },
     {
       name: "Si-29",
       tags: ["Quantum"],
       about:
         "Silicon-29 is a spin-bearing silicon isotope and is often the isotope being reduced when producing high-purity Si-28 environments.",
-      uses:
-        "Relevant mainly as the isotope depleted in quantum-grade silicon enrichment.",
+      uses: "Relevant mainly as the isotope depleted in quantum-grade silicon enrichment.",
     },
     {
       name: "O-18",
       tags: ["Medical", "Research"],
       about:
         "Oxygen-18 is important in the production pathway for fluorine-18 and in specialized research applications.",
-      uses:
-        "F-18 production pathways and research tracing applications.",
+      uses: "F-18 production pathways and research tracing applications.",
     },
     {
       name: "N-15",
       tags: ["Research", "Materials"],
       about:
         "Nitrogen-15 is a stable isotope used in research and specialized tracing applications.",
-      uses:
-        "Research tracing, environmental studies, and specialized materials work.",
+      uses: "Research tracing, environmental studies, and specialized materials work.",
     },
     {
       name: "Cl-37",
       tags: ["Advanced reactors", "Materials"],
       about:
         "Chlorine-37 is relevant in some advanced reactor chemistry and materials discussions.",
-      uses:
-        "Advanced reactor research and specialized materials contexts.",
+      uses: "Advanced reactor research and specialized materials contexts.",
     },
   ];
 
@@ -428,16 +401,14 @@ export default function IsotopesPage() {
       tags: ["Industrial"],
       about:
         "Iridium-192 is a major industrial radiography isotope used to inspect welds and structural materials.",
-      uses:
-        "Non-destructive testing and industrial inspection.",
+      uses: "Non-destructive testing and industrial inspection.",
     },
     {
       name: "Se-75",
       tags: ["Industrial"],
       about:
         "Selenium-75 is used in industrial radiography and specialized measurement applications.",
-      uses:
-        "Industrial inspection and selected measurement systems.",
+      uses: "Industrial inspection and selected measurement systems.",
     },
     {
       name: "Am-241",
@@ -468,16 +439,14 @@ export default function IsotopesPage() {
       tags: ["Industrial", "Power sources"],
       about:
         "Strontium-90 is used in specialized power sources and industrial applications.",
-      uses:
-        "Radioisotope power sources and specialized industrial systems.",
+      uses: "Radioisotope power sources and specialized industrial systems.",
     },
     {
       name: "Kr-85",
       tags: ["Industrial"],
       about:
         "Krypton-85 is used in specialized industrial measurement and related applications.",
-      uses:
-        "Industrial gauging and specialized technical systems.",
+      uses: "Industrial gauging and specialized technical systems.",
     },
     {
       name: "Ni-63",
@@ -492,8 +461,7 @@ export default function IsotopesPage() {
       tags: ["Industrial", "Research"],
       about:
         "Iron-55 is used in specialized measurement and research applications.",
-      uses:
-        "X-ray fluorescence related uses and specialized research systems.",
+      uses: "X-ray fluorescence related uses and specialized research systems.",
     },
   ];
 
@@ -519,7 +487,7 @@ export default function IsotopesPage() {
               Some isotopes are stable. Others are unstable and release energy as they change. That energy and those nuclear properties are what make certain isotopes useful in medicine, energy systems, quantum technologies, and industry.
             </p>
             <p>
-              This directory focuses on the isotopes that currently matter most. For the full scientific set of all known isotopes, use the official data sources linked at the bottom.
+              This directory focuses on the isotopes that currently matter most. For the broader external landscape, use the Links page.
             </p>
           </div>
         </section>
@@ -570,23 +538,17 @@ export default function IsotopesPage() {
 
         <section className="mb-16 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Complete Scientific Data
+            Wider Isotope World
           </h2>
           <p className="text-gray-400 mb-6">
-            This directory is a curated map of the isotopes that currently matter most economically and strategically. For the full set of all known isotopes, use these authoritative sources:
+            For official databases, institutions, public companies, and private companies across the broader isotope landscape, visit the Links page.
           </p>
-          <ul className="space-y-3 text-sky-400">
-            <li>
-              <a href="https://www.nndc.bnl.gov/nudat3/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                NuDat 3 (National Nuclear Data Center)
-              </a>
-            </li>
-            <li>
-              <a href="https://www-nds.iaea.org/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                IAEA Nuclear Data Services
-              </a>
-            </li>
-          </ul>
+          <Link
+            href="/links"
+            className="inline-block py-3 px-6 button-primary text-center text-white rounded-lg"
+          >
+            Open Links
+          </Link>
         </section>
 
         <section className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
