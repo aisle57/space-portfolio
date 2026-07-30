@@ -36,186 +36,193 @@ function CompanyCard({ item }: { item: Company }) {
 }
 
 export default function CompaniesPage() {
-  const publicProducers: Company[] = [
+  const productionEnrichment: Company[] = [
     {
       name: "ASP Isotopes",
-      tags: ["Public", "Enrichment", "Si-28"],
+      tags: ["Public", "Enrichment", "Advanced materials"],
       about:
-        "ASP Isotopes is focused on stable isotope enrichment and the advancement of production capabilities for high-value materials used in quantum, semiconductor, and related applications.",
+        "Public company developing aerodynamic and related enrichment processes for high-value stable isotopes used in advanced materials and related markets.",
       focus:
-        "Stable isotope enrichment, including silicon-28 and other advanced materials relevant isotopes.",
+        "Stable isotope enrichment pathways for quantum, semiconductor, medical, and industrial materials.",
     },
     {
       name: "Silex Systems",
-      tags: ["Public", "Laser enrichment", "Quantum silicon"],
+      tags: ["Public", "Laser enrichment"],
       about:
-        "Silex Systems is developing laser isotope separation technology with applications in enrichment pathways, including work relevant to quantum silicon.",
-      focus:
-        "Laser isotope separation technology and related enrichment development.",
+        "Australian public company developing laser isotope separation technology with applications across enrichment pathways, including silicon-related work.",
+      focus: "Laser isotope separation technology development.",
     },
     {
       name: "Centrus Energy",
-      tags: ["Public", "Enrichment", "HALEU"],
+      tags: ["Public", "Uranium enrichment", "HALEU"],
       about:
-        "Centrus Energy is a major U.S. enrichment company and a central player in the development of domestic High-Assay Low-Enriched Uranium production capacity.",
-      focus:
-        "Uranium enrichment, including HALEU production for advanced reactors and related nuclear fuel infrastructure.",
-      note: "One of the most important publicly traded companies in the U.S. enrichment rebuild.",
+        "U.S. enrichment company central to domestic High-Assay Low-Enriched Uranium capacity and broader nuclear fuel enrichment infrastructure.",
+      focus: "Uranium enrichment and HALEU production capacity.",
+      note: "Key public reference point in the U.S. enrichment rebuild.",
     },
     {
       name: "BWX Technologies",
-      tags: ["Public", "Nuclear", "Production"],
+      tags: ["Public", "Nuclear manufacturing"],
       about:
-        "BWX Technologies is involved in nuclear technologies and medical isotope production related capabilities.",
-      focus: "Nuclear systems and isotope production related activities.",
+        "Nuclear manufacturing company with roles across naval nuclear, commercial nuclear components, and selected isotope-related production activities.",
+      focus: "Nuclear manufacturing and specialty isotope-linked capacity.",
     },
     {
       name: "Eckert & Ziegler",
-      tags: ["Public", "Isotope products", "Supply"],
+      tags: ["Public", "Isotope products"],
       about:
-        "Eckert & Ziegler is a significant company in isotope products, radiopharmaceutical components, and related supply activities.",
-      focus:
-        "Isotope products, radiopharmaceutical supply, and related production services.",
+        "Established supplier of isotope products, components, and related systems for medical and industrial users.",
+      focus: "Commercial isotope products and radiopharmaceutical support systems.",
     },
     {
       name: "IBA",
-      tags: ["Public", "Cyclotrons", "Infrastructure"],
+      tags: ["Public", "Cyclotrons"],
       about:
-        "IBA provides cyclotron systems and radiopharma production infrastructure used in medical isotope and radiopharmaceutical manufacturing environments.",
-      focus:
-        "Production infrastructure for radiopharmaceutical and medical isotope systems.",
+        "Major provider of cyclotron and radiopharma production systems used in medical isotope infrastructure worldwide.",
+      focus: "Cyclotrons and radiopharmaceutical production infrastructure.",
     },
     {
-      name: "China Isotope & Radiation",
-      tags: ["Public", "Isotope production", "Radiopharma"],
+      name: "China Isotope & Radiation Corporation",
+      tags: ["Public", "Isotope production"],
       about:
-        "China Isotope & Radiation is a major listed company involved in the research, manufacture, and sale of nuclides, radiopharmaceuticals, and radioactive source products.",
-      focus:
-        "Isotope production, radiopharmaceuticals, and radioactive source products for medical and industrial applications.",
-      note: "An important public company in the broader global isotope production landscape.",
+        "Major Chinese isotope and radiation company involved in production and radiopharmaceutical-related supply.",
+      focus: "Isotope production and radiation applications at scale.",
     },
   ];
 
   const medical: Company[] = [
     {
       name: "Novartis",
-      tags: ["Theranostics", "Lu-177"],
+      tags: ["Public", "Radioligand therapy"],
       about:
-        "Novartis is a major force in radioligand therapy and theranostics, with significant activity around targeted radiopharmaceutical treatments.",
-      focus: "Radioligand therapy and commercial theranostic applications.",
+        "Major pharmaceutical company commercializing radioligand therapy platforms that depend on reliable therapeutic isotope supply.",
+      focus: "Clinical radioligand therapy and related nuclear medicine platforms.",
     },
     {
       name: "Bayer",
-      tags: ["Alpha therapy", "Radiopharma"],
+      tags: ["Public", "Targeted therapy"],
       about:
-        "Bayer is active in targeted alpha therapies and broader radiopharmaceutical development.",
-      focus: "Targeted alpha therapy and radiopharmaceutical innovation.",
+        "Pharmaceutical company with targeted radiotherapy products in the nuclear medicine landscape.",
+      focus: "Targeted radiotherapeutic products and related clinical platforms.",
     },
     {
       name: "Lantheus",
-      tags: ["Diagnostics", "Therapy"],
+      tags: ["Public", "Diagnostics", "Therapeutics"],
       about:
-        "Lantheus is an important company in diagnostic and therapeutic radiopharmaceuticals.",
-      focus: "Imaging agents and therapeutic radiopharmaceutical products.",
+        "Commercial nuclear medicine company active in diagnostic imaging agents and therapeutic development.",
+      focus: "Diagnostic and therapeutic radiopharmaceutical products.",
     },
     {
       name: "Telix Pharmaceuticals",
-      tags: ["Theranostics", "Imaging"],
+      tags: ["Public", "Radiopharma"],
       about:
-        "Telix develops targeted radiation therapies and imaging agents across oncology-focused radiopharmaceutical applications.",
-      focus: "Targeted radiopharmaceutical therapy and diagnostic agents.",
+        "Radiopharmaceutical company developing diagnostic and therapeutic agents across oncology and related indications.",
+      focus: "Targeted radiopharmaceutical diagnostics and therapy.",
     },
     {
       name: "Curium",
-      tags: ["Supply", "Medical isotopes"],
+      tags: ["Medical isotopes", "Manufacturing"],
       about:
-        "Curium is one of the largest global suppliers of medical isotopes and radiopharmaceuticals.",
-      focus: "Medical isotope supply and radiopharmaceutical manufacturing.",
+        "Large nuclear medicine manufacturer and supplier supporting diagnostic and therapeutic isotope products.",
+      focus: "Medical isotope manufacturing and radiopharmaceutical supply.",
+    },
+    {
+      name: "ITM Isotope Technologies Munich",
+      tags: ["Theranostics", "Production"],
+      about:
+        "European radiopharmaceutical and isotope company focused on targeted radionuclide therapy and related production capability.",
+      focus: "Therapeutic radioisotopes and theranostic development.",
     },
     {
       name: "NorthStar Medical Radioisotopes",
-      tags: ["Mo-99", "Production tech"],
+      tags: ["Mo-99", "Production technology"],
       about:
-        "NorthStar focuses on alternative production approaches for Mo-99 / Tc-99m related supply.",
-      focus:
-        "Non-traditional Mo-99 production technology and related medical isotope supply.",
+        "U.S. company developing alternative production routes for molybdenum-99 and related medical isotope supply technology.",
+      focus: "Mo-99 production technology and medical isotope manufacturing systems.",
     },
     {
-      name: "Shine Technologies",
-      tags: ["Production tech", "Medical"],
+      name: "SHINE Technologies",
+      tags: ["Production technology", "Medical"],
       about:
-        "Shine is developing advanced production methods intended to expand medical isotope supply.",
-      focus: "Next-generation medical isotope production technology.",
+        "Company developing accelerator-based and related production systems for medical isotopes and nuclear technology applications.",
+      focus: "Alternative medical isotope production technology.",
     },
     {
       name: "Nusano",
-      tags: ["Accelerator", "Production"],
+      tags: ["Accelerator production"],
       about:
-        "Nusano is building large-scale accelerator-based radioisotope production capacity.",
-      focus: "Accelerator-based radioisotope production infrastructure.",
+        "Accelerator-based isotope production company building capacity for medical and related radioisotopes.",
+      focus: "Accelerator production platforms for radioisotopes.",
+    },
+    {
+      name: "NTP Radioisotopes",
+      tags: ["Medical", "Mo-99"],
+      about:
+        "South African producer and an important part of global medical isotope supply, including molybdenum-99 related production.",
+      focus: "Reactor-linked medical isotope production and supply.",
+    },
+    {
+      name: "ANSTO",
+      tags: ["Australia", "Medical isotopes"],
+      about:
+        "Australia's nuclear science organization, including commercial medical isotope production linked to the OPAL reactor system.",
+      focus: "Medical and industrial isotope production for regional and export supply.",
     },
   ];
 
   const stable: Company[] = [
     {
       name: "Urenco Stable Isotopes",
-      tags: ["Enrichment", "Stable isotopes"],
+      tags: ["Stable isotopes", "Enrichment"],
       about:
-        "Urenco Stable Isotopes is a major established player in commercial stable isotope enrichment.",
-      focus: "Commercial enrichment and supply of stable isotopes.",
+        "Established commercial supplier of enriched stable isotopes for research, medical, and industrial users.",
+      focus: "Commercial stable isotope enrichment and product supply.",
     },
     {
       name: "Orano Stable Isotopes",
-      tags: ["Enrichment", "Materials"],
+      tags: ["Stable isotopes", "Materials"],
       about:
-        "Orano is active in stable isotope production and advanced materials related supply.",
-      focus: "Stable isotope production and materials-linked isotope supply.",
+        "Part of Orano's broader nuclear materials activity, supplying stable isotopes and related products.",
+      focus: "Stable isotope production and materials-linked supply.",
     },
     {
       name: "Cambridge Isotope Laboratories",
-      tags: ["Research supply", "Stable isotopes"],
+      tags: ["Research supply"],
       about:
-        "Cambridge Isotope Laboratories is an important supplier of stable isotopes for research and specialized applications.",
-      focus: "Research and specialty stable isotope products.",
+        "Major supplier of stable isotopes and labeled compounds for research and specialty applications.",
+      focus: "Research-grade stable isotopes and labeled materials.",
     },
     {
       name: "Trace Sciences International",
       tags: ["Stable isotopes"],
       about:
-        "Trace Sciences supplies enriched stable isotopes for research and industry.",
-      focus: "Enriched stable isotope supply for scientific and commercial users.",
+        "Supplier of enriched stable isotopes for scientific and commercial users.",
+      focus: "Enriched stable isotope distribution.",
     },
     {
       name: "Isoflex",
       tags: ["Stable isotopes"],
       about:
-        "Isoflex provides enriched stable isotopes for scientific and commercial use.",
-      focus: "Specialty enriched stable isotope products.",
+        "Specialty supplier of enriched stable isotopes for research and industrial use.",
+      focus: "Specialty enriched isotope products.",
     },
   ];
 
   const strategic: Company[] = [
     {
       name: "Framatome",
-      tags: ["Nuclear", "Fuel cycle"],
+      tags: ["Nuclear fuel cycle"],
       about:
-        "Framatome is active in nuclear fuel and related isotope-linked nuclear technology activities.",
-      focus: "Nuclear fuel cycle and related nuclear technology services.",
-    },
-    {
-      name: "NTP Radioisotopes",
-      tags: ["Medical", "Mo-99"],
-      about:
-        "NTP is a major South African producer of medical isotopes and an important part of global supply for selected diagnostic isotopes.",
-      focus: "Medical isotope production, including Mo-99 related supply.",
+        "Nuclear fuel and technology company active across fuel-cycle services and related nuclear systems.",
+      focus: "Nuclear fuel cycle technology and services.",
     },
     {
       name: "DOE National Isotope Development Center network",
-      tags: ["Research", "Strategic supply"],
+      tags: ["Strategic supply", "Research"],
       about:
-        "The NIDC network coordinates production and distribution of many research and specialty isotopes across U.S. national laboratory capabilities.",
-      focus:
-        "Strategic research and specialty isotope availability through national laboratory infrastructure.",
+        "U.S. coordination layer for production and distribution of many research and specialty isotopes across national laboratory capabilities.",
+      focus: "Strategic research and specialty isotope availability.",
+      note: "Infrastructure network rather than a single commercial producer.",
     },
   ];
 
@@ -225,30 +232,41 @@ export default function CompaniesPage() {
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Companies</h1>
           <p className="text-gray-400 text-lg max-w-3xl">
-            Organizations producing, processing, enriching, and advancing isotopes across medicine, energy, quantum technologies, and advanced materials.
+            Organizations producing, processing, enriching, and commercializing
+            isotopes across medicine, energy, quantum materials, and industry.
           </p>
         </div>
 
         <section className="mb-20 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            The Commercial Layer
+            The commercial layer
           </h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              Isotopes move from research facilities into the real economy through companies. Some specialize in production. Others focus on enrichment, processing, radiopharmaceutical development, or the materials and technologies that depend on specific isotopes.
+              Companies turn isotope production into usable supply. Some enrich.
+              Some manufacture medical products. Some build the machines and
+              processing systems that make production possible.
             </p>
             <p>
-              This page maps the major commercial and production-linked players shaping the isotope supply chain.
+              This page is a role map, not a ranking. For financing structure, use{" "}
+              <Link href="/capital" className="text-sky-400 hover:underline">
+                Capital & Markets
+              </Link>
+              . For external directories and institutions, use{" "}
+              <Link href="/links" className="text-sky-400 hover:underline">
+                Links
+              </Link>
+              .
             </p>
           </div>
         </section>
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Production & Enrichment Focused
+            Production & Enrichment
           </h2>
           <div className="space-y-4">
-            {publicProducers.map((item) => (
+            {productionEnrichment.map((item) => (
               <CompanyCard key={item.name} item={item} />
             ))}
           </div>
@@ -267,7 +285,7 @@ export default function CompaniesPage() {
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Stable Isotopes & Enrichment
+            Stable Isotopes & Specialty Supply
           </h2>
           <div className="space-y-4">
             {stable.map((item) => (
@@ -278,7 +296,7 @@ export default function CompaniesPage() {
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Production, Nuclear & Strategic Supply
+            Strategic & Nuclear Supply
           </h2>
           <div className="space-y-4">
             {strategic.map((item) => (
@@ -289,10 +307,11 @@ export default function CompaniesPage() {
 
         <section className="mb-16 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Wider Isotope World
+            Wider commercial landscape
           </h2>
           <p className="text-gray-400 mb-6">
-            For official databases, institutions, public companies, and private companies across the broader isotope landscape, visit the Links page.
+            For broader public and private directories, institutions, and data
+            sources, use the Links page.
           </p>
           <Link
             href="/links"
@@ -306,25 +325,24 @@ export default function CompaniesPage() {
           <h2 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Where to go next
           </h2>
-          <p className="text-gray-400 mb-6">Continue through the resource hub:</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/isotopes"
-              className="py-3 px-6 button-primary text-center text-white rounded-lg"
-            >
-              Isotope Directory
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
               href="/facilities"
-              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+              className="py-3 px-6 button-primary text-center text-white rounded-lg"
             >
               Research Facilities
             </Link>
             <Link
-              href="/advanced"
+              href="/capital"
               className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
             >
-              Advanced
+              Capital & Markets
+            </Link>
+            <Link
+              href="/isotopes"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Isotope Directory
             </Link>
           </div>
         </section>
