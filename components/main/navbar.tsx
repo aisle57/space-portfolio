@@ -27,6 +27,7 @@ const NAV_GROUPS = [
       { title: "Q3 Watchlist", link: "/watch" },
       { title: "Isotope Directory", link: "/isotopes" },
       { title: "Facilities", link: "/facilities" },
+      { title: "Map", link: "/map" },
       { title: "Companies", link: "/companies" },
       { title: "Capital & Markets", link: "/capital" },
       { title: "Links", link: "/links" },
