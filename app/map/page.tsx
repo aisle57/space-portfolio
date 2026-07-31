@@ -12,146 +12,26 @@ type MapSite = {
 };
 
 const SITES: MapSite[] = [
-  {
-    name: "HFIR",
-    location: "Oak Ridge, USA",
-    type: "Research reactor",
-    lat: 35.93,
-    lng: -84.31,
-  },
-  {
-    name: "ATR",
-    location: "Idaho, USA",
-    type: "Research reactor",
-    lat: 43.52,
-    lng: -112.05,
-  },
-  {
-    name: "MURR",
-    location: "Columbia, Missouri, USA",
-    type: "University reactor",
-    lat: 38.95,
-    lng: -92.33,
-  },
-  {
-    name: "McMaster",
-    location: "Hamilton, Canada",
-    type: "University reactor",
-    lat: 43.26,
-    lng: -79.92,
-  },
-  {
-    name: "BR2",
-    location: "Mol, Belgium",
-    type: "Research reactor",
-    lat: 51.22,
-    lng: 5.09,
-  },
-  {
-    name: "HFR Petten",
-    location: "Petten, Netherlands",
-    type: "Research reactor",
-    lat: 52.79,
-    lng: 4.67,
-  },
-  {
-    name: "FRM II",
-    location: "Garching, Germany",
-    type: "Research reactor",
-    lat: 48.27,
-    lng: 11.67,
-  },
-  {
-    name: "ILL",
-    location: "Grenoble, France",
-    type: "Neutron source",
-    lat: 45.19,
-    lng: 5.72,
-  },
-  {
-    name: "LVR-15",
-    location: "Rez, Czech Republic",
-    type: "Research reactor",
-    lat: 50.16,
-    lng: 14.37,
-  },
-  {
-    name: "MARIA",
-    location: "Swierk, Poland",
-    type: "Research reactor",
-    lat: 52.12,
-    lng: 21.35,
-  },
-  {
-    name: "OPAL",
-    location: "Lucas Heights, Australia",
-    type: "Research reactor",
-    lat: -34.05,
-    lng: 150.98,
-  },
-  {
-    name: "SAFARI-1",
-    location: "Pelindaba, South Africa",
-    type: "Research reactor",
-    lat: -25.8,
-    lng: 27.94,
-  },
-  {
-    name: "HANARO",
-    location: "Daejeon, South Korea",
-    type: "Research reactor",
-    lat: 36.42,
-    lng: 127.37,
-  },
-  {
-    name: "Dhruva",
-    location: "Trombay, India",
-    type: "Research reactor",
-    lat: 19.01,
-    lng: 72.92,
-  },
-  {
-    name: "BLIP",
-    location: "Brookhaven, USA",
-    type: "Accelerator",
-    lat: 40.87,
-    lng: -72.87,
-  },
-  {
-    name: "LANL IPF",
-    location: "Los Alamos, USA",
-    type: "Accelerator",
-    lat: 35.88,
-    lng: -106.3,
-  },
-  {
-    name: "TRIUMF",
-    location: "Vancouver, Canada",
-    type: "Accelerator",
-    lat: 49.25,
-    lng: -123.23,
-  },
-  {
-    name: "ARRONAX",
-    location: "Nantes, France",
-    type: "Accelerator",
-    lat: 47.25,
-    lng: -1.52,
-  },
-  {
-    name: "PSI",
-    location: "Villigen, Switzerland",
-    type: "Accelerator",
-    lat: 47.54,
-    lng: 8.22,
-  },
-  {
-    name: "iThemba LABS",
-    location: "Cape Town area, South Africa",
-    type: "Accelerator",
-    lat: -33.98,
-    lng: 18.62,
-  },
+  { name: "HFIR", location: "Oak Ridge, USA", type: "Research reactor", lat: 35.93, lng: -84.31 },
+  { name: "ATR", location: "Idaho, USA", type: "Research reactor", lat: 43.52, lng: -112.05 },
+  { name: "MURR", location: "Columbia, Missouri, USA", type: "University reactor", lat: 38.95, lng: -92.33 },
+  { name: "McMaster", location: "Hamilton, Canada", type: "University reactor", lat: 43.26, lng: -79.92 },
+  { name: "BR2", location: "Mol, Belgium", type: "Research reactor", lat: 51.22, lng: 5.09 },
+  { name: "HFR Petten", location: "Petten, Netherlands", type: "Research reactor", lat: 52.79, lng: 4.67 },
+  { name: "FRM II", location: "Garching, Germany", type: "Research reactor", lat: 48.27, lng: 11.67 },
+  { name: "ILL", location: "Grenoble, France", type: "Neutron source", lat: 45.19, lng: 5.72 },
+  { name: "LVR-15", location: "Rez, Czech Republic", type: "Research reactor", lat: 50.16, lng: 14.37 },
+  { name: "MARIA", location: "Swierk, Poland", type: "Research reactor", lat: 52.12, lng: 21.35 },
+  { name: "OPAL", location: "Lucas Heights, Australia", type: "Research reactor", lat: -34.05, lng: 150.98 },
+  { name: "SAFARI-1", location: "Pelindaba, South Africa", type: "Research reactor", lat: -25.8, lng: 27.94 },
+  { name: "HANARO", location: "Daejeon, South Korea", type: "Research reactor", lat: 36.42, lng: 127.37 },
+  { name: "Dhruva", location: "Trombay, India", type: "Research reactor", lat: 19.01, lng: 72.92 },
+  { name: "BLIP", location: "Brookhaven, USA", type: "Accelerator", lat: 40.87, lng: -72.87 },
+  { name: "LANL IPF", location: "Los Alamos, USA", type: "Accelerator", lat: 35.88, lng: -106.3 },
+  { name: "TRIUMF", location: "Vancouver, Canada", type: "Accelerator", lat: 49.25, lng: -123.23 },
+  { name: "ARRONAX", location: "Nantes, France", type: "Accelerator", lat: 47.25, lng: -1.52 },
+  { name: "PSI", location: "Villigen, Switzerland", type: "Accelerator", lat: 47.54, lng: 8.22 },
+  { name: "iThemba LABS", location: "Cape Town area, South Africa", type: "Accelerator", lat: -33.98, lng: 18.62 },
 ];
 
 export default function MapPage() {
@@ -202,9 +82,9 @@ export default function MapPage() {
         }).addTo(map);
 
         marker.bindPopup(
-          `<strong style="color:#0f172a">${site.name}</strong><br/>
-           <span style="color:#334155">${site.location}</span><br/>
-           <span style="color:#64748b">${site.type}</span>`
+          `<strong style="color:#0f172a">${site.name}</strong><br/>` +
+            `<span style="color:#334155">${site.location}</span><br/>` +
+            `<span style="color:#64748b">${site.type}</span>`
         );
       });
 
@@ -243,4 +123,35 @@ export default function MapPage() {
         </div>
 
         <div className="rounded-2xl overflow-hidden border border-white/10 mb-8">
-          <div ref={mapRef} className="w
+          <div ref={mapRef} className="w-full h-[70vh] min-h-[420px]" />
+        </div>
+
+        <p className="text-gray-500 text-sm mb-10">
+          Click a marker for site details. Full context lives on the Facilities
+          page.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+          <Link
+            href="/facilities"
+            className="py-3 px-6 button-primary text-center text-white rounded-lg"
+          >
+            Facilities
+          </Link>
+          <Link
+            href="/companies"
+            className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+          >
+            Companies
+          </Link>
+          <Link
+            href="/watch"
+            className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+          >
+            Q3 Watchlist
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
+}
