@@ -3,6 +3,9 @@ import Link from "next/link";
 type Facility = {
   name: string;
   tags: string[];
+  location?: string;
+  lat?: number;
+  lng?: number;
   about: string;
   knownFor: string;
   note?: string;
@@ -22,6 +25,9 @@ function FacilityCard({ item }: { item: Facility }) {
           </span>
         ))}
       </div>
+      {item.location && (
+        <p className="text-sky-400/90 text-sm mb-2">{item.location}</p>
+      )}
       <p className="text-gray-300 text-sm leading-relaxed mb-2">{item.about}</p>
       <p className="text-gray-400 text-sm leading-relaxed mb-2">
         <span className="text-white">Known for:</span> {item.knownFor}
@@ -40,6 +46,9 @@ export default function FacilitiesPage() {
     {
       name: "High Flux Isotope Reactor (HFIR)",
       tags: ["USA", "Research reactor", "Medical", "Actinides"],
+      location: "Oak Ridge, Tennessee, USA",
+      lat: 35.93,
+      lng: -84.31,
       about:
         "Located at Oak Ridge National Laboratory, HFIR is one of the most important U.S. isotope production reactors. Its high neutron flux makes it especially valuable for producing both medical and research isotopes.",
       knownFor:
@@ -49,6 +58,9 @@ export default function FacilitiesPage() {
     {
       name: "Advanced Test Reactor (ATR)",
       tags: ["USA", "Research reactor"],
+      location: "Idaho Falls area, Idaho, USA",
+      lat: 43.52,
+      lng: -112.05,
       about:
         "Located at Idaho National Laboratory, ATR is a major materials test reactor with important roles in irradiation services and isotope-related work.",
       knownFor:
@@ -57,6 +69,9 @@ export default function FacilitiesPage() {
     {
       name: "University of Missouri Research Reactor (MURR)",
       tags: ["USA", "University reactor", "Medical"],
+      location: "Columbia, Missouri, USA",
+      lat: 38.95,
+      lng: -92.33,
       about:
         "MURR is one of the most significant university-based isotope production reactors in North America and an important supplier of medical isotopes.",
       knownFor: "Medical isotopes and research-related production.",
@@ -65,178 +80,175 @@ export default function FacilitiesPage() {
     {
       name: "McMaster Nuclear Reactor",
       tags: ["Canada", "University reactor", "Medical"],
+      location: "Hamilton, Ontario, Canada",
+      lat: 43.26,
+      lng: -79.92,
       about:
-        "McMaster is an important Canadian university reactor supporting research and isotope-related work within North America's broader nuclear infrastructure.",
-      knownFor: "Research irradiation and isotope-related services.",
-    },
-    {
-      name: "Canadian isotope production network",
-      tags: ["Canada", "Medical", "Strategic"],
-      about:
-        "Canada has long been a major force in medical isotope production. Current and future reactor-based and related capacity remains strategically important to North American and global supply.",
-      knownFor:
-        "Medical isotope production and related nuclear research infrastructure.",
-      note: "Canada's role remains significant even as specific reactor systems change over time.",
+        "McMaster operates an important Canadian university reactor with medical isotope and research roles.",
+      knownFor: "Medical and research isotope production in Canada.",
     },
     {
       name: "BR2",
       tags: ["Belgium", "Research reactor", "Medical"],
+      location: "Mol, Belgium",
+      lat: 51.22,
+      lng: 5.09,
       about:
-        "BR2 is a major European research reactor and an important source of medical isotopes for regional and international supply.",
-      knownFor:
-        "Medical isotope production and research irradiation services.",
+        "BR2 is a major European high-flux research reactor and an important part of the continent's medical and research isotope infrastructure.",
+      knownFor: "High-flux irradiation and medical isotope production.",
     },
     {
       name: "HFR Petten",
       tags: ["Netherlands", "Research reactor", "Medical"],
+      location: "Petten, Netherlands",
+      lat: 52.79,
+      lng: 4.67,
       about:
-        "The High Flux Reactor at Petten has long been one of Europe's most important medical isotope production facilities.",
-      knownFor:
-        "Medical isotopes, including major contributions to diagnostic isotope supply chains.",
-      note: "Historically central to European Mo-99 related supply.",
+        "HFR Petten has long been one of the most important European reactors for medical isotope production.",
+      knownFor: "Medical isotope production and irradiation services.",
     },
     {
       name: "FRM II",
       tags: ["Germany", "Research reactor"],
+      location: "Garching, Germany",
+      lat: 48.27,
+      lng: 11.67,
       about:
-        "FRM II in Garching is one of Europe's most important modern research reactors and a significant irradiation and research platform.",
-      knownFor:
-        "Neutron research, irradiation services, and specialized isotope-related work.",
+        "FRM II is a major German research reactor supporting neutron science and isotope-related irradiation work.",
+      knownFor: "Research irradiation and specialized isotope support.",
     },
     {
       name: "Institut Laue-Langevin (ILL)",
-      tags: ["France", "Research reactor"],
+      tags: ["France", "Research reactor", "Neutron source"],
+      location: "Grenoble, France",
+      lat: 45.19,
+      lng: 5.72,
       about:
-        "ILL operates one of the world's leading high-flux neutron sources and remains a major European research infrastructure node.",
-      knownFor: "High-flux neutron research and specialized irradiation capability.",
+        "ILL operates one of the world's leading high-flux neutron sources and is a central European research infrastructure.",
+      knownFor: "High-flux neutron research and related irradiation capability.",
     },
     {
       name: "LVR-15",
       tags: ["Czech Republic", "Research reactor"],
+      location: "Rez, Czech Republic",
+      lat: 50.16,
+      lng: 14.37,
       about:
-        "LVR-15 is a European research reactor involved in irradiation services and isotope-related work.",
-      knownFor:
-        "Research irradiation and selected isotope production support.",
+        "LVR-15 is an important Central European research reactor used for irradiation and isotope-related work.",
+      knownFor: "Research reactor irradiation and regional isotope support.",
     },
     {
       name: "MARIA reactor",
       tags: ["Poland", "Research reactor", "Medical"],
+      location: "Swierk, Poland",
+      lat: 52.12,
+      lng: 21.35,
       about:
-        "The MARIA reactor is an important Central European research reactor with roles in medical isotope production and research.",
-      knownFor:
-        "Medical isotopes and research irradiation services.",
+        "MARIA is Poland's key research reactor and a meaningful part of European medical and research isotope capacity.",
+      knownFor: "Medical and research isotope production.",
     },
     {
       name: "OPAL",
       tags: ["Australia", "Research reactor", "Medical"],
+      location: "Lucas Heights, Australia",
+      lat: -34.05,
+      lng: 150.98,
       about:
-        "OPAL is Australia's open-pool research reactor and a major regional producer of medical and industrial isotopes.",
-      knownFor:
-        "Medical isotopes, industrial isotopes, and research support for the region.",
+        "OPAL is Australia's open-pool research reactor and the core of ANSTO's isotope production capability.",
+      knownFor: "Medical and industrial isotope production for Australia and export markets.",
     },
     {
       name: "SAFARI-1",
       tags: ["South Africa", "Research reactor", "Medical"],
+      location: "Pelindaba, South Africa",
+      lat: -25.8,
+      lng: 27.94,
       about:
-        "SAFARI-1 is a key African research reactor and an important global contributor to medical isotope production.",
-      knownFor: "Medical isotopes, including Mo-99 related production.",
+        "SAFARI-1 supports major medical isotope production through South Africa's NTP system.",
+      knownFor: "Medical isotope production, including Mo-99 related supply.",
     },
     {
       name: "HANARO",
       tags: ["South Korea", "Research reactor"],
+      location: "Daejeon, South Korea",
+      lat: 36.42,
+      lng: 127.37,
       about:
-        "HANARO is a major Asian research reactor supporting neutron research, irradiation services, and isotope-related capability in South Korea.",
-      knownFor:
-        "Research irradiation, materials work, and regional isotope support.",
-    },
-    {
-      name: "Japanese research reactor capacity",
-      tags: ["Japan", "Research reactor"],
-      about:
-        "Japan maintains research reactor and related nuclear infrastructure important to regional isotope research, materials work, and specialized production pathways.",
-      knownFor:
-        "Research irradiation and specialized nuclear materials capability.",
+        "HANARO is South Korea's leading research reactor platform for neutron science and isotope-related work.",
+      knownFor: "Research irradiation and regional isotope capability.",
     },
     {
       name: "Dhruva",
       tags: ["India", "Research reactor"],
+      location: "Trombay, Mumbai, India",
+      lat: 19.01,
+      lng: 72.92,
       about:
-        "Dhruva is a major Indian research reactor and an important part of India's nuclear research and isotope-related infrastructure.",
-      knownFor:
-        "Research reactor operations and national isotope-related capability.",
-    },
-    {
-      name: "Chinese research reactor and production capacity",
-      tags: ["China", "Research reactor", "Production"],
-      about:
-        "China operates a substantial research reactor and isotope production base supporting domestic medical, industrial, and research demand, with growing international relevance.",
-      knownFor:
-        "Broad isotope production capacity and expanding nuclear research infrastructure.",
+        "Dhruva is a major Indian research reactor within the country's broader nuclear research and isotope infrastructure.",
+      knownFor: "Research reactor capacity and isotope-related irradiation.",
     },
   ];
 
   const accelerators: Facility[] = [
     {
-      name: "Medical cyclotrons",
-      tags: ["Global", "Cyclotron", "PET"],
-      about:
-        "Hospital and regional cyclotrons form a distributed production layer for short-lived PET isotopes. Unlike large research reactors, these systems are widespread and closer to clinical demand.",
-      knownFor: "F-18 and other PET isotopes used in diagnostic imaging.",
-      note: "Critical for daily PET supply because many PET isotopes cannot be shipped long distances.",
-    },
-    {
       name: "Brookhaven Linac Isotope Producer (BLIP)",
       tags: ["USA", "Accelerator", "Medical"],
+      location: "Upton, New York, USA",
+      lat: 40.87,
+      lng: -72.87,
       about:
-        "BLIP is an important U.S. accelerator-based isotope production facility supporting medical and research isotopes.",
+        "BLIP is a key U.S. accelerator-based isotope production facility at Brookhaven National Laboratory.",
       knownFor: "Accelerator-produced medical and research isotopes.",
     },
     {
       name: "Los Alamos Isotope Production Facility (IPF)",
-      tags: ["USA", "Accelerator", "Medical"],
+      tags: ["USA", "Accelerator"],
+      location: "Los Alamos, New Mexico, USA",
+      lat: 35.88,
+      lng: -106.3,
       about:
-        "The Los Alamos IPF supports accelerator-based production of medical and research isotopes as part of the U.S. isotope infrastructure.",
-      knownFor: "Accelerator-produced isotopes for medicine and research.",
+        "IPF supports accelerator-based isotope production within the U.S. national laboratory system.",
+      knownFor: "Accelerator isotope production for research and specialty needs.",
     },
     {
       name: "TRIUMF",
       tags: ["Canada", "Accelerator", "Medical"],
+      location: "Vancouver, British Columbia, Canada",
+      lat: 49.25,
+      lng: -123.23,
       about:
-        "TRIUMF is one of North America's most important accelerator laboratories and a significant site for isotope research and production-related work.",
-      knownFor:
-        "Accelerator-based isotope research, medical isotope development, and nuclear science infrastructure.",
+        "TRIUMF is Canada's particle accelerator centre with major roles in isotope research and production.",
+      knownFor: "Accelerator-based medical and research isotopes.",
     },
     {
       name: "ARRONAX",
       tags: ["France", "Accelerator", "Medical"],
+      location: "Nantes, France",
+      lat: 47.25,
+      lng: -1.52,
       about:
-        "ARRONAX is a dedicated high-energy cyclotron facility focused on radioisotope production for medical research and applications.",
-      knownFor:
-        "Accelerator-produced medical radioisotopes and related research support.",
+        "ARRONAX is a dedicated European accelerator facility focused on medical radioisotope production and research.",
+      knownFor: "Medical radioisotope production by accelerator routes.",
     },
     {
       name: "Paul Scherrer Institute (PSI)",
       tags: ["Switzerland", "Accelerator", "Research"],
+      location: "Villigen, Switzerland",
+      lat: 47.54,
+      lng: 8.22,
       about:
-        "PSI is a major European research center with important accelerator infrastructure used in isotope research and related nuclear science.",
-      knownFor:
-        "Accelerator-based research isotopes and advanced nuclear science capability.",
+        "PSI is a major Swiss research centre with accelerator infrastructure used in isotope and nuclear science work.",
+      knownFor: "Accelerator research and specialized isotope capability.",
     },
     {
       name: "iThemba LABS",
       tags: ["South Africa", "Accelerator"],
+      location: "Cape Town area, South Africa",
+      lat: -33.98,
+      lng: 18.62,
       about:
-        "iThemba LABS is a major African accelerator laboratory supporting isotope production, research, and nuclear science applications.",
-      knownFor:
-        "Accelerator-based isotope production and regional research infrastructure.",
-    },
-    {
-      name: "Specialized linear accelerators",
-      tags: ["Global", "Accelerator", "Emerging"],
-      about:
-        "Specialized linacs are increasingly important for isotopes that are difficult, inefficient, or strategically undesirable to produce only in reactors.",
-      knownFor:
-        "Emerging medical isotopes, research isotopes, and alternative production routes.",
+        "iThemba LABS provides accelerator-based nuclear research and isotope-related capability in South Africa.",
+      knownFor: "Accelerator isotope research and regional production support.",
     },
   ];
 
@@ -245,26 +257,28 @@ export default function FacilitiesPage() {
       name: "DOE Isotope Program / NIDC network",
       tags: ["USA", "National network", "Strategic"],
       about:
-        "The U.S. Department of Energy Isotope Program and the National Isotope Development Center coordinate production and distribution of many research and specialty isotopes across national laboratory capabilities.",
+        "Coordinates production and distribution of many research and specialty isotopes across U.S. national laboratory capabilities.",
       knownFor:
         "Research isotopes, specialty isotopes, and strategic production coordination.",
-      note: "One of the most important organizing layers in the U.S. isotope supply system.",
+      note: "Network layer, not a single map point.",
     },
     {
       name: "IAEA research reactor and isotope cooperation frameworks",
       tags: ["International", "Coordination"],
       about:
-        "Through data resources, cooperation frameworks, and technical support, the IAEA helps make the global research reactor and isotope production landscape more visible and coordinated.",
+        "International cooperation, data resources, and technical support across the global research reactor landscape.",
       knownFor:
         "International reactor data, cooperation, and capacity visibility.",
+      note: "Network layer, not a single map point.",
     },
     {
       name: "Regional radiopharmacy and distribution networks",
       tags: ["Global", "Logistics", "Medical"],
       about:
-        "Beyond primary production sites, regional radiopharmacies and distribution networks are essential to converting produced isotopes into clinically usable doses on time.",
+        "Regional radiopharmacies and distribution systems convert produced isotopes into clinically usable doses on time.",
       knownFor:
         "Last-mile medical isotope preparation, quality control, and clinical supply.",
+      note: "Distributed logistics layer, not a single map point.",
     },
   ];
 
@@ -277,34 +291,10 @@ export default function FacilitiesPage() {
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl">
             The reactors, accelerators, and production networks that turn
-            nuclear infrastructure into usable isotopes for medicine, energy,
-            quantum technologies, and industry.
+            nuclear infrastructure into usable isotopes. Point sites include
+            location data for future mapping.
           </p>
         </div>
-
-        <section className="mb-20 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Why Facilities Matter
-          </h2>
-          <div className="space-y-5 text-gray-300 leading-relaxed">
-            <p>
-              Most useful isotopes are not simply extracted from nature in the
-              amounts modern systems need. They are made.
-            </p>
-            <p>
-              That production depends on real infrastructure: research reactors,
-              accelerators, target systems, processing facilities, and
-              distribution networks. The availability of these facilities
-              determines which isotopes can be supplied, at what scale, and with
-              what resilience.
-            </p>
-            <p>
-              In several critical cases, a relatively small number of facilities
-              support a large share of global use. That concentration is one of
-              the defining features of the isotope economy.
-            </p>
-          </div>
-        </section>
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
@@ -319,7 +309,7 @@ export default function FacilitiesPage() {
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Accelerators & Cyclotrons
+            Accelerators
           </h2>
           <div className="space-y-4">
             {accelerators.map((item) => (
@@ -330,7 +320,7 @@ export default function FacilitiesPage() {
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Strategic Production Networks
+            Networks & Coordination
           </h2>
           <div className="space-y-4">
             {networks.map((item) => (
@@ -339,46 +329,34 @@ export default function FacilitiesPage() {
           </div>
         </section>
 
-        <section className="mb-16 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Wider Isotope World
-          </h2>
-          <p className="text-gray-400 mb-6">
-            For official databases, institutions, public companies, and private
-            companies across the broader isotope landscape, visit the Links
-            page.
-          </p>
-          <Link
-            href="/links"
-            className="inline-block py-3 px-6 button-primary text-center text-white rounded-lg"
-          >
-            Open Links
-          </Link>
-        </section>
-
         <section className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
           <h2 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
             Where to go next
           </h2>
-          <p className="text-gray-400 mb-6">Continue through the resource hub:</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/companies"
-              className="py-3 px-6 button-primary text-center text-white rounded-lg"
-            >
-              Companies
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
             <Link
               href="/isotopes"
-              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+              className="py-3 px-6 button-primary text-center text-white rounded-lg"
             >
               Isotope Directory
             </Link>
             <Link
-              href="/advanced"
+              href="/companies"
               className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
             >
-              Advanced
+              Companies
+            </Link>
+            <Link
+              href="/watch"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Q3 Watchlist
+            </Link>
+            <Link
+              href="/links"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Links
             </Link>
           </div>
         </section>
