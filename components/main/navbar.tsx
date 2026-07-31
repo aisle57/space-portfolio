@@ -24,6 +24,7 @@ const NAV_GROUPS = [
   {
     title: "Resources",
     items: [
+      { title: "Q3 Watchlist", link: "/watch" },
       { title: "Isotope Directory", link: "/isotopes" },
       { title: "Facilities", link: "/facilities" },
       { title: "Companies", link: "/companies" },
@@ -47,7 +48,6 @@ export const Navbar = () => {
           </div>
         </Link>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-2">
           <div className="flex items-center gap-1 border border-sky-400/30 bg-[rgba(3,0,20,0.37)] px-3 py-2 rounded-full text-gray-200 text-sm">
             <Link
@@ -108,7 +108,6 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-white focus:outline-none text-3xl"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -117,7 +116,6 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-[65px] left-0 w-full bg-[#030014] border-t border-white/10 p-5 md:hidden">
           <div className="flex flex-col gap-3">
