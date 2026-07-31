@@ -71,6 +71,9 @@ export const Footer = () => {
                 >
                   Research Facilities
                 </Link>
+                <Link href="/map" className="hover:text-sky-400 transition">
+                  Map
+                </Link>
                 <Link
                   href="/companies"
                   className="hover:text-sky-400 transition"
