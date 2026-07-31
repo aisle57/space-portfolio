@@ -59,6 +59,9 @@ export const Footer = () => {
             <div className="flex flex-col items-center sm:items-start">
               <h3 className="font-bold text-[16px] mb-3">Resources</h3>
               <div className="flex flex-col gap-2 text-sm text-gray-400">
+                <Link href="/watch" className="hover:text-sky-400 transition">
+                  Q3 Watchlist
+                </Link>
                 <Link href="/isotopes" className="hover:text-sky-400 transition">
                   Isotope Directory
                 </Link>
