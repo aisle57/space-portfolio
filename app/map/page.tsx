@@ -6,12 +6,13 @@ import Link from "next/link";
 type MapSite = {
   name: string;
   location: string;
-  type: string;
+  type: "Research reactor" | "University reactor" | "Neutron source" | "Accelerator" | "Enrichment";
   lat: number;
   lng: number;
 };
 
 const SITES: MapSite[] = [
+  // Reactors
   { name: "HFIR", location: "Oak Ridge, USA", type: "Research reactor", lat: 35.93, lng: -84.31 },
   { name: "ATR", location: "Idaho, USA", type: "Research reactor", lat: 43.52, lng: -112.05 },
   { name: "MURR", location: "Columbia, Missouri, USA", type: "University reactor", lat: 38.95, lng: -92.33 },
@@ -26,12 +27,22 @@ const SITES: MapSite[] = [
   { name: "SAFARI-1", location: "Pelindaba, South Africa", type: "Research reactor", lat: -25.8, lng: 27.94 },
   { name: "HANARO", location: "Daejeon, South Korea", type: "Research reactor", lat: 36.42, lng: 127.37 },
   { name: "Dhruva", location: "Trombay, India", type: "Research reactor", lat: 19.01, lng: 72.92 },
+
+  // Accelerators
   { name: "BLIP", location: "Brookhaven, USA", type: "Accelerator", lat: 40.87, lng: -72.87 },
   { name: "LANL IPF", location: "Los Alamos, USA", type: "Accelerator", lat: 35.88, lng: -106.3 },
   { name: "TRIUMF", location: "Vancouver, Canada", type: "Accelerator", lat: 49.25, lng: -123.23 },
   { name: "ARRONAX", location: "Nantes, France", type: "Accelerator", lat: 47.25, lng: -1.52 },
   { name: "PSI", location: "Villigen, Switzerland", type: "Accelerator", lat: 47.54, lng: 8.22 },
   { name: "iThemba LABS", location: "Cape Town area, South Africa", type: "Accelerator", lat: -33.98, lng: 18.62 },
+
+  // Enrichment / separation
+  { name: "Centrus ACP", location: "Piketon, Ohio, USA", type: "Enrichment", lat: 39.07, lng: -83.01 },
+  { name: "Urenco USA", location: "Eunice, New Mexico, USA", type: "Enrichment", lat: 32.41, lng: -103.2 },
+  { name: "Urenco Netherlands", location: "Almelo, Netherlands", type: "Enrichment", lat: 52.35, lng: 6.66 },
+  { name: "Urenco UK", location: "Capenhurst, UK", type: "Enrichment", lat: 53.26, lng: -2.95 },
+  { name: "Urenco Deutschland", location: "Gronau, Germany", type: "Enrichment", lat: 52.21, lng: 7.04 },
+  { name: "Orano Georges Besse II", location: "Tricastin, France", type: "Enrichment", lat: 44.33, lng: 4.73 },
 ];
 
 export default function MapPage() {
