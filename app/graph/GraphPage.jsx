@@ -1,8 +1,12 @@
 "use client";
 
 import { useRef, useCallback, useState } from "react";
-import ForceGraph2D from "react-force-graph-2d";
+import dynamic from "next/dynamic";
 import { nodes, links, typeColors } from "./graph-data";
+
+const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), {
+  ssr: false,
+});
 
 export default function GraphPage() {
   const fgRef = useRef();
@@ -29,7 +33,7 @@ export default function GraphPage() {
     const isHovered = hoverNode && hoverNode.id === node.id;
 
     const radius = Math.sqrt(node.val) * 3.2;
-    
+
     // Outer glow
     ctx.beginPath();
     ctx.arc(node.x, node.y, radius + 4, 0, 2 * Math.PI, false);
