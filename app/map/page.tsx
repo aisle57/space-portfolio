@@ -6,13 +6,17 @@ import Link from "next/link";
 type MapSite = {
   name: string;
   location: string;
-  type: "Research reactor" | "University reactor" | "Neutron source" | "Accelerator" | "Enrichment";
+  type:
+    | "Research reactor"
+    | "University reactor"
+    | "Neutron source"
+    | "Accelerator"
+    | "Enrichment";
   lat: number;
   lng: number;
 };
 
 const SITES: MapSite[] = [
-  // Reactors
   { name: "HFIR", location: "Oak Ridge, USA", type: "Research reactor", lat: 35.93, lng: -84.31 },
   { name: "ATR", location: "Idaho, USA", type: "Research reactor", lat: 43.52, lng: -112.05 },
   { name: "MURR", location: "Columbia, Missouri, USA", type: "University reactor", lat: 38.95, lng: -92.33 },
@@ -27,16 +31,12 @@ const SITES: MapSite[] = [
   { name: "SAFARI-1", location: "Pelindaba, South Africa", type: "Research reactor", lat: -25.8, lng: 27.94 },
   { name: "HANARO", location: "Daejeon, South Korea", type: "Research reactor", lat: 36.42, lng: 127.37 },
   { name: "Dhruva", location: "Trombay, India", type: "Research reactor", lat: 19.01, lng: 72.92 },
-
-  // Accelerators
   { name: "BLIP", location: "Brookhaven, USA", type: "Accelerator", lat: 40.87, lng: -72.87 },
   { name: "LANL IPF", location: "Los Alamos, USA", type: "Accelerator", lat: 35.88, lng: -106.3 },
   { name: "TRIUMF", location: "Vancouver, Canada", type: "Accelerator", lat: 49.25, lng: -123.23 },
   { name: "ARRONAX", location: "Nantes, France", type: "Accelerator", lat: 47.25, lng: -1.52 },
   { name: "PSI", location: "Villigen, Switzerland", type: "Accelerator", lat: 47.54, lng: 8.22 },
   { name: "iThemba LABS", location: "Cape Town area, South Africa", type: "Accelerator", lat: -33.98, lng: 18.62 },
-
-  // Enrichment / separation
   { name: "Centrus ACP", location: "Piketon, Ohio, USA", type: "Enrichment", lat: 39.07, lng: -83.01 },
   { name: "Urenco USA", location: "Eunice, New Mexico, USA", type: "Enrichment", lat: 32.41, lng: -103.2 },
   { name: "Urenco Netherlands", location: "Almelo, Netherlands", type: "Enrichment", lat: 52.35, lng: 6.66 },
@@ -44,6 +44,12 @@ const SITES: MapSite[] = [
   { name: "Urenco Deutschland", location: "Gronau, Germany", type: "Enrichment", lat: 52.21, lng: 7.04 },
   { name: "Orano Georges Besse II", location: "Tricastin, France", type: "Enrichment", lat: 44.33, lng: 4.73 },
 ];
+
+function markerColor(type: MapSite["type"]) {
+  if (type === "Accelerator") return "#fbbf24";
+  if (type === "Enrichment") return "#c084fc";
+  return "#38bdf8";
+}
 
 export default function MapPage() {
   const mapRef = useRef<HTMLDivElement | null>(null);
@@ -62,7 +68,9 @@ export default function MapPage() {
     }
 
     const scriptId = "leaflet-js";
-    const existing = document.getElementById(scriptId) as HTMLScriptElement | null;
+    const existing = document.getElementById(
+      scriptId
+    ) as HTMLScriptElement | null;
 
     const initMap = () => {
       const L = (window as any).L;
@@ -84,11 +92,12 @@ export default function MapPage() {
       ).addTo(map);
 
       SITES.forEach((site) => {
+        const color = markerColor(site.type);
         const marker = L.circleMarker([site.lat, site.lng], {
           radius: 7,
-          color: "#38bdf8",
-          fillColor: "#38bdf8",
-          fillOpacity: 0.85,
+          color,
+          fillColor: color,
+          fillOpacity: 0.9,
           weight: 1,
         }).addTo(map);
 
@@ -126,20 +135,41 @@ export default function MapPage() {
     <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Map</h1>
-          <p className="text-gray-400 text-lg max-w-3xl">
-            Point sites from the Facilities dataset. Reactors and accelerators
-            only. Networks and logistics layers are not plotted.
+          <p className="text-sky-400 text-sm mb-3 tracking-wide uppercase">
+            Supply structure
           </p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Visualizing Isotope Supply Chains
+          </h1>
+          <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
+            Critical isotopes depend on a thin global network of reactors,
+            accelerators, and enrichment plants. This map shows the point sites
+            behind that system. Sparse is the point.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-4 text-sm text-gray-400 mb-6">
+          <span className="flex items-center gap-2">
+            <span className="inline-block w-2.5 h-2.5 rounded-full bg-sky-400" />
+            Reactors
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="inline-block w-2.5 h-2.5 rounded-full bg-amber-400" />
+            Accelerators
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="inline-block w-2.5 h-2.5 rounded-full bg-purple-400" />
+            Enrichment
+          </span>
         </div>
 
         <div className="rounded-2xl overflow-hidden border border-white/10 mb-8">
           <div ref={mapRef} className="w-full h-[70vh] min-h-[420px]" />
         </div>
 
-        <p className="text-gray-500 text-sm mb-10">
+        <p className="text-gray-500 text-sm mb-10 max-w-3xl">
           Click a marker for site details. Full context lives on the Facilities
-          page.
+          page. Company HQs, networks, and logistics nodes are not plotted.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
