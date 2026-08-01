@@ -21,32 +21,61 @@ type MapSite = {
 type LayerKey = "reactors" | "accelerators" | "enrichment";
 
 const SITES: MapSite[] = [
+  // North America — reactors
   { name: "HFIR", location: "Oak Ridge, USA", type: "Research reactor", lat: 35.93, lng: -84.31 },
   { name: "ATR", location: "Idaho, USA", type: "Research reactor", lat: 43.52, lng: -112.05 },
   { name: "MURR", location: "Columbia, Missouri, USA", type: "University reactor", lat: 38.95, lng: -92.33 },
   { name: "McMaster", location: "Hamilton, Canada", type: "University reactor", lat: 43.26, lng: -79.92 },
+
+  // Europe — reactors
   { name: "BR2", location: "Mol, Belgium", type: "Research reactor", lat: 51.22, lng: 5.09 },
   { name: "HFR Petten", location: "Petten, Netherlands", type: "Research reactor", lat: 52.79, lng: 4.67 },
   { name: "FRM II", location: "Garching, Germany", type: "Research reactor", lat: 48.27, lng: 11.67 },
   { name: "ILL", location: "Grenoble, France", type: "Neutron source", lat: 45.19, lng: 5.72 },
   { name: "LVR-15", location: "Rez, Czech Republic", type: "Research reactor", lat: 50.16, lng: 14.37 },
   { name: "MARIA", location: "Swierk, Poland", type: "Research reactor", lat: 52.12, lng: 21.35 },
+
+  // Russia — reactors
+  { name: "RIAR", location: "Dimitrovgrad, Russia", type: "Research reactor", lat: 54.19, lng: 49.48 },
+
+  // Asia-Pacific — reactors
   { name: "OPAL", location: "Lucas Heights, Australia", type: "Research reactor", lat: -34.05, lng: 150.98 },
-  { name: "SAFARI-1", location: "Pelindaba, South Africa", type: "Research reactor", lat: -25.8, lng: 27.94 },
   { name: "HANARO", location: "Daejeon, South Korea", type: "Research reactor", lat: 36.42, lng: 127.37 },
   { name: "Dhruva", location: "Trombay, India", type: "Research reactor", lat: 19.01, lng: 72.92 },
+  { name: "CARR", location: "Beijing area, China", type: "Research reactor", lat: 39.74, lng: 116.04 },
+  { name: "JRR-3", location: "Tokai, Japan", type: "Research reactor", lat: 36.46, lng: 140.6 },
+
+  // Africa / Middle East / LatAm — reactors
+  { name: "SAFARI-1", location: "Pelindaba, South Africa", type: "Research reactor", lat: -25.8, lng: 27.94 },
+  { name: "RA-3", location: "Ezeiza, Argentina", type: "Research reactor", lat: -34.83, lng: -58.52 },
+  { name: "ETRR-2", location: "Inshas, Egypt", type: "Research reactor", lat: 30.29, lng: 31.41 },
+  { name: "IEA-R1", location: "Sao Paulo, Brazil", type: "Research reactor", lat: -23.56, lng: -46.74 },
+
+  // Accelerators
   { name: "BLIP", location: "Brookhaven, USA", type: "Accelerator", lat: 40.87, lng: -72.87 },
   { name: "LANL IPF", location: "Los Alamos, USA", type: "Accelerator", lat: 35.88, lng: -106.3 },
   { name: "TRIUMF", location: "Vancouver, Canada", type: "Accelerator", lat: 49.25, lng: -123.23 },
   { name: "ARRONAX", location: "Nantes, France", type: "Accelerator", lat: 47.25, lng: -1.52 },
   { name: "PSI", location: "Villigen, Switzerland", type: "Accelerator", lat: 47.54, lng: 8.22 },
   { name: "iThemba LABS", location: "Cape Town area, South Africa", type: "Accelerator", lat: -33.98, lng: 18.62 },
+
+  // Enrichment — West
   { name: "Centrus ACP", location: "Piketon, Ohio, USA", type: "Enrichment", lat: 39.07, lng: -83.01 },
   { name: "Urenco USA", location: "Eunice, New Mexico, USA", type: "Enrichment", lat: 32.41, lng: -103.2 },
   { name: "Urenco Netherlands", location: "Almelo, Netherlands", type: "Enrichment", lat: 52.35, lng: 6.66 },
   { name: "Urenco UK", location: "Capenhurst, UK", type: "Enrichment", lat: 53.26, lng: -2.95 },
   { name: "Urenco Deutschland", location: "Gronau, Germany", type: "Enrichment", lat: 52.21, lng: 7.04 },
   { name: "Orano Georges Besse II", location: "Tricastin, France", type: "Enrichment", lat: 44.33, lng: 4.73 },
+
+  // Enrichment — Russia
+  { name: "Novouralsk UEIP", location: "Novouralsk, Russia", type: "Enrichment", lat: 57.25, lng: 60.08 },
+  { name: "Zelenogorsk ECP", location: "Zelenogorsk, Russia", type: "Enrichment", lat: 56.11, lng: 94.55 },
+  { name: "Seversk SCC", location: "Seversk, Russia", type: "Enrichment", lat: 56.6, lng: 84.87 },
+  { name: "Angarsk AECC", location: "Angarsk, Russia", type: "Enrichment", lat: 52.53, lng: 103.89 },
+
+  // Enrichment — China
+  { name: "Lanzhou Enrichment", location: "Lanzhou, China", type: "Enrichment", lat: 36.15, lng: 103.52 },
+  { name: "Hanzhong Enrichment", location: "Hanzhong, China", type: "Enrichment", lat: 33.07, lng: 107.02 },
 ];
 
 function layerForType(type: SiteType): LayerKey {
