@@ -28,6 +28,7 @@ const NAV_GROUPS = [
       { title: "Isotope Directory", link: "/isotopes" },
       { title: "Facilities", link: "/facilities" },
       { title: "Map", link: "/map" },
+      { title: "Graph", link: "/graph" },
       { title: "Companies", link: "/companies" },
       { title: "Capital & Markets", link: "/capital" },
       { title: "Links", link: "/links" },
@@ -51,10 +52,7 @@ export const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-2">
           <div className="flex items-center gap-1 border border-sky-400/30 bg-[rgba(3,0,20,0.37)] px-3 py-2 rounded-full text-gray-200 text-sm">
-            <Link
-              href="/"
-              className="px-3 py-1 hover:text-sky-400 transition"
-            >
+            <Link href="/" className="px-3 py-1 hover:text-sky-400 transition">
               Home
             </Link>
 
@@ -77,25 +75,23 @@ export const Navbar = () => {
                 </button>
 
                 {openDesktop === group.title && (
-                  <div className="absolute top-full left-0 pt-2 min-w-[220px]">
-                    <div className="rounded-xl border border-white/10 bg-[#0a0618] shadow-xl p-2">
-                      {group.items.map((item) => (
-                        <Link
-                          key={item.title}
-                          href={item.link}
-                          className="block px-3 py-2 rounded-lg text-gray-300 hover:text-sky-400 hover:bg-white/5 transition"
-                        >
-                          {item.title}
-                        </Link>
-                      ))}
-                    </div>
+                  <div className="absolute top-full left-0 mt-2 min-w-[200px] rounded-xl border border-white/10 bg-[#030014] shadow-xl py-2 z-50">
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.title}
+                        href={item.link}
+                        className="block px-4 py-2 text-gray-300 hover:text-sky-400 hover:bg-white/5 transition"
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
             ))}
           </div>
 
-          <div className="flex flex-row gap-4 ml-4">
+          <div className="flex items-center gap-3 ml-2">
             {SOCIALS.map(({ link, name, icon: Icon }) => (
               <Link
                 href={link}
