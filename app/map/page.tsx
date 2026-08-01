@@ -1,20 +1,24 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+
+type SiteType =
+  | "Research reactor"
+  | "University reactor"
+  | "Neutron source"
+  | "Accelerator"
+  | "Enrichment";
 
 type MapSite = {
   name: string;
   location: string;
-  type:
-    | "Research reactor"
-    | "University reactor"
-    | "Neutron source"
-    | "Accelerator"
-    | "Enrichment";
+  type: SiteType;
   lat: number;
   lng: number;
 };
+
+type LayerKey = "reactors" | "accelerators" | "enrichment";
 
 const SITES: MapSite[] = [
   { name: "HFIR", location: "Oak Ridge, USA", type: "Research reactor", lat: 35.93, lng: -84.31 },
@@ -45,7 +49,13 @@ const SITES: MapSite[] = [
   { name: "Orano Georges Besse II", location: "Tricastin, France", type: "Enrichment", lat: 44.33, lng: 4.73 },
 ];
 
-function markerColor(type: MapSite["type"]) {
+function layerForType(type: SiteType): LayerKey {
+  if (type === "Accelerator") return "accelerators";
+  if (type === "Enrichment") return "enrichment";
+  return "reactors";
+}
+
+function markerColor(type: SiteType) {
   if (type === "Accelerator") return "#fbbf24";
   if (type === "Enrichment") return "#c084fc";
   return "#38bdf8";
@@ -54,6 +64,26 @@ function markerColor(type: MapSite["type"]) {
 export default function MapPage() {
   const mapRef = useRef<HTMLDivElement | null>(null);
   const mapInstance = useRef<any>(null);
+  const markersRef = useRef<any[]>([]);
+
+  const [layers, setLayers] = useState({
+    reactors: true,
+    accelerators: true,
+    enrichment: true,
+  });
+
+  const counts = useMemo(() => {
+    const reactors = SITES.filter((s) => layerForType(s.type) === "reactors").length;
+    const accelerators = SITES.filter((s) => layerForType(s.type) === "accelerators").length;
+    const enrichment = SITES.filter((s) => layerForType(s.type) === "enrichment").length;
+    return { reactors, accelerators, enrichment };
+  }, []);
+
+  const visibleSites = useMemo(() => {
+    return SITES.filter((site) => layers[layerForType(site.type)]);
+  }, [layers]);
+
+  const visibleCount = visibleSites.length;
 
   useEffect(() => {
     if (!mapRef.current || mapInstance.current) return;
@@ -68,9 +98,7 @@ export default function MapPage() {
     }
 
     const scriptId = "leaflet-js";
-    const existing = document.getElementById(
-      scriptId
-    ) as HTMLScriptElement | null;
+    const existing = document.getElementById(scriptId) as HTMLScriptElement | null;
 
     const initMap = () => {
       const L = (window as any).L;
@@ -90,23 +118,6 @@ export default function MapPage() {
           maxZoom: 18,
         }
       ).addTo(map);
-
-      SITES.forEach((site) => {
-        const color = markerColor(site.type);
-        const marker = L.circleMarker([site.lat, site.lng], {
-          radius: 7,
-          color,
-          fillColor: color,
-          fillOpacity: 0.9,
-          weight: 1,
-        }).addTo(map);
-
-        marker.bindPopup(
-          `<strong style="color:#0f172a">${site.name}</strong><br/>` +
-            `<span style="color:#334155">${site.location}</span><br/>` +
-            `<span style="color:#64748b">${site.type}</span>`
-        );
-      });
 
       mapInstance.current = map;
     };
@@ -131,6 +142,38 @@ export default function MapPage() {
     };
   }, []);
 
+  useEffect(() => {
+    const L = (window as any).L;
+    const map = mapInstance.current;
+    if (!L || !map) return;
+
+    markersRef.current.forEach((marker) => map.removeLayer(marker));
+    markersRef.current = [];
+
+    visibleSites.forEach((site) => {
+      const color = markerColor(site.type);
+      const marker = L.circleMarker([site.lat, site.lng], {
+        radius: 7,
+        color,
+        fillColor: color,
+        fillOpacity: 0.9,
+        weight: 1,
+      }).addTo(map);
+
+      marker.bindPopup(
+        `<strong style="color:#0f172a">${site.name}</strong><br/>` +
+          `<span style="color:#334155">${site.location}</span><br/>` +
+          `<span style="color:#64748b">${site.type}</span>`
+      );
+
+      markersRef.current.push(marker);
+    });
+  }, [visibleSites]);
+
+  const toggleLayer = (key: LayerKey) => {
+    setLayers((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
     <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -148,19 +191,43 @@ export default function MapPage() {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-4 text-sm text-gray-400 mb-6">
-          <span className="flex items-center gap-2">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-sky-400" />
-            Reactors
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-amber-400" />
-            Accelerators
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-purple-400" />
-            Enrichment
-          </span>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+          <div className="flex flex-wrap gap-3">
+            <button
+              onClick={() => toggleLayer("reactors")}
+              className={`px-3 py-1.5 rounded-full border text-sm transition ${
+                layers.reactors
+                  ? "border-sky-400/50 text-sky-300 bg-sky-400/10"
+                  : "border-white/10 text-gray-500"
+              }`}
+            >
+              Reactors · {counts.reactors}
+            </button>
+            <button
+              onClick={() => toggleLayer("accelerators")}
+              className={`px-3 py-1.5 rounded-full border text-sm transition ${
+                layers.accelerators
+                  ? "border-amber-400/50 text-amber-300 bg-amber-400/10"
+                  : "border-white/10 text-gray-500"
+              }`}
+            >
+              Accelerators · {counts.accelerators}
+            </button>
+            <button
+              onClick={() => toggleLayer("enrichment")}
+              className={`px-3 py-1.5 rounded-full border text-sm transition ${
+                layers.enrichment
+                  ? "border-purple-400/50 text-purple-300 bg-purple-400/10"
+                  : "border-white/10 text-gray-500"
+              }`}
+            >
+              Enrichment · {counts.enrichment}
+            </button>
+          </div>
+
+          <p className="text-gray-500 text-sm">
+            Showing {visibleCount} of {SITES.length} sites
+          </p>
         </div>
 
         <div className="rounded-2xl overflow-hidden border border-white/10 mb-8">
@@ -168,8 +235,9 @@ export default function MapPage() {
         </div>
 
         <p className="text-gray-500 text-sm mb-10 max-w-3xl">
-          Click a marker for site details. Full context lives on the Facilities
-          page. Company HQs, networks, and logistics nodes are not plotted.
+          Toggle layers to isolate production or enrichment capacity. Full
+          context lives on the Facilities page. Company HQs and logistics
+          networks are not plotted.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
