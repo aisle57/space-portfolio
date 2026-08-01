@@ -76,6 +76,12 @@ const SITES: MapSite[] = [
   // Enrichment — China
   { name: "Lanzhou Enrichment", location: "Lanzhou, China", type: "Enrichment", lat: 36.15, lng: 103.52 },
   { name: "Hanzhong Enrichment", location: "Hanzhong, China", type: "Enrichment", lat: 33.07, lng: 107.02 },
+
+  // Enrichment — other commercial / specialty
+  { name: "ASP Pretoria", location: "Pretoria, South Africa", type: "Enrichment", lat: -25.75, lng: 28.23 },
+  { name: "JNFL Rokkasho", location: "Rokkasho, Japan", type: "Enrichment", lat: 40.96, lng: 141.37 },
+  { name: "INB Resende", location: "Resende, Brazil", type: "Enrichment", lat: -22.47, lng: -44.45 },
+  { name: "RMP Rattehalli", location: "Rattehalli, India", type: "Enrichment", lat: 12.97, lng: 76.4 },
 ];
 
 function layerForType(type: SiteType): LayerKey {
