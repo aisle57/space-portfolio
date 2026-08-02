@@ -47,7 +47,7 @@ export const nodes = [
     name: "Li-7",
     type: "Isotope",
     val: 7,
-    note: "Complement to Li-6 in nuclear chemistry and coolant contexts. Often discussed alongside enrichment of lithium isotopes.",
+    note: "Complement to Li-6 in nuclear chemistry and coolant contexts.",
   },
   {
     id: "haleu",
@@ -61,107 +61,135 @@ export const nodes = [
     name: "H-2 Deuterium",
     type: "Isotope",
     val: 8,
-    note: "Heavy hydrogen used in research, moderators, and fusion-related work. Separation is an industrial process, not mining.",
+    note: "Heavy hydrogen used in research, moderators, and fusion-related work. Separation is industrial, not mining.",
   },
   {
     id: "h-3",
     name: "H-3 Tritium",
     type: "Isotope",
     val: 9,
-    note: "Radioactive hydrogen isotope central to fusion fuel cycles and specialized applications. Often linked to Li-6 breeding routes.",
+    note: "Central to fusion fuel cycles. Often linked to Li-6 breeding routes.",
   },
 
   // Processes
   {
     id: "gas-centrifugation",
-    name: "Gas centrifugation enrichment",
+    name: "Gas centrifugation",
     type: "Process",
     val: 12,
-    note: "Core industrial method for separating isotopes by mass. Underpins much commercial uranium and some specialty enrichment.",
+    note: "Core industrial method for separating isotopes by mass. Underpins commercial uranium and some specialty enrichment.",
   },
   {
     id: "reactor-production",
-    name: "Reactor-based production",
+    name: "Reactor production",
     type: "Process",
     val: 12,
-    note: "Creates isotopes through neutron reactions in research and production reactors. Backbone of medical isotope supply.",
+    note: "Creates isotopes through neutron reactions. Backbone of medical isotope supply.",
   },
   {
     id: "accelerator-production",
     name: "Accelerator production",
     type: "Process",
     val: 9,
-    note: "Creates isotopes with charged-particle beams. Important route for several medical and research nuclides.",
+    note: "Creates isotopes with charged-particle beams. Important for several medical and research nuclides.",
   },
   {
     id: "tritium-breeding",
     name: "Tritium breeding",
     type: "Process",
     val: 9,
-    note: "Pathway that converts lithium pathways, especially Li-6, into tritium for fusion fuel concepts.",
+    note: "Converts Li-6 pathways into tritium for fusion fuel concepts.",
   },
   {
     id: "haleu-enrichment",
     name: "HALEU enrichment",
     type: "Process",
     val: 9,
-    note: "Enrichment above standard LEU levels toward HALEU product. Capacity remains scarce globally.",
+    note: "Enrichment above standard LEU toward HALEU. Global capacity remains scarce.",
   },
 
   // Applications
   {
     id: "precision-medicine",
-    name: "Precision Medicine / Theranostics",
+    name: "Precision Medicine",
     type: "Application",
     val: 14,
-    note: "Diagnostic imaging and targeted radiotherapies that depend on reliable isotope supply and processing.",
+    note: "Diagnostic imaging and targeted radiotherapies that depend on reliable isotope supply.",
   },
   {
     id: "quantum-technologies",
     name: "Quantum Technologies",
     type: "Application",
     val: 12,
-    note: "Devices and materials that need ultra-pure or rare isotopes such as Si-28 and He-3.",
+    note: "Devices and materials needing ultra-pure or rare isotopes such as Si-28 and He-3.",
   },
   {
     id: "nuclear-fusion",
-    name: "Nuclear Production / Fusion",
+    name: "Nuclear / Fusion",
     type: "Application",
     val: 13,
-    note: "Power and fusion pathways that depend on enriched materials, breeding routes, and nuclear production infrastructure.",
+    note: "Power and fusion pathways that depend on enriched materials, breeding routes, and production infrastructure.",
   },
 
-  // Facilities (seed)
+  // Facilities
   {
     id: "hfir",
     name: "HFIR",
     type: "Facility",
     val: 8,
-    note: "High Flux Isotope Reactor at Oak Ridge. Major U.S. node for isotope production research and supply.",
+    note: "High Flux Isotope Reactor, Oak Ridge. Major U.S. isotope production node.",
+  },
+  {
+    id: "murr",
+    name: "MURR",
+    type: "Facility",
+    val: 7,
+    note: "University of Missouri research reactor. Important U.S. medical isotope production site.",
   },
   {
     id: "opal",
     name: "OPAL",
     type: "Facility",
     val: 7,
-    note: "Australian research reactor supporting radioisotope production and nuclear science.",
+    note: "Australian research reactor supporting radioisotope production.",
+  },
+  {
+    id: "safari-1",
+    name: "SAFARI-1",
+    type: "Facility",
+    val: 7,
+    note: "South African research reactor at Pelindaba. Key regional isotope production node.",
   },
   {
     id: "centrus-piketon",
     name: "Centrus ACP",
     type: "Facility",
     val: 8,
-    note: "U.S. enrichment site at Piketon associated with advanced enrichment and HALEU pathway work.",
+    note: "U.S. enrichment site at Piketon. Advanced enrichment and HALEU pathway work.",
+  },
+  {
+    id: "urenco-usa",
+    name: "Urenco USA",
+    type: "Facility",
+    val: 8,
+    note: "Commercial uranium enrichment plant in Eunice, New Mexico.",
   },
   {
     id: "asp-pretoria",
     name: "ASP Pretoria",
     type: "Facility",
     val: 7,
-    note: "Specialty isotope enrichment facilities in Pretoria. Notable commercial enrichment footprint in Africa.",
+    note: "Specialty isotope enrichment facilities in Pretoria. Notable enrichment footprint in Africa.",
+  },
+  {
+    id: "blip",
+    name: "BLIP",
+    type: "Facility",
+    val: 6,
+    note: "Brookhaven Linac Isotope Producer. Accelerator-based isotope production node.",
   },
 
-  // Companies (seed)
+  // Companies
   {
     id: "urenco",
     name: "Urenco",
@@ -181,12 +209,19 @@ export const nodes = [
     name: "ASP Isotopes",
     type: "Company",
     val: 7,
-    note: "Specialty isotope enrichment company with operating facilities in Pretoria focused on light isotopes.",
+    note: "Specialty isotope enrichment company with operating facilities in Pretoria.",
+  },
+  {
+    id: "orano",
+    name: "Orano",
+    type: "Company",
+    val: 7,
+    note: "Major fuel-cycle company including commercial enrichment at Georges Besse II.",
   },
 ];
 
 export const links = [
-  // Medicine cluster
+  // Medicine
   { source: "mo-99", target: "precision-medicine", relation: "used_in" },
   { source: "mo-99", target: "reactor-production", relation: "produced_by" },
   { source: "lu-177", target: "precision-medicine", relation: "used_in" },
@@ -194,14 +229,17 @@ export const links = [
   { source: "ac-225", target: "precision-medicine", relation: "used_in" },
   { source: "ac-225", target: "accelerator-production", relation: "produced_by" },
   { source: "reactor-production", target: "hfir", relation: "located_at" },
+  { source: "reactor-production", target: "murr", relation: "located_at" },
   { source: "reactor-production", target: "opal", relation: "located_at" },
+  { source: "reactor-production", target: "safari-1", relation: "located_at" },
+  { source: "accelerator-production", target: "blip", relation: "located_at" },
 
-  // Quantum cluster
+  // Quantum
   { source: "si-28", target: "quantum-technologies", relation: "used_in" },
   { source: "si-28", target: "gas-centrifugation", relation: "enriched_by" },
   { source: "he-3", target: "quantum-technologies", relation: "used_in" },
 
-  // Nuclear / fusion cluster
+  // Nuclear / fusion
   { source: "li-6", target: "nuclear-fusion", relation: "used_in" },
   { source: "li-6", target: "gas-centrifugation", relation: "enriched_by" },
   { source: "li-6", target: "tritium-breeding", relation: "requires" },
@@ -213,13 +251,16 @@ export const links = [
   { source: "haleu", target: "nuclear-fusion", relation: "used_in" },
   { source: "haleu-enrichment", target: "centrus-piketon", relation: "located_at" },
   { source: "gas-centrifugation", target: "centrus-piketon", relation: "located_at" },
+  { source: "gas-centrifugation", target: "urenco-usa", relation: "located_at" },
+  { source: "gas-centrifugation", target: "asp-pretoria", relation: "located_at" },
 
-  // Company / facility links
+  // Companies
   { source: "centrus", target: "centrus-piketon", relation: "operates" },
   { source: "centrus", target: "haleu-enrichment", relation: "supplies" },
+  { source: "urenco", target: "urenco-usa", relation: "operates" },
   { source: "urenco", target: "gas-centrifugation", relation: "supplies" },
+  { source: "orano", target: "gas-centrifugation", relation: "supplies" },
   { source: "asp-isotopes", target: "asp-pretoria", relation: "operates" },
-  { source: "asp-pretoria", target: "gas-centrifugation", relation: "related_to" },
   { source: "asp-isotopes", target: "si-28", relation: "supplies" },
 ];
 
@@ -230,3 +271,11 @@ export const typeColors = {
   Facility: "#34d399",
   Company: "#f472b6",
 };
+
+export const typeList = [
+  "Isotope",
+  "Process",
+  "Application",
+  "Facility",
+  "Company",
+];
