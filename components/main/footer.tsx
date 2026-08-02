@@ -5,7 +5,6 @@ export const Footer = () => {
     <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] border-t border-white/10">
       <div className="w-full flex flex-col items-center justify-center m-auto py-10">
         <div className="w-full max-w-6xl flex flex-col md:flex-row items-start justify-between gap-10 px-6">
-
           <div className="flex flex-col items-center md:items-start w-full md:w-auto">
             <h3 className="font-bold text-lg text-white mb-2">
               Isotope Economy
@@ -73,6 +72,9 @@ export const Footer = () => {
                 </Link>
                 <Link href="/map" className="hover:text-sky-400 transition">
                   Map
+                </Link>
+                <Link href="/graph" className="hover:text-sky-400 transition">
+                  Graph
                 </Link>
                 <Link
                   href="/companies"
