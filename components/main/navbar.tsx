@@ -11,6 +11,7 @@ const NAV_GROUPS = [
     items: [
       { title: "Start Learning", link: "/learn" },
       { title: "Advanced", link: "/advanced" },
+      { title: "About", link: "/about" },
     ],
   },
   {
