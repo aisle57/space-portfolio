@@ -83,12 +83,11 @@ export default function AboutPage() {
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400 mb-4">
-            Operator
+            Contact
           </h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              Isotope Economy is operated by{" "}
-              <span className="text-white">Matthew Malaszuk</span>.
+              Isotope Economy is an independent public resource project.
             </p>
             <p>
               Corrections, missing sites, and better classifications are welcome.
@@ -96,7 +95,7 @@ export default function AboutPage() {
               push back on errors.
             </p>
             <p>
-              Contact:{" "}
+              Public contact:{" "}
               <Link
                 href="https://x.com/IsotopeEconomy"
                 target="_blank"
