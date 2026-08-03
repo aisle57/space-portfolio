@@ -175,6 +175,13 @@ export const nodes = [
     note: "Advanced Test Reactor, Idaho. High-power irradiation capability.",
   },
   {
+    id: "mcmaster",
+    name: "McMaster",
+    type: "Facility",
+    val: 7,
+    note: "Canadian university reactor with isotope production activity.",
+  },
+  {
     id: "br2",
     name: "BR2",
     type: "Facility",
@@ -187,6 +194,20 @@ export const nodes = [
     type: "Facility",
     val: 7,
     note: "Netherlands research reactor. Key medical isotope supply node.",
+  },
+  {
+    id: "frm-ii",
+    name: "FRM II",
+    type: "Facility",
+    val: 7,
+    note: "German research reactor supporting neutron research and isotope-related work.",
+  },
+  {
+    id: "ill",
+    name: "ILL",
+    type: "Facility",
+    val: 6,
+    note: "Institut Laue-Langevin neutron source in Grenoble. Major European neutron facility.",
   },
   {
     id: "opal",
@@ -239,6 +260,27 @@ export const nodes = [
     val: 6,
     note: "Los Alamos Isotope Production Facility.",
   },
+  {
+    id: "arronax",
+    name: "ARRONAX",
+    type: "Facility",
+    val: 6,
+    note: "French accelerator facility focused on medical radioisotope production.",
+  },
+  {
+    id: "psi",
+    name: "PSI",
+    type: "Facility",
+    val: 6,
+    note: "Paul Scherrer Institute. Swiss accelerator-based isotope and research node.",
+  },
+  {
+    id: "ithemba",
+    name: "iThemba LABS",
+    type: "Facility",
+    val: 6,
+    note: "South African accelerator facility with isotope production capability.",
+  },
 
   // ─── Facilities: enrichment ───
   {
@@ -261,6 +303,20 @@ export const nodes = [
     type: "Facility",
     val: 7,
     note: "Almelo enrichment plant. Core European centrifuge capacity.",
+  },
+  {
+    id: "urenco-uk",
+    name: "Urenco UK",
+    type: "Facility",
+    val: 7,
+    note: "Capenhurst enrichment plant. Part of Urenco's European capacity.",
+  },
+  {
+    id: "urenco-de",
+    name: "Urenco Deutschland",
+    type: "Facility",
+    val: 7,
+    note: "Gronau enrichment plant. Part of Urenco's European capacity.",
   },
   {
     id: "orano-tricastin",
@@ -311,7 +367,7 @@ export const nodes = [
     name: "Curium",
     type: "Company",
     val: 7,
-    note: "Major radiopharmaceutical company active across diagnostic and therapeutic isotope supply chains.",
+    note: "Major radiopharmaceutical company across diagnostic and therapeutic isotope chains.",
   },
   {
     id: "lantheus",
@@ -325,12 +381,26 @@ export const nodes = [
     name: "NorthStar",
     type: "Company",
     val: 7,
-    note: "Medical isotope company focused on production pathways for diagnostic radioisotopes including Mo-99.",
+    note: "Medical isotope company focused on diagnostic radioisotope production pathways including Mo-99.",
+  },
+  {
+    id: "itm",
+    name: "ITM",
+    type: "Company",
+    val: 7,
+    note: "Radiopharmaceutical company active in therapeutic isotope development and supply.",
+  },
+  {
+    id: "telix",
+    name: "Telix",
+    type: "Company",
+    val: 7,
+    note: "Radiopharmaceutical company focused on diagnostic and therapeutic nuclear medicine.",
   },
 ];
 
 export const links = [
-  // Medicine supply chains
+  // Medicine chains
   { source: "mo-99", target: "reactor-production", relation: "produced_by" },
   { source: "mo-99", target: "precision-medicine", relation: "used_in" },
   { source: "lu-177", target: "reactor-production", relation: "produced_by" },
@@ -342,12 +412,15 @@ export const links = [
   { source: "f-18", target: "cyclotron-production", relation: "produced_by" },
   { source: "f-18", target: "precision-medicine", relation: "used_in" },
 
-  // Reactor facilities host production
+  // Reactor facilities
   { source: "reactor-production", target: "hfir", relation: "located_at" },
   { source: "reactor-production", target: "murr", relation: "located_at" },
   { source: "reactor-production", target: "atr", relation: "located_at" },
+  { source: "reactor-production", target: "mcmaster", relation: "located_at" },
   { source: "reactor-production", target: "br2", relation: "located_at" },
   { source: "reactor-production", target: "hfr-petten", relation: "located_at" },
+  { source: "reactor-production", target: "frm-ii", relation: "located_at" },
+  { source: "reactor-production", target: "ill", relation: "located_at" },
   { source: "reactor-production", target: "opal", relation: "located_at" },
   { source: "reactor-production", target: "safari-1", relation: "located_at" },
   { source: "reactor-production", target: "riar", relation: "located_at" },
@@ -357,13 +430,16 @@ export const links = [
   { source: "accelerator-production", target: "blip", relation: "located_at" },
   { source: "accelerator-production", target: "triumf", relation: "located_at" },
   { source: "accelerator-production", target: "lanl-ipf", relation: "located_at" },
+  { source: "accelerator-production", target: "arronax", relation: "located_at" },
+  { source: "accelerator-production", target: "psi", relation: "located_at" },
+  { source: "accelerator-production", target: "ithemba", relation: "located_at" },
 
-  // Quantum chain
+  // Quantum
   { source: "si-28", target: "gas-centrifugation", relation: "enriched_by" },
   { source: "si-28", target: "quantum-technologies", relation: "used_in" },
   { source: "he-3", target: "quantum-technologies", relation: "used_in" },
 
-  // Fusion / nuclear materials chain
+  // Fusion / nuclear materials
   { source: "li-6", target: "gas-centrifugation", relation: "enriched_by" },
   { source: "li-6", target: "tritium-breeding", relation: "requires" },
   { source: "li-6", target: "nuclear-fusion", relation: "used_in" },
@@ -374,19 +450,23 @@ export const links = [
   { source: "haleu", target: "haleu-enrichment", relation: "enriched_by" },
   { source: "haleu", target: "nuclear-fusion", relation: "used_in" },
 
-  // Enrichment facilities host separation
+  // Enrichment facilities
   { source: "gas-centrifugation", target: "centrus-piketon", relation: "located_at" },
   { source: "gas-centrifugation", target: "urenco-usa", relation: "located_at" },
   { source: "gas-centrifugation", target: "urenco-almelo", relation: "located_at" },
+  { source: "gas-centrifugation", target: "urenco-uk", relation: "located_at" },
+  { source: "gas-centrifugation", target: "urenco-de", relation: "located_at" },
   { source: "gas-centrifugation", target: "orano-tricastin", relation: "located_at" },
   { source: "gas-centrifugation", target: "asp-pretoria", relation: "located_at" },
   { source: "haleu-enrichment", target: "centrus-piketon", relation: "located_at" },
 
-  // Companies operate facilities / supply capability
+  // Enrichment companies
   { source: "centrus", target: "centrus-piketon", relation: "operates" },
   { source: "centrus", target: "haleu-enrichment", relation: "supplies" },
   { source: "urenco", target: "urenco-usa", relation: "operates" },
   { source: "urenco", target: "urenco-almelo", relation: "operates" },
+  { source: "urenco", target: "urenco-uk", relation: "operates" },
+  { source: "urenco", target: "urenco-de", relation: "operates" },
   { source: "urenco", target: "gas-centrifugation", relation: "supplies" },
   { source: "orano", target: "orano-tricastin", relation: "operates" },
   { source: "orano", target: "gas-centrifugation", relation: "supplies" },
@@ -401,6 +481,10 @@ export const links = [
   { source: "lantheus", target: "f-18", relation: "supplies" },
   { source: "northstar", target: "mo-99", relation: "supplies" },
   { source: "northstar", target: "reactor-production", relation: "supplies" },
+  { source: "itm", target: "precision-medicine", relation: "supplies" },
+  { source: "itm", target: "lu-177", relation: "supplies" },
+  { source: "telix", target: "precision-medicine", relation: "supplies" },
+  { source: "telix", target: "lu-177", relation: "supplies" },
 ];
 
 export const typeColors = {
