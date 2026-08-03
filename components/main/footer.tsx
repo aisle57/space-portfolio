@@ -13,9 +13,6 @@ export const Footer = () => {
               A public resource for the isotopes, facilities, and companies
               shaping medicine, energy, quantum systems, and industry.
             </p>
-            <p className="text-sm text-gray-500 text-center md:text-left max-w-xs mt-3">
-              Operated by Matthew Malaszuk
-            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full md:w-auto">
