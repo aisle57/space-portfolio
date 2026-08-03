@@ -61,18 +61,16 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              <p>
-              Entries are curated from public information: institutional sources,
-              company disclosures, and established nuclear and medical reference
-              material.
-            </p>
-            <p>
-              The map and graph prioritize system-relevant production,
-              enrichment, and application nodes rather than attempting a complete
-              global inventory on day one. Coverage will expand as additional
-              sites and relationships are verified. Missing nodes should be read
-              as incomplete coverage, not proof that something does not exist.
-            </p>
+            Most people encounter isotopes only inside specialized fields:
+            nuclear medicine, quantum materials, energy systems, or research.
+            The production and enrichment network behind those uses is often
+            invisible.
+          </p>
+          <p>
+            Isotope Economy exists to make that landscape clearer. The hub maps
+            important isotopes, the facilities that produce or separate them,
+            the companies involved, and the dependencies that connect them.
+          </p>
           </div>
         </section>
 
