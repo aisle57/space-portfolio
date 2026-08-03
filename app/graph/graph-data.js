@@ -22,6 +22,20 @@ export const nodes = [
     note: "Alpha-emitter for targeted therapy. Scalable production is still the constraint.",
   },
   {
+    id: "i-131",
+    name: "I-131",
+    type: "Isotope",
+    val: 10,
+    note: "Therapeutic and diagnostic radioiodine. Long-standing medical isotope with reactor-based supply routes.",
+  },
+  {
+    id: "f-18",
+    name: "F-18",
+    type: "Isotope",
+    val: 10,
+    note: "PET imaging isotope. Short-lived supply depends on cyclotron networks close to clinical use.",
+  },
+  {
     id: "si-28",
     name: "Si-28",
     type: "Isotope",
@@ -85,6 +99,13 @@ export const nodes = [
     type: "Process",
     val: 10,
     note: "Charged-particle routes for medical and research isotopes.",
+  },
+  {
+    id: "cyclotron-production",
+    name: "Cyclotron production",
+    type: "Process",
+    val: 9,
+    note: "Local accelerator route for short-lived medical isotopes such as F-18. Capacity is distributed but time-sensitive.",
   },
   {
     id: "gas-centrifugation",
@@ -285,6 +306,27 @@ export const nodes = [
     val: 7,
     note: "Specialty isotope enrichment company with Pretoria facilities.",
   },
+  {
+    id: "curium",
+    name: "Curium",
+    type: "Company",
+    val: 7,
+    note: "Major radiopharmaceutical company active across diagnostic and therapeutic isotope supply chains.",
+  },
+  {
+    id: "lantheus",
+    name: "Lantheus",
+    type: "Company",
+    val: 7,
+    note: "Medical imaging and radiopharmaceutical company dependent on reliable isotope supply.",
+  },
+  {
+    id: "northstar",
+    name: "NorthStar",
+    type: "Company",
+    val: 7,
+    note: "Medical isotope company focused on production pathways for diagnostic radioisotopes including Mo-99.",
+  },
 ];
 
 export const links = [
@@ -295,6 +337,10 @@ export const links = [
   { source: "lu-177", target: "precision-medicine", relation: "used_in" },
   { source: "ac-225", target: "accelerator-production", relation: "produced_by" },
   { source: "ac-225", target: "precision-medicine", relation: "used_in" },
+  { source: "i-131", target: "reactor-production", relation: "produced_by" },
+  { source: "i-131", target: "precision-medicine", relation: "used_in" },
+  { source: "f-18", target: "cyclotron-production", relation: "produced_by" },
+  { source: "f-18", target: "precision-medicine", relation: "used_in" },
 
   // Reactor facilities host production
   { source: "reactor-production", target: "hfir", relation: "located_at" },
@@ -346,6 +392,15 @@ export const links = [
   { source: "orano", target: "gas-centrifugation", relation: "supplies" },
   { source: "asp-isotopes", target: "asp-pretoria", relation: "operates" },
   { source: "asp-isotopes", target: "si-28", relation: "supplies" },
+
+  // Medical companies
+  { source: "curium", target: "precision-medicine", relation: "supplies" },
+  { source: "curium", target: "mo-99", relation: "supplies" },
+  { source: "curium", target: "lu-177", relation: "supplies" },
+  { source: "lantheus", target: "precision-medicine", relation: "supplies" },
+  { source: "lantheus", target: "f-18", relation: "supplies" },
+  { source: "northstar", target: "mo-99", relation: "supplies" },
+  { source: "northstar", target: "reactor-production", relation: "supplies" },
 ];
 
 export const typeColors = {
