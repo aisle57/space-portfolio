@@ -61,14 +61,17 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
+              <p>
               Entries are curated from public information: institutional sources,
               company disclosures, and established nuclear and medical reference
               material.
             </p>
             <p>
-              The map and graph are intentionally selective. Sparse coverage is
-              part of the point. The goal is to show concentration and dependence,
-              not to plot every possible node.
+              The map and graph prioritize system-relevant production,
+              enrichment, and application nodes rather than attempting a complete
+              global inventory on day one. Coverage will expand as additional
+              sites and relationships are verified. Missing nodes should be read
+              as incomplete coverage, not proof that something does not exist.
             </p>
           </div>
         </section>
