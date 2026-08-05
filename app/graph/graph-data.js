@@ -22,6 +22,13 @@ export const nodes = [
     note: "Alpha-emitter for targeted therapy. Scalable production is still the constraint.",
   },
   {
+    id: "pb-212",
+    name: "Pb-212",
+    type: "Isotope",
+    val: 9,
+    note: "Alpha-therapy related isotope in the lead/bismuth decay pathways. Production and generator logistics remain specialized.",
+  },
+  {
     id: "i-131",
     name: "I-131",
     type: "Isotope",
@@ -46,8 +53,8 @@ export const nodes = [
     id: "he-3",
     name: "He-3",
     type: "Isotope",
-    val: 8,
-    note: "Scarce isotope for sensing, detection, and research. Structurally tight supply.",
+    val: 10,
+    note: "Scarce helium isotope. Practical supply has mainly come from tritium decay recovery tied to nuclear stockpile management, not from bulk helium production.",
   },
   {
     id: "li-6",
@@ -82,7 +89,7 @@ export const nodes = [
     name: "H-3 Tritium",
     type: "Isotope",
     val: 9,
-    note: "Fusion fuel isotope. Often linked to Li-6 breeding pathways.",
+    note: "Fusion fuel isotope. Often linked to Li-6 breeding pathways. Also the parent pathway for recovered He-3.",
   },
 
   // ─── Processes ───
@@ -127,6 +134,20 @@ export const nodes = [
     type: "Process",
     val: 9,
     note: "Converts Li-6 pathways into tritium for fusion fuel concepts.",
+  },
+  {
+    id: "he3-recovery",
+    name: "Tritium decay recovery",
+    type: "Process",
+    val: 9,
+    note: "Helium-3 is recovered as tritium decays and is processed. Supply follows tritium management systems, not a normal commodity market.",
+  },
+  {
+    id: "uranium-conversion",
+    name: "Uranium conversion",
+    type: "Process",
+    val: 10,
+    note: "Converts uranium oxide concentrates into UF6, the feedstock form used by enrichment plants. A thin and often overlooked layer of the fuel cycle.",
   },
 
   // ─── Applications ───
@@ -282,7 +303,7 @@ export const nodes = [
     note: "South African accelerator facility with isotope production capability.",
   },
 
-  // ─── Facilities: enrichment ───
+  // ─── Facilities: enrichment / conversion / recovery ───
   {
     id: "centrus-piketon",
     name: "Centrus ACP",
@@ -331,6 +352,29 @@ export const nodes = [
     type: "Facility",
     val: 7,
     note: "Specialty isotope enrichment in Pretoria. Key African enrichment footprint.",
+  },
+  {
+    id: "savannah-river",
+    name: "Savannah River Site",
+    type: "Facility",
+    val: 7,
+    note: "DOE site associated with tritium processing pathways relevant to He-3 recovery. Not a commercial isotope market hub.",
+  },
+  {
+    id: "metropolis-conversion",
+    name: "Metropolis conversion",
+    type: "Facility",
+    val: 7,
+    note: "Key U.S. commercial uranium conversion context for UF6 feedstock ahead of enrichment.",
+  },
+
+  // ─── Facilities: medical manufacturing ───
+  {
+    id: "bellwether-lab",
+    name: "Bellwether Lab",
+    type: "Facility",
+    val: 7,
+    note: "TerraPower Isotopes Ac-225 manufacturing project in Philadelphia. Major planned capacity expansion for medical alpha emitters.",
   },
 
   // ─── Companies ───
@@ -397,6 +441,55 @@ export const nodes = [
     val: 7,
     note: "Radiopharmaceutical company focused on diagnostic and therapeutic nuclear medicine.",
   },
+  {
+    id: "terrapower-isotopes",
+    name: "TerraPower Isotopes",
+    type: "Company",
+    val: 8,
+    note: "Expanding Ac-225 supply for targeted alpha therapy, including a large cGMP manufacturing project in Philadelphia intended to raise capacity once online.",
+  },
+  {
+    id: "shine",
+    name: "SHINE",
+    type: "Company",
+    val: 7,
+    note: "Medical isotope company developing non-traditional production pathways, including Mo-99 related supply efforts.",
+  },
+  {
+    id: "nusano",
+    name: "Nusano",
+    type: "Company",
+    val: 7,
+    note: "Radioisotope production company building out capacity for medical and related isotope supply.",
+  },
+  {
+    id: "pantera",
+    name: "PanTera",
+    type: "Company",
+    val: 7,
+    note: "Focused on Ac-225 production scale-up for targeted alpha therapy supply.",
+  },
+  {
+    id: "bwxt",
+    name: "BWXT",
+    type: "Company",
+    val: 7,
+    note: "Nuclear manufacturer with roles across nuclear components and isotope related nuclear work.",
+  },
+  {
+    id: "eckert-ziegler",
+    name: "Eckert & Ziegler",
+    type: "Company",
+    val: 7,
+    note: "Radiopharmaceutical and isotope technology company active in medical isotope products and services.",
+  },
+  {
+    id: "convertdyn",
+    name: "ConverDyn",
+    type: "Company",
+    val: 6,
+    note: "U.S. uranium conversion joint venture context tied to UF6 feedstock supply ahead of enrichment.",
+  },
 ];
 
 export const links = [
@@ -407,6 +500,7 @@ export const links = [
   { source: "lu-177", target: "precision-medicine", relation: "used_in" },
   { source: "ac-225", target: "accelerator-production", relation: "produced_by" },
   { source: "ac-225", target: "precision-medicine", relation: "used_in" },
+  { source: "pb-212", target: "precision-medicine", relation: "used_in" },
   { source: "i-131", target: "reactor-production", relation: "produced_by" },
   { source: "i-131", target: "precision-medicine", relation: "used_in" },
   { source: "f-18", target: "cyclotron-production", relation: "produced_by" },
@@ -434,10 +528,13 @@ export const links = [
   { source: "accelerator-production", target: "psi", relation: "located_at" },
   { source: "accelerator-production", target: "ithemba", relation: "located_at" },
 
-  // Quantum
+  // Quantum / He-3
   { source: "si-28", target: "gas-centrifugation", relation: "enriched_by" },
   { source: "si-28", target: "quantum-technologies", relation: "used_in" },
   { source: "he-3", target: "quantum-technologies", relation: "used_in" },
+  { source: "he-3", target: "he3-recovery", relation: "produced_by" },
+  { source: "h-3", target: "he3-recovery", relation: "requires" },
+  { source: "he3-recovery", target: "savannah-river", relation: "located_at" },
 
   // Fusion / nuclear materials
   { source: "li-6", target: "gas-centrifugation", relation: "enriched_by" },
@@ -450,7 +547,7 @@ export const links = [
   { source: "haleu", target: "haleu-enrichment", relation: "enriched_by" },
   { source: "haleu", target: "nuclear-fusion", relation: "used_in" },
 
-  // Enrichment facilities
+  // Enrichment and conversion
   { source: "gas-centrifugation", target: "centrus-piketon", relation: "located_at" },
   { source: "gas-centrifugation", target: "urenco-usa", relation: "located_at" },
   { source: "gas-centrifugation", target: "urenco-almelo", relation: "located_at" },
@@ -459,8 +556,11 @@ export const links = [
   { source: "gas-centrifugation", target: "orano-tricastin", relation: "located_at" },
   { source: "gas-centrifugation", target: "asp-pretoria", relation: "located_at" },
   { source: "haleu-enrichment", target: "centrus-piketon", relation: "located_at" },
+  { source: "uranium-conversion", target: "metropolis-conversion", relation: "located_at" },
+  { source: "uranium-conversion", target: "gas-centrifugation", relation: "supplies" },
+  { source: "haleu", target: "uranium-conversion", relation: "requires" },
 
-  // Enrichment companies
+  // Enrichment / conversion companies
   { source: "centrus", target: "centrus-piketon", relation: "operates" },
   { source: "centrus", target: "haleu-enrichment", relation: "supplies" },
   { source: "urenco", target: "urenco-usa", relation: "operates" },
@@ -472,6 +572,8 @@ export const links = [
   { source: "orano", target: "gas-centrifugation", relation: "supplies" },
   { source: "asp-isotopes", target: "asp-pretoria", relation: "operates" },
   { source: "asp-isotopes", target: "si-28", relation: "supplies" },
+  { source: "convertdyn", target: "metropolis-conversion", relation: "operates" },
+  { source: "convertdyn", target: "uranium-conversion", relation: "supplies" },
 
   // Medical companies
   { source: "curium", target: "precision-medicine", relation: "supplies" },
@@ -485,6 +587,19 @@ export const links = [
   { source: "itm", target: "lu-177", relation: "supplies" },
   { source: "telix", target: "precision-medicine", relation: "supplies" },
   { source: "telix", target: "lu-177", relation: "supplies" },
+  { source: "terrapower-isotopes", target: "ac-225", relation: "supplies" },
+  { source: "terrapower-isotopes", target: "precision-medicine", relation: "supplies" },
+  { source: "terrapower-isotopes", target: "bellwether-lab", relation: "operates" },
+  { source: "shine", target: "mo-99", relation: "supplies" },
+  { source: "shine", target: "precision-medicine", relation: "supplies" },
+  { source: "nusano", target: "precision-medicine", relation: "supplies" },
+  { source: "nusano", target: "accelerator-production", relation: "supplies" },
+  { source: "pantera", target: "ac-225", relation: "supplies" },
+  { source: "pantera", target: "precision-medicine", relation: "supplies" },
+  { source: "bwxt", target: "reactor-production", relation: "supplies" },
+  { source: "bwxt", target: "precision-medicine", relation: "supplies" },
+  { source: "eckert-ziegler", target: "precision-medicine", relation: "supplies" },
+  { source: "eckert-ziegler", target: "lu-177", relation: "supplies" },
 ];
 
 export const typeColors = {
