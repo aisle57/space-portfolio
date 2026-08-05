@@ -2,7 +2,6 @@
 
 import { useRef, useCallback, useState, useMemo, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { forceCollide } from "d3-force";
 import { nodes, links, typeColors, typeList } from "./graph-data";
 
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), {
@@ -91,12 +90,14 @@ export default function GraphPage() {
   };
 
   useEffect(() => {
-    if (!selectedNode) return;
-    const stillVisible = filteredData.nodes.some(
-      (n) => n.id === selectedNode.id
-    );
-    if (!stillVisible) setSelectedNode(null);
-  }, [filteredData, selectedNode]);
+    const fg = fgRef.current;
+    if (!fg) return;
+
+    fg.d3Force("charge")?.strength(-220);
+    fg.d3Force("link")?.distance(110);
+
+    fg.d3ReheatSimulation();
+  }, [filteredData]);
 
   // More spacing between nodes
   useEffect(() => {
