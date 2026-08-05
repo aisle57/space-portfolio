@@ -41,15 +41,23 @@ export default function CompaniesPage() {
       name: "ASP Isotopes",
       tags: ["Public", "Enrichment", "Advanced materials"],
       about:
-        "Public company developing aerodynamic and related enrichment processes for high-value stable isotopes used in advanced materials and related markets.",
+        "Public company developing enrichment processes for high-value stable isotopes used in advanced materials and related markets.",
       focus:
         "Stable isotope enrichment pathways for quantum, semiconductor, medical, and industrial materials.",
+    },
+    {
+      name: "Quantum Leap Energy",
+      tags: ["Fuel cycle", "Conversion", "HALEU"],
+      about:
+        "ASP Isotopes subsidiary focused on nuclear fuel-cycle pathways, including uranium conversion work, HALEU-oriented enrichment efforts, and lithium isotope separation.",
+      focus: "Uranium conversion, advanced enrichment pathways, and lithium isotopes.",
+      note: "Fuel-cycle company under the ASP Isotopes group, not a medical radiopharma manufacturer.",
     },
     {
       name: "Silex Systems",
       tags: ["Public", "Laser enrichment"],
       about:
-        "Australian public company developing laser isotope separation technology with applications across enrichment pathways, including silicon-related work.",
+        "Australian public company developing laser isotope separation technology across enrichment pathways.",
       focus: "Laser isotope separation technology development.",
     },
     {
@@ -61,11 +69,39 @@ export default function CompaniesPage() {
       note: "Key public reference point in the U.S. enrichment rebuild.",
     },
     {
+      name: "Urenco",
+      tags: ["Enrichment", "Commercial"],
+      about:
+        "Major commercial uranium enricher with centrifuge plants in Europe and the United States.",
+      focus: "Industrial uranium enrichment capacity.",
+    },
+    {
+      name: "Orano",
+      tags: ["Fuel cycle", "Enrichment"],
+      about:
+        "Fuel-cycle company with major commercial enrichment capacity and broader nuclear services.",
+      focus: "Enrichment and nuclear fuel-cycle operations.",
+    },
+    {
+      name: "ConverDyn",
+      tags: ["Conversion", "UF6"],
+      about:
+        "U.S. uranium conversion joint venture context tied to UF6 feedstock supply ahead of enrichment.",
+      focus: "Uranium conversion to enrichment feedstock.",
+    },
+    {
       name: "BWX Technologies",
       tags: ["Public", "Nuclear manufacturing"],
       about:
         "Nuclear manufacturing company with roles across naval nuclear, commercial nuclear components, and selected isotope-related production activities.",
       focus: "Nuclear manufacturing and specialty isotope-linked capacity.",
+    },
+    {
+      name: "Framatome",
+      tags: ["Nuclear fuel", "Technology"],
+      about:
+        "Nuclear fuel and technology company active across fuel fabrication and related nuclear systems.",
+      focus: "Nuclear fuel systems and advanced fuel-cycle support.",
     },
     {
       name: "Eckert & Ziegler",
@@ -95,8 +131,8 @@ export default function CompaniesPage() {
       name: "Novartis",
       tags: ["Public", "Radioligand therapy"],
       about:
-        "Major pharmaceutical company commercializing radioligand therapy platforms that depend on reliable therapeutic isotope supply.",
-      focus: "Clinical radioligand therapy and related nuclear medicine platforms.",
+        "Major pharmaceutical company with radioligand therapy programs that depend on reliable therapeutic isotope supply.",
+      focus: "Radioligand therapeutics and clinical nuclear medicine platforms.",
     },
     {
       name: "Bayer",
@@ -144,7 +180,7 @@ export default function CompaniesPage() {
       name: "SHINE Technologies",
       tags: ["Production technology", "Medical"],
       about:
-        "Company developing accelerator-based and related production systems for medical isotopes and nuclear technology applications.",
+        "Company developing alternative production systems for medical isotopes and related nuclear technology applications.",
       focus: "Alternative medical isotope production technology.",
     },
     {
@@ -155,72 +191,122 @@ export default function CompaniesPage() {
       focus: "Accelerator production platforms for radioisotopes.",
     },
     {
+      name: "TerraPower Isotopes",
+      tags: ["Ac-225", "Manufacturing"],
+      about:
+        "Expanding actinium-225 supply for targeted alpha therapy, including a large cGMP manufacturing project in Philadelphia intended to raise capacity once online.",
+      focus: "Ac-225 production scale-up for advanced cancer therapies.",
+      note: "Planned capacity expansion. Not the same as TerraPower's reactor business.",
+    },
+    {
+      name: "PanTera",
+      tags: ["Ac-225", "Production"],
+      about:
+        "Company focused on actinium-225 production scale-up for targeted alpha therapy supply.",
+      focus: "Ac-225 production capacity.",
+    },
+    {
+      name: "Niowave",
+      tags: ["Accelerator", "Ac-225"],
+      about:
+        "Accelerator-based medical isotope company active in actinium-225 and related radioisotope pathways.",
+      focus: "Accelerator production of medical radioisotopes.",
+    },
+    {
+      name: "Orano Med",
+      tags: ["Alpha therapy", "Pb-212"],
+      about:
+        "Orano's nuclear medicine arm focused on targeted alpha therapy and related isotope development.",
+      focus: "Targeted alpha therapy isotope platforms.",
+    },
+    {
+      name: "IRE",
+      tags: ["Medical", "Mo-99"],
+      about:
+        "Belgian radioisotope producer important to global molybdenum-99 and related medical isotope supply.",
+      focus: "Reactor-linked medical radioisotope production.",
+    },
+    {
       name: "NTP Radioisotopes",
       tags: ["Medical", "Mo-99"],
       about:
-        "South African producer and an important part of global medical isotope supply, including molybdenum-99 related production.",
-      focus: "Reactor-linked medical isotope production and supply.",
+        "South African radioisotope producer linked to SAFARI-1 production pathways.",
+      focus: "Medical radioisotope production and supply.",
     },
     {
       name: "ANSTO",
-      tags: ["Australia", "Medical isotopes"],
+      tags: ["National lab", "Medical"],
       about:
-        "Australia's nuclear science organization, including commercial medical isotope production linked to the OPAL reactor system.",
-      focus: "Medical and industrial isotope production for regional and export supply.",
+        "Australian nuclear science organization with reactor-based radioisotope production through OPAL-related pathways.",
+      focus: "National radioisotope production and nuclear science services.",
+    },
+    {
+      name: "Isotopia",
+      tags: ["Therapeutics", "Production"],
+      about:
+        "Radiopharmaceutical and isotope company active in therapeutic isotope development and supply.",
+      focus: "Therapeutic radioisotope products.",
+    },
+    {
+      name: "SOFIE",
+      tags: ["PET", "Manufacturing"],
+      about:
+        "Radiopharma company connected to PET manufacturing and broader nuclear medicine supply activity.",
+      focus: "PET radiopharmaceutical manufacturing.",
+    },
+    {
+      name: "ARTMS",
+      tags: ["Cyclotron technology"],
+      about:
+        "Technology company focused on cyclotron-based production routes for medical isotopes.",
+      focus: "Cyclotron production technology for medical isotopes.",
     },
   ];
 
-  const stable: Company[] = [
+  const nationalRegional: Company[] = [
     {
-      name: "Urenco Stable Isotopes",
-      tags: ["Stable isotopes", "Enrichment"],
+      name: "NRG",
+      tags: ["Irradiation", "Petten"],
       about:
-        "Established commercial supplier of enriched stable isotopes for research, medical, and industrial users.",
-      focus: "Commercial stable isotope enrichment and product supply.",
+        "Operator context around the Petten research reactor and related irradiation services important to European isotope supply.",
+      focus: "Research reactor irradiation and isotope-related services.",
     },
     {
-      name: "Orano Stable Isotopes",
-      tags: ["Stable isotopes", "Materials"],
+      name: "POLATOM",
+      tags: ["Medical", "Poland"],
       about:
-        "Part of Orano's broader nuclear materials activity, supplying stable isotopes and related products.",
-      focus: "Stable isotope production and materials-linked supply.",
+        "Polish radioisotope producer linked to MARIA reactor pathways.",
+      focus: "National radioisotope production and supply.",
     },
     {
-      name: "Cambridge Isotope Laboratories",
-      tags: ["Research supply"],
+      name: "INVAP",
+      tags: ["Reactor technology", "Argentina"],
       about:
-        "Major supplier of stable isotopes and labeled compounds for research and specialty applications.",
-      focus: "Research-grade stable isotopes and labeled materials.",
+        "Argentine nuclear technology company connected to research reactor and isotope infrastructure development.",
+      focus: "Research reactor technology and related nuclear infrastructure.",
     },
     {
-      name: "Trace Sciences International",
-      tags: ["Stable isotopes"],
+      name: "KAERI",
+      tags: ["National lab", "Korea"],
       about:
-        "Supplier of enriched stable isotopes for scientific and commercial users.",
-      focus: "Enriched stable isotope distribution.",
+        "Korea Atomic Energy Research Institute context around HANARO and national nuclear research capacity.",
+      focus: "National nuclear research and irradiation capability.",
     },
     {
-      name: "Isoflex",
-      tags: ["Stable isotopes"],
+      name: "JSC Isotope",
+      tags: ["Supply", "Russia"],
       about:
-        "Specialty supplier of enriched stable isotopes for research and industrial use.",
-      focus: "Specialty enriched isotope products.",
+        "Russian isotope trading and supply organization connected to national production capacity.",
+      focus: "Isotope supply organization linked to domestic production nodes.",
     },
   ];
 
   const strategic: Company[] = [
     {
-      name: "Framatome",
-      tags: ["Nuclear fuel cycle"],
+      name: "DOE Isotope Program",
+      tags: ["U.S. program", "National labs"],
       about:
-        "Nuclear fuel and technology company active across fuel-cycle services and related nuclear systems.",
-      focus: "Nuclear fuel cycle technology and services.",
-    },
-    {
-      name: "DOE National Isotope Development Center network",
-      tags: ["Strategic supply", "Research"],
-      about:
-        "U.S. coordination layer for production and distribution of many research and specialty isotopes across national laboratory capabilities.",
+        "U.S. program coordinating isotope production and distribution across national laboratory capabilities.",
       focus: "Strategic research and specialty isotope availability.",
       note: "Infrastructure network rather than a single commercial producer.",
     },
@@ -285,10 +371,10 @@ export default function CompaniesPage() {
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
-            Stable Isotopes & Specialty Supply
+            National & Regional Producers
           </h2>
           <div className="space-y-4">
-            {stable.map((item) => (
+            {nationalRegional.map((item) => (
               <CompanyCard key={item.name} item={item} />
             ))}
           </div>
@@ -343,6 +429,12 @@ export default function CompaniesPage() {
               className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
             >
               Isotope Directory
+            </Link>
+            <Link
+              href="/graph"
+              className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+            >
+              Knowledge Graph
             </Link>
           </div>
         </section>
