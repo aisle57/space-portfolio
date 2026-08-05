@@ -2,6 +2,7 @@
 
 import { useRef, useCallback, useState, useMemo, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { forceCollide } from "d3-force";
 import { nodes, links, typeColors, typeList } from "./graph-data";
 
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), {
@@ -47,11 +48,13 @@ export default function GraphPage() {
       const t = typeof l.target === "object" ? l.target.id : l.target;
       if (s === selectedNode.id) {
         const target = nodes.find((n) => n.id === t);
-        if (target) result.push({ node: target, relation: l.relation, direction: "out" });
+        if (target)
+          result.push({ node: target, relation: l.relation, direction: "out" });
       }
       if (t === selectedNode.id) {
         const source = nodes.find((n) => n.id === s);
-        if (source) result.push({ node: source, relation: l.relation, direction: "in" });
+        if (source)
+          result.push({ node: source, relation: l.relation, direction: "in" });
       }
     });
     return result;
@@ -75,7 +78,7 @@ export default function GraphPage() {
   const resetView = useCallback(() => {
     setSelectedNode(null);
     if (fgRef.current) {
-      fgRef.current.zoomToFit(400, 40);
+      fgRef.current.zoomToFit(400, 80);
     }
   }, []);
 
@@ -89,9 +92,26 @@ export default function GraphPage() {
 
   useEffect(() => {
     if (!selectedNode) return;
-    const stillVisible = filteredData.nodes.some((n) => n.id === selectedNode.id);
+    const stillVisible = filteredData.nodes.some(
+      (n) => n.id === selectedNode.id
+    );
     if (!stillVisible) setSelectedNode(null);
   }, [filteredData, selectedNode]);
+
+  // More spacing between nodes
+  useEffect(() => {
+    const fg = fgRef.current;
+    if (!fg) return;
+
+    fg.d3Force("charge")?.strength(-220);
+    fg.d3Force("link")?.distance(110);
+    fg.d3Force(
+      "collide",
+      forceCollide((node) => Math.sqrt(node.val || 8) * 4 + 14).strength(0.85)
+    );
+
+    fg.d3ReheatSimulation();
+  }, [filteredData]);
 
   const paintNode = useCallback(
     (node, ctx, globalScale) => {
@@ -136,7 +156,6 @@ export default function GraphPage() {
 
   return (
     <div className="relative w-full h-screen bg-[#030014] overflow-hidden">
-      {/* Header */}
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-4 bg-[#030014]/80 backdrop-blur-md border-b border-white/10">
         <div className="flex items-center gap-3">
           <span className="text-white font-semibold tracking-tight">
@@ -155,7 +174,6 @@ export default function GraphPage() {
         </div>
       </div>
 
-      {/* Filters */}
       <div className="absolute top-20 left-6 z-20 flex flex-wrap gap-2 max-w-md">
         {typeList.map((type) => (
           <button
@@ -194,12 +212,11 @@ export default function GraphPage() {
         nodeCanvasObject={paintNode}
         onNodeClick={handleNodeClick}
         onNodeHover={handleNodeHover}
-        cooldownTicks={100}
-        d3AlphaDecay={0.022}
+        cooldownTicks={150}
+        d3AlphaDecay={0.018}
         d3VelocityDecay={0.3}
       />
 
-      {/* Side panel */}
       {selectedNode && (
         <div className="absolute top-20 right-4 md:right-6 w-[min(100%-2rem,22rem)] bg-[#0a0a1a]/95 border border-white/10 rounded-xl p-5 shadow-2xl z-30 backdrop-blur-sm max-h-[70vh] overflow-y-auto">
           <div className="flex items-start justify-between mb-3">
@@ -242,7 +259,8 @@ export default function GraphPage() {
                   >
                     <div className="text-sm text-white">{c.node.name}</div>
                     <div className="text-xs text-white/40">
-                      {c.relation?.replaceAll("_", " ") || "linked"} · {c.node.type}
+                      {c.relation?.replaceAll("_", " ") || "linked"} ·{" "}
+                      {c.node.type}
                     </div>
                   </button>
                 ))}
@@ -252,7 +270,6 @@ export default function GraphPage() {
         </div>
       )}
 
-      {/* Count */}
       <div className="absolute bottom-6 left-6 z-20 text-xs text-white/40">
         {filteredData.nodes.length} nodes · {filteredData.links.length} links
       </div>
