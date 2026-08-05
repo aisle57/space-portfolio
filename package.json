@@ -22,6 +22,7 @@
     "react-intersection-observer": "^10.1.0",
     "tailwind-merge": "^3.6.0",
     "three": "^0.185.1"
+    "d3-force": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
