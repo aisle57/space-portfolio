@@ -2,6 +2,7 @@
 
 import { useRef, useCallback, useState, useMemo, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { forceCollide } from "d3-force";
 import { nodes, links, typeColors, typeList } from "./graph-data";
 
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), {
@@ -90,25 +91,22 @@ export default function GraphPage() {
   };
 
   useEffect(() => {
-    const fg = fgRef.current;
-    if (!fg) return;
+    if (!selectedNode) return;
+    const stillVisible = filteredData.nodes.some(
+      (n) => n.id === selectedNode.id
+    );
+    if (!stillVisible) setSelectedNode(null);
+  }, [filteredData, selectedNode]);
 
-    fg.d3Force("charge")?.strength(-220);
-    fg.d3Force("link")?.distance(110);
-
-    fg.d3ReheatSimulation();
-  }, [filteredData]);
-
-  // More spacing between nodes
   useEffect(() => {
     const fg = fgRef.current;
     if (!fg) return;
 
-    fg.d3Force("charge")?.strength(-220);
-    fg.d3Force("link")?.distance(110);
+    fg.d3Force("charge")?.strength(-300);
+    fg.d3Force("link")?.distance(130);
     fg.d3Force(
       "collide",
-      forceCollide((node) => Math.sqrt(node.val || 8) * 4 + 14).strength(0.85)
+      forceCollide((node) => Math.sqrt(node.val || 8) * 4 + 16).strength(0.9)
     );
 
     fg.d3ReheatSimulation();
@@ -213,9 +211,9 @@ export default function GraphPage() {
         nodeCanvasObject={paintNode}
         onNodeClick={handleNodeClick}
         onNodeHover={handleNodeHover}
-        cooldownTicks={150}
-        d3AlphaDecay={0.018}
-        d3VelocityDecay={0.3}
+        cooldownTicks={200}
+        d3AlphaDecay={0.015}
+        d3VelocityDecay={0.25}
       />
 
       {selectedNode && (
