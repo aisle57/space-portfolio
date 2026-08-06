@@ -83,6 +83,7 @@ const SITES: MapSite[] = [
   { name: "ITM Neufahrn", location: "Neufahrn, Germany", type: "Accelerator", lat: 48.32, lng: 11.66, role: "Large-scale n.c.a. Lu-177 production" },
   { name: "RSG-GAS", location: "Serpong, Indonesia", type: "Research reactor", lat: -6.35, lng: 106.66, role: "Regional research reactor isotope production" },
 ];
+
 function layerForType(type: SiteType): LayerKey {
   if (type === "Accelerator") return "accelerators";
   if (type === "Enrichment") return "enrichment";
