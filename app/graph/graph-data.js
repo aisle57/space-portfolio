@@ -90,6 +90,20 @@ export const nodes = [
   { id: "psi", name: "PSI", type: "Facility", val: 6, note: "Paul Scherrer Institute. Swiss accelerator-based isotope node." },
   { id: "ithemba", name: "iThemba LABS", type: "Facility", val: 6, note: "South African accelerator facility with isotope production capability." },
 
+  // ─── Added Aug 2026 isotope production nodes ───
+  { id: "hfetr", name: "HFETR", type: "Facility", val: 7, note: "Chinese high-flux reactor used for isotope production including industrial and medical pathways." },
+  { id: "oklo-groves", name: "Oklo Groves", type: "Facility", val: 7, note: "Isotope test reactor in Lockhart, Texas. Pathway toward domestic isotope production capability." },
+  { id: "shine-janesville", name: "SHINE Janesville", type: "Facility", val: 8, note: "Commercial Lu-177 production site with Mo-99 pathway development." },
+  { id: "northstar-beloit", name: "NorthStar Beloit", type: "Facility", val: 7, note: "Accelerator-based production focused on Cu-67 and Ac-225." },
+  { id: "nusano-utah", name: "Nusano", type: "Facility", val: 7, note: "Multi-isotope cyclotron production facility in Utah." },
+  { id: "bruce-ips", name: "Bruce Power IPS", type: "Facility", val: 7, note: "Power-reactor isotope production system for Lu-177 and Co-60." },
+  { id: "darlington", name: "Darlington", type: "Facility", val: 7, note: "Power-reactor pathway for Mo-99 related production." },
+  { id: "cnl-chalk-river", name: "CNL Chalk River", type: "Facility", val: 7, note: "Canadian isotope research and Ac-225 related production node." },
+  { id: "anl-leaf", name: "ANL LEAF", type: "Facility", val: 7, note: "Argonne electron-accelerator facility for medical isotope production." },
+  { id: "ire-fleurus", name: "IRE Fleurus", type: "Facility", val: 8, note: "Major Mo-99 processing and radioisotope supply node in Belgium." },
+  { id: "itm-neufahrn", name: "ITM Neufahrn", type: "Facility", val: 8, note: "Large-scale n.c.a. Lu-177 production facility near Munich." },
+  { id: "rsg-gas", name: "RSG-GAS", type: "Facility", val: 6, note: "Indonesian research reactor supporting regional isotope production." },
+
   // ─── Enrichment / conversion / recovery ───
   { id: "centrus-piketon", name: "Centrus ACP", type: "Facility", val: 8, note: "Piketon enrichment site. Advanced enrichment and HALEU pathway." },
   { id: "urenco-usa", name: "Urenco USA", type: "Facility", val: 8, note: "Eunice, New Mexico commercial uranium enrichment plant." },
