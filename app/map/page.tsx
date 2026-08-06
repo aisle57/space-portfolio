@@ -78,6 +78,10 @@ const SITES: MapSite[] = [
   { name: "Bruce Power IPS", location: "Tiverton, Ontario, Canada", type: "Research reactor", lat: 44.32, lng: -81.6 },
   { name: "Darlington", location: "Clarington, Ontario, Canada", type: "Research reactor", lat: 43.87, lng: -78.72 },
   { name: "CNL Chalk River", location: "Chalk River, Ontario, Canada", type: "Research reactor", lat: 46.05, lng: -77.36 },
+  { name: "ANL LEAF", location: "Argonne, Illinois, USA", type: "Accelerator", lat: 41.71, lng: -87.98 },
+  { name: "IRE Fleurus", location: "Fleurus, Belgium", type: "Research reactor", lat: 50.48, lng: 4.55 },
+  { name: "ITM Neufahrn", location: "Neufahrn, Germany", type: "Accelerator", lat: 48.32, lng: 11.66 },
+  { name: "RSG-GAS", location: "Serpong, Indonesia", type: "Research reactor", lat: -6.35, lng: 106.66 },
 ];
 
 function layerForType(type: SiteType): LayerKey {
