@@ -2,6 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const GlobeView = dynamic(
+  () => import("@/components/map/GlobeView").then((m) => m.GlobeView),
+  { ssr: false }
+);
 
 type SiteType =
   | "Research reactor"
@@ -21,63 +27,44 @@ type MapSite = {
 type LayerKey = "reactors" | "accelerators" | "enrichment";
 
 const SITES: MapSite[] = [
-  // North America — reactors
   { name: "HFIR", location: "Oak Ridge, USA", type: "Research reactor", lat: 35.93, lng: -84.31 },
   { name: "ATR", location: "Idaho, USA", type: "Research reactor", lat: 43.52, lng: -112.05 },
   { name: "MURR", location: "Columbia, Missouri, USA", type: "University reactor", lat: 38.95, lng: -92.33 },
   { name: "McMaster", location: "Hamilton, Canada", type: "University reactor", lat: 43.26, lng: -79.92 },
-
-  // Europe — reactors
   { name: "BR2", location: "Mol, Belgium", type: "Research reactor", lat: 51.22, lng: 5.09 },
   { name: "HFR Petten", location: "Petten, Netherlands", type: "Research reactor", lat: 52.79, lng: 4.67 },
   { name: "FRM II", location: "Garching, Germany", type: "Research reactor", lat: 48.27, lng: 11.67 },
   { name: "ILL", location: "Grenoble, France", type: "Neutron source", lat: 45.19, lng: 5.72 },
   { name: "LVR-15", location: "Rez, Czech Republic", type: "Research reactor", lat: 50.16, lng: 14.37 },
   { name: "MARIA", location: "Swierk, Poland", type: "Research reactor", lat: 52.12, lng: 21.35 },
-
-  // Russia — reactors
   { name: "RIAR", location: "Dimitrovgrad, Russia", type: "Research reactor", lat: 54.19, lng: 49.48 },
-
-  // Asia-Pacific — reactors
   { name: "OPAL", location: "Lucas Heights, Australia", type: "Research reactor", lat: -34.05, lng: 150.98 },
   { name: "HANARO", location: "Daejeon, South Korea", type: "Research reactor", lat: 36.42, lng: 127.37 },
   { name: "Dhruva", location: "Trombay, India", type: "Research reactor", lat: 19.01, lng: 72.92 },
   { name: "CARR", location: "Beijing area, China", type: "Research reactor", lat: 39.74, lng: 116.04 },
   { name: "JRR-3", location: "Tokai, Japan", type: "Research reactor", lat: 36.46, lng: 140.6 },
-
-  // Africa / Middle East / LatAm — reactors
   { name: "SAFARI-1", location: "Pelindaba, South Africa", type: "Research reactor", lat: -25.8, lng: 27.94 },
   { name: "RA-3", location: "Ezeiza, Argentina", type: "Research reactor", lat: -34.83, lng: -58.52 },
   { name: "ETRR-2", location: "Inshas, Egypt", type: "Research reactor", lat: 30.29, lng: 31.41 },
   { name: "IEA-R1", location: "Sao Paulo, Brazil", type: "Research reactor", lat: -23.56, lng: -46.74 },
-
-  // Accelerators
   { name: "BLIP", location: "Brookhaven, USA", type: "Accelerator", lat: 40.87, lng: -72.87 },
   { name: "LANL IPF", location: "Los Alamos, USA", type: "Accelerator", lat: 35.88, lng: -106.3 },
   { name: "TRIUMF", location: "Vancouver, Canada", type: "Accelerator", lat: 49.25, lng: -123.23 },
   { name: "ARRONAX", location: "Nantes, France", type: "Accelerator", lat: 47.25, lng: -1.52 },
   { name: "PSI", location: "Villigen, Switzerland", type: "Accelerator", lat: 47.54, lng: 8.22 },
   { name: "iThemba LABS", location: "Cape Town area, South Africa", type: "Accelerator", lat: -33.98, lng: 18.62 },
-
-  // Enrichment — West
   { name: "Centrus ACP", location: "Piketon, Ohio, USA", type: "Enrichment", lat: 39.07, lng: -83.01 },
   { name: "Urenco USA", location: "Eunice, New Mexico, USA", type: "Enrichment", lat: 32.41, lng: -103.2 },
   { name: "Urenco Netherlands", location: "Almelo, Netherlands", type: "Enrichment", lat: 52.35, lng: 6.66 },
   { name: "Urenco UK", location: "Capenhurst, UK", type: "Enrichment", lat: 53.26, lng: -2.95 },
   { name: "Urenco Deutschland", location: "Gronau, Germany", type: "Enrichment", lat: 52.21, lng: 7.04 },
   { name: "Orano Georges Besse II", location: "Tricastin, France", type: "Enrichment", lat: 44.33, lng: 4.73 },
-
-  // Enrichment — Russia
   { name: "Novouralsk UEIP", location: "Novouralsk, Russia", type: "Enrichment", lat: 57.25, lng: 60.08 },
   { name: "Zelenogorsk ECP", location: "Zelenogorsk, Russia", type: "Enrichment", lat: 56.11, lng: 94.55 },
   { name: "Seversk SCC", location: "Seversk, Russia", type: "Enrichment", lat: 56.6, lng: 84.87 },
   { name: "Angarsk AECC", location: "Angarsk, Russia", type: "Enrichment", lat: 52.53, lng: 103.89 },
-
-  // Enrichment — China
   { name: "Lanzhou Enrichment", location: "Lanzhou, China", type: "Enrichment", lat: 36.15, lng: 103.52 },
   { name: "Hanzhong Enrichment", location: "Hanzhong, China", type: "Enrichment", lat: 33.07, lng: 107.02 },
-
-  // Enrichment — other commercial / specialty
   { name: "ASP Pretoria", location: "Pretoria, South Africa", type: "Enrichment", lat: -25.75, lng: 28.23 },
   { name: "JNFL Rokkasho", location: "Rokkasho, Japan", type: "Enrichment", lat: 40.96, lng: 141.37 },
   { name: "INB Resende", location: "Resende, Brazil", type: "Enrichment", lat: -22.47, lng: -44.45 },
@@ -101,6 +88,7 @@ export default function MapPage() {
   const mapInstance = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
 
+  const [viewMode, setViewMode] = useState<"2d" | "3d">("2d");
   const [layers, setLayers] = useState({
     reactors: true,
     accelerators: true,
@@ -121,6 +109,7 @@ export default function MapPage() {
   const visibleCount = visibleSites.length;
 
   useEffect(() => {
+    if (viewMode !== "2d") return;
     if (!mapRef.current || mapInstance.current) return;
 
     const cssId = "leaflet-css";
@@ -175,59 +164,73 @@ export default function MapPage() {
         mapInstance.current = null;
       }
     };
-  }, []);
+  }, [viewMode]);
 
   useEffect(() => {
+    if (viewMode !== "2d") return;
     const L = (window as any).L;
     const map = mapInstance.current;
     if (!L || !map) return;
 
-    markersRef.current.forEach((marker) => map.removeLayer(marker));
+    markersRef.current.forEach((m) => map.removeLayer(m));
     markersRef.current = [];
 
     visibleSites.forEach((site) => {
-      const color = markerColor(site.type);
       const marker = L.circleMarker([site.lat, site.lng], {
         radius: 7,
-        color,
-        fillColor: color,
-        fillOpacity: 0.9,
+        color: markerColor(site.type),
+        fillColor: markerColor(site.type),
+        fillOpacity: 0.85,
         weight: 1,
       }).addTo(map);
 
       marker.bindPopup(
-        `<strong style="color:#0f172a">${site.name}</strong><br/>` +
-          `<span style="color:#334155">${site.location}</span><br/>` +
-          `<span style="color:#64748b">${site.type}</span>`
+        `<strong>\( {site.name}</strong><br/> \){site.location}<br/>${site.type}`
       );
-
       markersRef.current.push(marker);
     });
-  }, [visibleSites]);
+  }, [visibleSites, viewMode]);
 
   const toggleLayer = (key: LayerKey) => {
     setLayers((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
-    <main className="min-h-screen bg-[#030014] text-white pt-28 pb-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-10">
-          <p className="text-sky-400 text-sm mb-3 tracking-wide uppercase">
-            Supply structure
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Visualizing Isotope Supply Chains
-          </h1>
-          <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
-            Critical isotopes depend on a thin global network of reactors,
-            accelerators, and enrichment plants. This map shows the point sites
-            behind that system. Sparse is the point.
-          </p>
-        </div>
+    <main className="h-full w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-20">
+        <h1 className="text-4xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400 mb-4">
+          Supply Map
+        </h1>
+        <p className="text-gray-400 text-lg max-w-3xl mb-8">
+          Research reactors, accelerators, and enrichment plants that sit behind
+          medical, industrial, and specialty isotope production.
+        </p>
 
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-          <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col gap-4 mb-6">
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setViewMode("2d")}
+              className={`px-3 py-1.5 rounded-full border text-sm transition ${
+                viewMode === "2d"
+                  ? "border-sky-400/50 text-sky-300 bg-sky-400/10"
+                  : "border-white/10 text-gray-500"
+              }`}
+            >
+              2D Map
+            </button>
+            <button
+              onClick={() => setViewMode("3d")}
+              className={`px-3 py-1.5 rounded-full border text-sm transition ${
+                viewMode === "3d"
+                  ? "border-sky-400/50 text-sky-300 bg-sky-400/10"
+                  : "border-white/10 text-gray-500"
+              }`}
+            >
+              3D Earth
+            </button>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
             <button
               onClick={() => toggleLayer("reactors")}
               className={`px-3 py-1.5 rounded-full border text-sm transition ${
@@ -266,7 +269,11 @@ export default function MapPage() {
         </div>
 
         <div className="rounded-2xl overflow-hidden border border-white/10 mb-8">
-          <div ref={mapRef} className="w-full h-[70vh] min-h-[420px]" />
+          {viewMode === "2d" ? (
+            <div ref={mapRef} className="w-full h-[70vh] min-h-[420px]" />
+          ) : (
+            <GlobeView sites={visibleSites} />
+          )}
         </div>
 
         <p className="text-gray-500 text-sm mb-10 max-w-3xl">
