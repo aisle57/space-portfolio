@@ -424,6 +424,14 @@ export const links = [
   { source: "oklo-groves", target: "precision-medicine", relation: "related_to" },
   { source: "anl-leaf", target: "cu-67", relation: "related_to" },
   { source: "doe-isotope-program", target: "anl-leaf", relation: "related_to" },
+
+  // Strengthening links
+  { source: "hfetr", target: "co-60", relation: "related_to" },
+  { source: "hfetr", target: "ir-192", relation: "related_to" },
+  { source: "rsg-gas", target: "precision-medicine", relation: "related_to" },
+  { source: "shine-janesville", target: "mo-99", relation: "related_to" },
+  { source: "itm-neufahrn", target: "lu-177", relation: "supplies" },
+  { source: "ire-fleurus", target: "mo-99", relation: "supplies" },
 ];
 
 export const typeColors = {
