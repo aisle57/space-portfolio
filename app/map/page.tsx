@@ -69,6 +69,15 @@ const SITES: MapSite[] = [
   { name: "JNFL Rokkasho", location: "Rokkasho, Japan", type: "Enrichment", lat: 40.96, lng: 141.37 },
   { name: "INB Resende", location: "Resende, Brazil", type: "Enrichment", lat: -22.47, lng: -44.45 },
   { name: "RMP Rattehalli", location: "Rattehalli, India", type: "Enrichment", lat: 12.97, lng: 76.4 },
+  // Added Aug 2026 — isotope production related
+  { name: "HFETR", location: "Chengdu, China", type: "Research reactor", lat: 30.67, lng: 104.07 },
+  { name: "Oklo Groves", location: "Lockhart, Texas, USA", type: "Research reactor", lat: 29.88, lng: -97.67 },
+  { name: "SHINE Janesville", location: "Janesville, Wisconsin, USA", type: "Accelerator", lat: 42.68, lng: -89.02 },
+  { name: "NorthStar Beloit", location: "Beloit, Wisconsin, USA", type: "Accelerator", lat: 42.51, lng: -89.03 },
+  { name: "Nusano", location: "West Valley City, Utah, USA", type: "Accelerator", lat: 40.69, lng: -112.0 },
+  { name: "Bruce Power IPS", location: "Tiverton, Ontario, Canada", type: "Research reactor", lat: 44.32, lng: -81.6 },
+  { name: "Darlington", location: "Clarington, Ontario, Canada", type: "Research reactor", lat: 43.87, lng: -78.72 },
+  { name: "CNL Chalk River", location: "Chalk River, Ontario, Canada", type: "Research reactor", lat: 46.05, lng: -77.36 },
 ];
 
 function layerForType(type: SiteType): LayerKey {
