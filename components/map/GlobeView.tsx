@@ -83,9 +83,12 @@ export function GlobeView({ sites }: { sites: MapSite[] }) {
           pointRadius="size"
           pointColor="color"
           pointLabel={(d: any) =>
-            `\( {d.name}<br/> \){d.location}<br/>\( {d.type} \){
-              d.role ? `<br/>${d.role}` : ""
-            }`
+            d.name +
+            "<br/>" +
+            d.location +
+            "<br/>" +
+            d.type +
+            (d.role ? "<br/>" + d.role : "")
           }
           atmosphereColor="#38bdf8"
           atmosphereAltitude={0.15}
