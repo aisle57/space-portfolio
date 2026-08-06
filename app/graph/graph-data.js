@@ -391,6 +391,39 @@ export const links = [
   { source: "doe-isotope-program", target: "blip", relation: "related_to" },
   { source: "doe-isotope-program", target: "lanl-ipf", relation: "related_to" },
   { source: "doe-isotope-program", target: "precision-medicine", relation: "supplies" },
+  
+  // Added Aug 2026 production links
+  { source: "reactor-production", target: "hfetr", relation: "located_at" },
+  { source: "reactor-production", target: "oklo-groves", relation: "located_at" },
+  { source: "reactor-production", target: "bruce-ips", relation: "located_at" },
+  { source: "reactor-production", target: "darlington", relation: "located_at" },
+  { source: "reactor-production", target: "cnl-chalk-river", relation: "located_at" },
+  { source: "reactor-production", target: "rsg-gas", relation: "located_at" },
+
+  { source: "accelerator-production", target: "shine-janesville", relation: "located_at" },
+  { source: "accelerator-production", target: "northstar-beloit", relation: "located_at" },
+  { source: "accelerator-production", target: "nusano-utah", relation: "located_at" },
+  { source: "accelerator-production", target: "anl-leaf", relation: "located_at" },
+
+  { source: "radiochemical-processing", target: "ire-fleurus", relation: "located_at" },
+  { source: "radiochemical-processing", target: "itm-neufahrn", relation: "located_at" },
+
+  { source: "shine", target: "shine-janesville", relation: "operates" },
+  { source: "shine", target: "lu-177", relation: "supplies" },
+  { source: "northstar", target: "northstar-beloit", relation: "operates" },
+  { source: "northstar", target: "cu-67", relation: "supplies" },
+  { source: "northstar", target: "ac-225", relation: "supplies" },
+  { source: "nusano", target: "nusano-utah", relation: "operates" },
+  { source: "ire", target: "ire-fleurus", relation: "operates" },
+  { source: "itm", target: "itm-neufahrn", relation: "operates" },
+
+  { source: "bruce-ips", target: "lu-177", relation: "supplies" },
+  { source: "bruce-ips", target: "co-60", relation: "supplies" },
+  { source: "darlington", target: "mo-99", relation: "related_to" },
+  { source: "cnl-chalk-river", target: "ac-225", relation: "supplies" },
+  { source: "oklo-groves", target: "precision-medicine", relation: "related_to" },
+  { source: "anl-leaf", target: "cu-67", relation: "related_to" },
+  { source: "doe-isotope-program", target: "anl-leaf", relation: "related_to" },
 ];
 
 export const typeColors = {
