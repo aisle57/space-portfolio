@@ -197,10 +197,10 @@ export default function MapPage() {
       }).addTo(map);
 
       marker.bindPopup(
-  `<strong>\( {site.name}</strong><br/> \){site.location}<br/>\( {site.type} \){
-    site.role ? `<br/><em>${site.role}</em>` : ""
-  }`
-);
+        `<strong>\( {site.name}</strong><br/> \){site.location}<br/>\( {site.type} \){
+          site.role ? `<br/><em>${site.role}</em>` : ""
+        }`
+      );
       markersRef.current.push(marker);
     });
   }, [visibleSites, viewMode]);
