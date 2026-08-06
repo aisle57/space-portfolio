@@ -28,33 +28,33 @@ type MapSite = {
 type LayerKey = "reactors" | "accelerators" | "enrichment";
 
 const SITES: MapSite[] = [
-  { name: "HFIR", location: "Oak Ridge, USA", type: "Research reactor", lat: 35.93, lng: -84.31 },
-  { name: "ATR", location: "Idaho, USA", type: "Research reactor", lat: 43.52, lng: -112.05 },
-  { name: "MURR", location: "Columbia, Missouri, USA", type: "University reactor", lat: 38.95, lng: -92.33 },
-  { name: "McMaster", location: "Hamilton, Canada", type: "University reactor", lat: 43.26, lng: -79.92 },
-  { name: "BR2", location: "Mol, Belgium", type: "Research reactor", lat: 51.22, lng: 5.09 },
-  { name: "HFR Petten", location: "Petten, Netherlands", type: "Research reactor", lat: 52.79, lng: 4.67 },
-  { name: "FRM II", location: "Garching, Germany", type: "Research reactor", lat: 48.27, lng: 11.67 },
+  { name: "HFIR", location: "Oak Ridge, USA", type: "Research reactor", lat: 35.93, lng: -84.31, role: "High-flux production of Cf-252, Ac-227, and specialty medical isotopes" },
+  { name: "ATR", location: "Idaho, USA", type: "Research reactor", lat: 43.52, lng: -112.05, role: "Large-volume irradiation for medical and industrial isotopes" },
+  { name: "MURR", location: "Columbia, Missouri, USA", type: "University reactor", lat: 38.95, lng: -92.33, role: "Major U.S. Mo-99 and medical isotope irradiation" },
+  { name: "McMaster", location: "Hamilton, Canada", type: "University reactor", lat: 43.26, lng: -79.92, role: "Significant I-125 and medical radioisotope production" },
+  { name: "BR2", location: "Mol, Belgium", type: "Research reactor", lat: 51.22, lng: 5.09, role: "Core European Mo-99 and multi-isotope irradiation" },
+  { name: "HFR Petten", location: "Petten, Netherlands", type: "Research reactor", lat: 52.79, lng: 4.67, role: "Major Mo-99 and Lu-177 irradiation supply" },
+  { name: "FRM II", location: "Garching, Germany", type: "Research reactor", lat: 48.27, lng: 11.67, role: "High-flux neutron source supporting isotope and materials work" },
   { name: "ILL", location: "Grenoble, France", type: "Neutron source", lat: 45.19, lng: 5.72 },
-  { name: "LVR-15", location: "Rez, Czech Republic", type: "Research reactor", lat: 50.16, lng: 14.37 },
-  { name: "MARIA", location: "Swierk, Poland", type: "Research reactor", lat: 52.12, lng: 21.35 },
-  { name: "RIAR", location: "Dimitrovgrad, Russia", type: "Research reactor", lat: 54.19, lng: 49.48 },
-  { name: "OPAL", location: "Lucas Heights, Australia", type: "Research reactor", lat: -34.05, lng: 150.98 },
+  { name: "LVR-15", location: "Rez, Czech Republic", type: "Research reactor", lat: 50.16, lng: 14.37, role: "European Mo-99 irradiation capacity" },
+  { name: "MARIA", location: "Swierk, Poland", type: "Research reactor", lat: 52.12, lng: 21.35, role: "European Mo-99 and medical isotope irradiation" },
+  { name: "RIAR", location: "Dimitrovgrad, Russia", type: "Research reactor", lat: 54.19, lng: 49.48, role: "Russian multi-reactor isotope production complex" },
+  { name: "OPAL", location: "Lucas Heights, Australia", type: "Research reactor", lat: -34.05, lng: 150.98, role: "Large-scale Mo-99 production for global supply" },
   { name: "HANARO", location: "Daejeon, South Korea", type: "Research reactor", lat: 36.42, lng: 127.37 },
   { name: "Dhruva", location: "Trombay, India", type: "Research reactor", lat: 19.01, lng: 72.92 },
   { name: "CARR", location: "Beijing area, China", type: "Research reactor", lat: 39.74, lng: 116.04 },
   { name: "JRR-3", location: "Tokai, Japan", type: "Research reactor", lat: 36.46, lng: 140.6 },
-  { name: "SAFARI-1", location: "Pelindaba, South Africa", type: "Research reactor", lat: -25.8, lng: 27.94 },
+  { name: "SAFARI-1", location: "Pelindaba, South Africa", type: "Research reactor", lat: -25.8, lng: 27.94, role: "Key Southern Hemisphere Mo-99 and medical isotope supply" },
   { name: "RA-3", location: "Ezeiza, Argentina", type: "Research reactor", lat: -34.83, lng: -58.52 },
   { name: "ETRR-2", location: "Inshas, Egypt", type: "Research reactor", lat: 30.29, lng: 31.41 },
   { name: "IEA-R1", location: "Sao Paulo, Brazil", type: "Research reactor", lat: -23.56, lng: -46.74 },
-  { name: "BLIP", location: "Brookhaven, USA", type: "Accelerator", lat: 40.87, lng: -72.87 },
-  { name: "LANL IPF", location: "Los Alamos, USA", type: "Accelerator", lat: 35.88, lng: -106.3 },
-  { name: "TRIUMF", location: "Vancouver, Canada", type: "Accelerator", lat: 49.25, lng: -123.23 },
-  { name: "ARRONAX", location: "Nantes, France", type: "Accelerator", lat: 47.25, lng: -1.52 },
+  { name: "BLIP", location: "Brookhaven, USA", type: "Accelerator", lat: 40.87, lng: -72.87, role: "DOE accelerator production of medical radioisotopes" },
+  { name: "LANL IPF", location: "Los Alamos, USA", type: "Accelerator", lat: 35.88, lng: -106.3, role: "DOE accelerator production of medical radioisotopes" },
+  { name: "TRIUMF", location: "Vancouver, Canada", type: "Accelerator", lat: 49.25, lng: -123.23, role: "Major cyclotron complex for medical and research isotopes" },
+  { name: "ARRONAX", location: "Nantes, France", type: "Accelerator", lat: 47.25, lng: -1.52, role: "High-energy cyclotron for medical isotope production" },
   { name: "PSI", location: "Villigen, Switzerland", type: "Accelerator", lat: 47.54, lng: 8.22 },
   { name: "iThemba LABS", location: "Cape Town area, South Africa", type: "Accelerator", lat: -33.98, lng: 18.62 },
-  { name: "Centrus ACP", location: "Piketon, Ohio, USA", type: "Enrichment", lat: 39.07, lng: -83.01 },
+  { name: "Centrus ACP", location: "Piketon, Ohio, USA", type: "Enrichment", lat: 39.07, lng: -83.01, role: "U.S. HALEU and enrichment capacity" },
   { name: "Urenco USA", location: "Eunice, New Mexico, USA", type: "Enrichment", lat: 32.41, lng: -103.2 },
   { name: "Urenco Netherlands", location: "Almelo, Netherlands", type: "Enrichment", lat: 52.35, lng: 6.66 },
   { name: "Urenco UK", location: "Capenhurst, UK", type: "Enrichment", lat: 53.26, lng: -2.95 },
@@ -66,25 +66,23 @@ const SITES: MapSite[] = [
   { name: "Angarsk AECC", location: "Angarsk, Russia", type: "Enrichment", lat: 52.53, lng: 103.89 },
   { name: "Lanzhou Enrichment", location: "Lanzhou, China", type: "Enrichment", lat: 36.15, lng: 103.52 },
   { name: "Hanzhong Enrichment", location: "Hanzhong, China", type: "Enrichment", lat: 33.07, lng: 107.02 },
-  { name: "ASP Pretoria", location: "Pretoria, South Africa", type: "Enrichment", lat: -25.75, lng: 28.23 },
+  { name: "ASP Pretoria", location: "Pretoria, South Africa", type: "Enrichment", lat: -25.75, lng: 28.23, role: "Specialty isotope and enrichment pathways" },
   { name: "JNFL Rokkasho", location: "Rokkasho, Japan", type: "Enrichment", lat: 40.96, lng: 141.37 },
   { name: "INB Resende", location: "Resende, Brazil", type: "Enrichment", lat: -22.47, lng: -44.45 },
   { name: "RMP Rattehalli", location: "Rattehalli, India", type: "Enrichment", lat: 12.97, lng: 76.4 },
-  // Added Aug 2026 — isotope production related
-  { name: "HFETR", location: "Chengdu, China", type: "Research reactor", lat: 30.67, lng: 104.07 },
-  { name: "Oklo Groves", location: "Lockhart, Texas, USA", type: "Research reactor", lat: 29.88, lng: -97.67 },
-  { name: "SHINE Janesville", location: "Janesville, Wisconsin, USA", type: "Accelerator", lat: 42.68, lng: -89.02 },
-  { name: "NorthStar Beloit", location: "Beloit, Wisconsin, USA", type: "Accelerator", lat: 42.51, lng: -89.03 },
-  { name: "Nusano", location: "West Valley City, Utah, USA", type: "Accelerator", lat: 40.69, lng: -112.0 },
-  { name: "Bruce Power IPS", location: "Tiverton, Ontario, Canada", type: "Research reactor", lat: 44.32, lng: -81.6 },
-  { name: "Darlington", location: "Clarington, Ontario, Canada", type: "Research reactor", lat: 43.87, lng: -78.72 },
-  { name: "CNL Chalk River", location: "Chalk River, Ontario, Canada", type: "Research reactor", lat: 46.05, lng: -77.36 },
-  { name: "ANL LEAF", location: "Argonne, Illinois, USA", type: "Accelerator", lat: 41.71, lng: -87.98 },
-  { name: "IRE Fleurus", location: "Fleurus, Belgium", type: "Research reactor", lat: 50.48, lng: 4.55 },
-  { name: "ITM Neufahrn", location: "Neufahrn, Germany", type: "Accelerator", lat: 48.32, lng: 11.66 },
-  { name: "RSG-GAS", location: "Serpong, Indonesia", type: "Research reactor", lat: -6.35, lng: 106.66 },
+  { name: "HFETR", location: "Chengdu, China", type: "Research reactor", lat: 30.67, lng: 104.07, role: "Chinese high-flux reactor for isotope production" },
+  { name: "Oklo Groves", location: "Lockhart, Texas, USA", type: "Research reactor", lat: 29.88, lng: -97.67, role: "Isotope test reactor; pathway to domestic production" },
+  { name: "SHINE Janesville", location: "Janesville, Wisconsin, USA", type: "Accelerator", lat: 42.68, lng: -89.02, role: "Commercial Lu-177 production; Mo-99 pathway" },
+  { name: "NorthStar Beloit", location: "Beloit, Wisconsin, USA", type: "Accelerator", lat: 42.51, lng: -89.03, role: "Cu-67 and Ac-225 accelerator production" },
+  { name: "Nusano", location: "West Valley City, Utah, USA", type: "Accelerator", lat: 40.69, lng: -112.0, role: "Multi-isotope cyclotron production" },
+  { name: "Bruce Power IPS", location: "Tiverton, Ontario, Canada", type: "Research reactor", lat: 44.32, lng: -81.6, role: "Power-reactor isotope production system for Lu-177 and Co-60" },
+  { name: "Darlington", location: "Clarington, Ontario, Canada", type: "Research reactor", lat: 43.87, lng: -78.72, role: "Power-reactor pathway for Mo-99 production" },
+  { name: "CNL Chalk River", location: "Chalk River, Ontario, Canada", type: "Research reactor", lat: 46.05, lng: -77.36, role: "Ac-225 and Canadian isotope research production" },
+  { name: "ANL LEAF", location: "Argonne, Illinois, USA", type: "Accelerator", lat: 41.71, lng: -87.98, role: "DOE electron-accelerator isotope production" },
+  { name: "IRE Fleurus", location: "Fleurus, Belgium", type: "Research reactor", lat: 50.48, lng: 4.55, role: "Major Mo-99 processing and radioisotope supply" },
+  { name: "ITM Neufahrn", location: "Neufahrn, Germany", type: "Accelerator", lat: 48.32, lng: 11.66, role: "Large-scale n.c.a. Lu-177 production" },
+  { name: "RSG-GAS", location: "Serpong, Indonesia", type: "Research reactor", lat: -6.35, lng: 106.66, role: "Regional research reactor isotope production" },
 ];
-
 function layerForType(type: SiteType): LayerKey {
   if (type === "Accelerator") return "accelerators";
   if (type === "Enrichment") return "enrichment";
@@ -199,8 +197,10 @@ export default function MapPage() {
       }).addTo(map);
 
       marker.bindPopup(
-        `<strong>\( {site.name}</strong><br/> \){site.location}<br/>${site.type}`
-      );
+  `<strong>\( {site.name}</strong><br/> \){site.location}<br/>\( {site.type} \){
+    site.role ? `<br/><em>${site.role}</em>` : ""
+  }`
+);
       markersRef.current.push(marker);
     });
   }, [visibleSites, viewMode]);
