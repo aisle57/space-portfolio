@@ -22,6 +22,7 @@ type MapSite = {
   type: SiteType;
   lat: number;
   lng: number;
+  role?: string;
 };
 
 type LayerKey = "reactors" | "accelerators" | "enrichment";
