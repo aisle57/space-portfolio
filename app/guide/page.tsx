@@ -86,4 +86,44 @@ export default function GuidePage() {
             <li>Not a government or laboratory publication</li>
             <li>Not affiliated with DOE, IAEA, or any producer</li>
             <li>Not investment advice</li>
-            <li>Not a live inventory of kilograms, curies, or order
+            <li>Not a live inventory of kilograms, curies, or order books</li>
+          </ul>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-white mb-4">
+            Suggested path
+          </h2>
+          <ol className="text-gray-400 leading-relaxed space-y-2 list-decimal list-inside">
+            <li>Skim Learn if you are new to isotopes</li>
+            <li>Open the Supply Map and toggle layers</li>
+            <li>Open the Graph and follow Mo-99, Lu-177, or enrichment</li>
+            <li>Use Companies and Facilities for named actors</li>
+            <li>Treat the Watchlist as a pressure-point list, not a forecast</li>
+          </ol>
+        </section>
+
+        <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+          <Link
+            href="/map"
+            className="py-3 px-6 button-primary text-center text-white rounded-lg"
+          >
+            Supply Map
+          </Link>
+          <Link
+            href="/graph"
+            className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+          >
+            Knowledge Graph
+          </Link>
+          <Link
+            href="/learn"
+            className="py-3 px-6 border border-white/20 text-center text-gray-200 hover:border-sky-400 hover:text-sky-400 transition rounded-lg"
+          >
+            Learn
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
+}
