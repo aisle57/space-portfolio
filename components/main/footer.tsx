@@ -22,6 +22,9 @@ export const Footer = () => {
                 <Link href="/" className="hover:text-sky-400 transition">
                   Home
                 </Link>
+                <Link href="/guide" className="hover:text-sky-400 transition">
+                  How to read this system
+                </Link>
                 <Link href="/learn" className="hover:text-sky-400 transition">
                   Start Learning
                 </Link>
