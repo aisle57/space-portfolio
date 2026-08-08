@@ -289,10 +289,13 @@ export default function FacilitiesPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Research Facilities
           </h1>
-          <p className="text-gray-400 text-lg max-w-3xl">
+          <p className="text-gray-400 text-lg max-w-3xl mb-4">
             The reactors, accelerators, and production networks that turn
             nuclear infrastructure into usable isotopes. Point sites include
             location data for future mapping.
+          </p>
+          <p className="text-gray-500 text-sm">
+            Content reviewed August 2026. Production nodes update when capacity or status changes.
           </p>
         </div>
 
