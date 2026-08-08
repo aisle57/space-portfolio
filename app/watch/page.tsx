@@ -70,9 +70,12 @@ export default function WatchPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Quarterly Watchlist
           </h1>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-gray-400 text-lg leading-relaxed mb-4">
             Structural pressure points in the isotope economy this quarter.
             Not news. Not prices. Why these items are worth watching now.
+          </p>
+          <p className="text-gray-500 text-sm">
+            Q3 2026 watchlist. Next scheduled review: Q4 2026.
           </p>
         </div>
 
