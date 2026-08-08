@@ -27,17 +27,32 @@ function pointColor(type: SiteType) {
   return "#38bdf8";
 }
 
+function isValidCoord(lat: number, lng: number) {
+  return (
+    typeof lat === "number" &&
+    typeof lng === "number" &&
+    !Number.isNaN(lat) &&
+    !Number.isNaN(lng) &&
+    lat >= -90 &&
+    lat <= 90 &&
+    lng >= -180 &&
+    lng <= 180
+  );
+}
+
 export function GlobeView({ sites }: { sites: MapSite[] }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
   const points = useMemo(
     () =>
-      sites.map((s) => ({
-        ...s,
-        size: 0.45,
-        color: pointColor(s.type),
-      })),
+      sites
+        .filter((s) => isValidCoord(s.lat, s.lng))
+        .map((s) => ({
+          ...s,
+          size: 0.45,
+          color: pointColor(s.type),
+        })),
     [sites]
   );
 
