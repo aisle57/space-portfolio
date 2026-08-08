@@ -187,6 +187,16 @@ export default function FacilitiesPage() {
         "Dhruva is a major Indian research reactor within the country's broader nuclear research and isotope infrastructure.",
       knownFor: "Research reactor capacity and isotope-related irradiation.",
     },
+    {
+      name: "PALLAS",
+      tags: ["Netherlands", "Under construction", "Research reactor"],
+      location: "Petten area, Netherlands",
+      about:
+        "Planned high-flux research reactor intended to succeed HFR Petten as a major European medical isotope irradiation source. Not operating yet.",
+      knownFor:
+        "Future Mo-99 and medical isotope irradiation capacity for Europe.",
+      note: "Under construction. Public planning points to operation around 2030 to 2031. Important because HFR Petten is a concentrated node in current supply.",
+    },
   ];
 
   const accelerators: Facility[] = [
