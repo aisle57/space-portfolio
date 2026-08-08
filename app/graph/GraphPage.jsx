@@ -174,9 +174,19 @@ export default function GraphPage() {
       </div>
 
       <div className="absolute top-20 left-6 z-20 max-w-md">
-        <p className="text-gray-500 text-sm mb-3">
+        <p className="text-gray-500 text-sm mb-2">
           Content reviewed August 2026. Production nodes update when capacity or
           status changes.
+        </p>
+        <p className="text-gray-500 text-xs mb-3 max-w-md">
+          Graph data export:{" "}
+          <a
+            href="/graph/isotope-economy-graph.json"
+            className="text-sky-400 hover:underline"
+          >
+            JSON
+          </a>
+          . License: CC BY 4.0. Attribution: Isotope Economy.
         </p>
         <div className="flex flex-wrap gap-2">
           {typeList.map((type) => (
