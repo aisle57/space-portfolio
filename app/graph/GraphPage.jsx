@@ -13,6 +13,7 @@ export default function GraphPage() {
   const fgRef = useRef();
   const [selectedNode, setSelectedNode] = useState(null);
   const [hoverNode, setHoverNode] = useState(null);
+  const [didInitialFit, setDidInitialFit] = useState(false);
   const [activeTypes, setActiveTypes] = useState(() =>
     Object.fromEntries(typeList.map((t) => [t, true]))
   );
@@ -82,12 +83,20 @@ export default function GraphPage() {
     }
   }, []);
 
+  const handleEngineStop = useCallback(() => {
+    if (!didInitialFit && fgRef.current) {
+      fgRef.current.zoomToFit(400, 80);
+      setDidInitialFit(true);
+    }
+  }, [didInitialFit]);
+
   const toggleType = (type) => {
     setActiveTypes((prev) => {
       const next = { ...prev, [type]: !prev[type] };
       const anyOn = Object.values(next).some(Boolean);
       return anyOn ? next : prev;
     });
+    setDidInitialFit(false);
   };
 
   useEffect(() => {
@@ -110,6 +119,15 @@ export default function GraphPage() {
     );
 
     fg.d3ReheatSimulation();
+
+    const t = setTimeout(() => {
+      if (fgRef.current) {
+        fgRef.current.zoomToFit(400, 80);
+        setDidInitialFit(true);
+      }
+    }, 700);
+
+    return () => clearTimeout(t);
   }, [filteredData]);
 
   const paintNode = useCallback(
@@ -227,6 +245,7 @@ export default function GraphPage() {
         nodeCanvasObject={paintNode}
         onNodeClick={handleNodeClick}
         onNodeHover={handleNodeHover}
+        onEngineStop={handleEngineStop}
         cooldownTicks={200}
         d3AlphaDecay={0.015}
         d3VelocityDecay={0.25}
