@@ -261,6 +261,15 @@ export default function CompaniesPage() {
         "Technology company focused on cyclotron-based production routes for medical isotopes.",
       focus: "Cyclotron production technology for medical isotopes.",
     },
+    {
+      name: "Nordion",
+      tags: ["Co-60", "Medical", "Industrial"],
+      about:
+        "Major actor in cobalt-60 supply and related nuclear medicine and industrial irradiation pathways.",
+      focus:
+        "Co-60 production and supply for sterilization, industrial irradiation, and selected medical uses.",
+      note: "Important to the Co-60 chain. Power-reactor production partnerships are part of the broader supply picture.",
+    },
   ];
 
   const nationalRegional: Company[] = [
