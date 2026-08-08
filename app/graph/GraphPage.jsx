@@ -173,30 +173,36 @@ export default function GraphPage() {
         </div>
       </div>
 
-      <div className="absolute top-20 left-6 z-20 flex flex-wrap gap-2 max-w-md">
-        {typeList.map((type) => (
+      <div className="absolute top-20 left-6 z-20 max-w-md">
+        <p className="text-gray-500 text-sm mb-3">
+          Content reviewed August 2026. Production nodes update when capacity or
+          status changes.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {typeList.map((type) => (
+            <button
+              key={type}
+              onClick={() => toggleType(type)}
+              className={`px-3 py-1.5 rounded-full border text-xs transition ${
+                activeTypes[type]
+                  ? "border-white/20 text-white bg-white/10"
+                  : "border-white/5 text-white/30"
+              }`}
+            >
+              <span
+                className="inline-block w-2 h-2 rounded-full mr-2"
+                style={{ background: typeColors[type] }}
+              />
+              {type}
+            </button>
+          ))}
           <button
-            key={type}
-            onClick={() => toggleType(type)}
-            className={`px-3 py-1.5 rounded-full border text-xs transition ${
-              activeTypes[type]
-                ? "border-white/20 text-white bg-white/10"
-                : "border-white/5 text-white/30"
-            }`}
+            onClick={resetView}
+            className="px-3 py-1.5 rounded-full border border-white/10 text-xs text-white/60 hover:text-white hover:border-white/25 transition"
           >
-            <span
-              className="inline-block w-2 h-2 rounded-full mr-2"
-              style={{ background: typeColors[type] }}
-            />
-            {type}
+            Reset view
           </button>
-        ))}
-        <button
-          onClick={resetView}
-          className="px-3 py-1.5 rounded-full border border-white/10 text-xs text-white/60 hover:text-white hover:border-white/25 transition"
-        >
-          Reset view
-        </button>
+        </div>
       </div>
 
       <ForceGraph2D
@@ -247,7 +253,7 @@ export default function GraphPage() {
               <div className="flex flex-col gap-2">
                 {connections.map((c) => (
                   <button
-                    key={`\( {c.direction}- \){c.node.id}-${c.relation}`}
+                    key={c.direction + "-" + c.node.id + "-" + c.relation}
                     onClick={() => {
                       const graphNode = filteredData.nodes.find(
                         (n) => n.id === c.node.id
