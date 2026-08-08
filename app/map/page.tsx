@@ -242,9 +242,13 @@ export default function MapPage() {
         <h1 className="text-4xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400 mb-4">
           Supply Map
         </h1>
-        <p className="text-gray-400 text-lg max-w-3xl mb-8">
+        <p className="text-gray-400 text-lg max-w-3xl mb-4">
           Research reactors, accelerators, and enrichment plants that sit behind
           medical, industrial, and specialty isotope production.
+        </p>
+
+        <p className="text-gray-500 text-sm mb-6">
+          Content reviewed August 2026. Production nodes update when capacity or status changes.
         </p>
 
         <div className="flex flex-col gap-4 mb-6">
