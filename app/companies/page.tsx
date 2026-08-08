@@ -317,9 +317,12 @@ export default function CompaniesPage() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Companies</h1>
-          <p className="text-gray-400 text-lg max-w-3xl">
+          <p className="text-gray-400 text-lg max-w-3xl mb-4">
             Organizations producing, processing, enriching, and commercializing
             isotopes across medicine, energy, quantum materials, and industry.
+          </p>
+          <p className="text-gray-500 text-sm">
+            Content reviewed August 2026. Production nodes update when capacity or status changes.
           </p>
         </div>
 
