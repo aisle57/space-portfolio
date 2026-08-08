@@ -60,8 +60,7 @@ const SITES: MapSite[] = [
   { name: "Urenco UK", location: "Capenhurst, UK", type: "Enrichment", lat: 53.26, lng: -2.95 },
   { name: "Urenco Deutschland", location: "Gronau, Germany", type: "Enrichment", lat: 52.21, lng: 7.04 },
   { name: "Orano Georges Besse II", location: "Tricastin, France", type: "Enrichment", lat: 44.33, lng: 4.73 },
-  { name: "Novouralsk UEIP", location: "Novouralsk, Russia", type: "Enrichment", lat: 57.25, lng: 60.08 },
-  { name: "Zelenogorsk ECP", location: "Zelenogorsk, Russia", type: "Enrichment", lat: 56.11, lng: 94.55 },
+  { name: "Novouralsk UEIP", location: "Novouralsk, Russia", type: "Enrichment", lat: 56.11, lng: 94.55 },
   { name: "Seversk SCC", location: "Seversk, Russia", type: "Enrichment", lat: 56.6, lng: 84.87 },
   { name: "Angarsk AECC", location: "Angarsk, Russia", type: "Enrichment", lat: 52.53, lng: 103.89 },
   { name: "Lanzhou Enrichment", location: "Lanzhou, China", type: "Enrichment", lat: 36.15, lng: 103.52 },
@@ -102,6 +101,7 @@ export default function MapPage() {
   const markersRef = useRef<any[]>([]);
 
   const [viewMode, setViewMode] = useState<"2d" | "3d">("2d");
+  const [mapReady, setMapReady] = useState(false);
   const [layers, setLayers] = useState({
     reactors: true,
     accelerators: true,
@@ -122,7 +122,10 @@ export default function MapPage() {
   const visibleCount = visibleSites.length;
 
   useEffect(() => {
-    if (viewMode !== "2d") return;
+    if (viewMode !== "2d") {
+      setMapReady(false);
+      return;
+    }
     if (!mapRef.current || mapInstance.current) return;
 
     const cssId = "leaflet-css";
@@ -157,6 +160,13 @@ export default function MapPage() {
       ).addTo(map);
 
       mapInstance.current = map;
+
+      map.whenReady(() => {
+        setTimeout(() => {
+          map.invalidateSize();
+          setMapReady(true);
+        }, 50);
+      });
     };
 
     if (existing && (window as any).L) {
@@ -176,11 +186,12 @@ export default function MapPage() {
         mapInstance.current.remove();
         mapInstance.current = null;
       }
+      setMapReady(false);
     };
   }, [viewMode]);
 
   useEffect(() => {
-    if (viewMode !== "2d") return;
+    if (viewMode !== "2d" || !mapReady) return;
     const L = (window as any).L;
     const map = mapInstance.current;
     if (!L || !map) return;
@@ -189,6 +200,15 @@ export default function MapPage() {
     markersRef.current = [];
 
     visibleSites.forEach((site) => {
+      if (
+        typeof site.lat !== "number" ||
+        typeof site.lng !== "number" ||
+        Number.isNaN(site.lat) ||
+        Number.isNaN(site.lng)
+      ) {
+        return;
+      }
+
       const marker = L.circleMarker([site.lat, site.lng], {
         radius: 7,
         color: markerColor(site.type),
@@ -208,7 +228,9 @@ export default function MapPage() {
       );
       markersRef.current.push(marker);
     });
-  }, [visibleSites, viewMode]);
+
+    map.invalidateSize();
+  }, [visibleSites, viewMode, mapReady]);
 
   const toggleLayer = (key: LayerKey) => {
     setLayers((prev) => ({ ...prev, [key]: !prev[key] }));
