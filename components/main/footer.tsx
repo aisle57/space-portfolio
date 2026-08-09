@@ -101,6 +101,13 @@ export const Footer = () => {
 
         <div className="mt-10 text-sm text-center text-gray-400">
           Questions, corrections, or additions:{" "}
+          <a
+            href="mailto:IsotopeEconomy@gmail.com"
+            className="text-sky-400 hover:underline"
+          >
+            IsotopeEconomy@gmail.com
+          </a>
+          {" · "}
           <Link
             href="https://x.com/IsotopeEconomy"
             target="_blank"
