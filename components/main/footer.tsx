@@ -94,6 +94,9 @@ export const Footer = () => {
                 <Link href="/links" className="hover:text-sky-400 transition">
                   Links
                 </Link>
+                <Link href="/rss.xml" className="hover:text-sky-400 transition">
+                  RSS
+                </Link>
               </div>
             </div>
           </div>
@@ -115,6 +118,10 @@ export const Footer = () => {
             className="text-sky-400 hover:underline"
           >
             @IsotopeEconomy on X
+          </Link>
+          {" · "}
+          <Link href="/rss.xml" className="text-sky-400 hover:underline">
+            RSS
           </Link>
         </div>
 
