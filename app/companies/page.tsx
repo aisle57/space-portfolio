@@ -213,6 +213,15 @@ export default function CompaniesPage() {
       focus: "Accelerator production of medical radioisotopes.",
     },
     {
+      name: "Cardinal Health",
+      tags: ["Theranostics", "Ac-225", "Distribution"],
+      about:
+        "Major nuclear medicine and theranostics supply actor. Its Center for Theranostics Advancement supports commercial-scale radiopharmaceutical production and distribution, including actinium-225 related capacity growth.",
+      focus:
+        "Radiopharmaceutical manufacturing, theranostics supply, and last-mile nuclear medicine logistics.",
+      note: "Important to the Ac-225 and broader therapeutic isotope commercial chain, especially where production volume and distribution meet.",
+    },
+    {
       name: "Orano Med",
       tags: ["Alpha therapy", "Pb-212"],
       about:
