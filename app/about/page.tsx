@@ -95,14 +95,23 @@ export default function AboutPage() {
               push back on errors.
             </p>
             <p>
-              Public contact:{" "}
+              Email:{" "}
+              <a
+                href="mailto:IsotopeEconomy@gmail.com"
+                className="text-sky-400 hover:underline"
+              >
+                IsotopeEconomy@gmail.com
+              </a>
+            </p>
+            <p>
+              X:{" "}
               <Link
                 href="https://x.com/IsotopeEconomy"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="text-sky-400 hover:underline"
               >
-                @IsotopeEconomy on X
+                @IsotopeEconomy
               </Link>
             </p>
           </div>
