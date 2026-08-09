@@ -53,7 +53,7 @@ export default function FacilitiesPage() {
         "Located at Oak Ridge National Laboratory, HFIR is one of the most important U.S. isotope production reactors. Its high neutron flux makes it especially valuable for producing both medical and research isotopes.",
       knownFor:
         "Medical isotopes, heavy actinides, and specialized research isotopes.",
-      note: "A cornerstone of U.S. isotope production capability.",
+      note: "A cornerstone of U.S. isotope production capability. Public reporting also places HFIR among the very small set of sources able to produce californium-252 at meaningful scale.",
     },
     {
       name: "Advanced Test Reactor (ATR)",
@@ -155,7 +155,8 @@ export default function FacilitiesPage() {
       lng: 150.98,
       about:
         "OPAL is Australia's open-pool research reactor and the core of ANSTO's isotope production capability.",
-      knownFor: "Medical and industrial isotope production for Australia and export markets.",
+      knownFor:
+        "Medical and industrial isotope production for Australia and export markets.",
     },
     {
       name: "SAFARI-1",
@@ -188,6 +189,16 @@ export default function FacilitiesPage() {
       knownFor: "Research reactor capacity and isotope-related irradiation.",
     },
     {
+      name: "SM-3",
+      tags: ["Russia", "Research reactor", "Cf-252"],
+      location: "Dimitrovgrad area, Russia",
+      about:
+        "Russian research reactor associated with specialized isotope production. Public reporting treats SM-3, alongside HFIR, as one of the very small set of sources able to produce californium-252 at meaningful scale.",
+      knownFor:
+        "Specialized high-value isotope production, including Cf-252 related pathways.",
+      note: "Concentration risk example. When only a handful of reactors can make a given isotope, outage or access limits become system-level issues.",
+    },
+    {
       name: "PALLAS",
       tags: ["Netherlands", "Under construction", "Research reactor"],
       location: "Petten area, Netherlands",
@@ -195,7 +206,32 @@ export default function FacilitiesPage() {
         "Planned high-flux research reactor intended to succeed HFR Petten as a major European medical isotope irradiation source. Not operating yet.",
       knownFor:
         "Future Mo-99 and medical isotope irradiation capacity for Europe.",
-      note: "Under construction. Public planning points to operation around 2030 to 2031. Important because HFR Petten is a concentrated node in current supply.",
+      note: "Under construction. Public planning points to operation around 2030 to 2031. Important because HFR Petten is a concentrated node in current supply. Listed here, not as an active map production node.",
+    },
+  ];
+
+  const powerReactors: Facility[] = [
+    {
+      name: "Bruce Power IPS",
+      tags: ["Canada", "Power reactor", "Lu-177", "Co-60"],
+      location: "Tiverton, Ontario, Canada",
+      lat: 44.32,
+      lng: -81.6,
+      about:
+        "Commercial power-reactor isotope production system supporting Lu-177 and Co-60 pathways, including on-site hot cell capability that strengthens therapeutic isotope supply logistics.",
+      knownFor: "Power-reactor production of Lu-177 and Co-60 related isotopes.",
+      note: "Structurally different from dedicated research reactors. Commercial power infrastructure used for isotope output.",
+    },
+    {
+      name: "Darlington",
+      tags: ["Canada", "Power reactor", "Mo-99"],
+      location: "Clarington, Ontario, Canada",
+      lat: 43.87,
+      lng: -78.72,
+      about:
+        "Power-reactor pathway supporting Mo-99 related production. Part of the broader shift toward using selected commercial reactors for medical isotope supply.",
+      knownFor: "Power-reactor Mo-99 related production pathways.",
+      note: "Another example of commercial nuclear infrastructure entering isotope supply, not a research reactor built primarily for irradiation services.",
     },
   ];
 
@@ -305,9 +341,34 @@ export default function FacilitiesPage() {
             location data for future mapping.
           </p>
           <p className="text-gray-500 text-sm">
-            Content reviewed August 2026. Production nodes update when capacity or status changes.
+            Content reviewed August 2026. Production nodes update when capacity
+            or status changes.
           </p>
         </div>
+
+        <section className="mb-20 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Power reactors as isotope producers
+          </h2>
+          <div className="space-y-5 text-gray-300 leading-relaxed">
+            <p>
+              Not all isotope production sits in research reactors or
+              accelerators. Selected power reactors are now part of the supply
+              system, especially for Lu-177 and Mo-99 related pathways.
+            </p>
+            <p>
+              Bruce Power IPS and Darlington are the clearest current examples in
+              this hub. They represent a different production route: commercial
+              power infrastructure used for isotope output, not a dedicated
+              research reactor built primarily for irradiation services.
+            </p>
+            <p>
+              That distinction matters for capacity planning. Research-reactor
+              outages and power-reactor isotope programs are not the same risk
+              profile.
+            </p>
+          </div>
+        </section>
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
@@ -315,6 +376,17 @@ export default function FacilitiesPage() {
           </h2>
           <div className="space-y-4">
             {reactors.map((item) => (
+              <FacilityCard key={item.name} item={item} />
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-20">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-amber-400">
+            Power Reactor Isotope Production
+          </h2>
+          <div className="space-y-4">
+            {powerReactors.map((item) => (
               <FacilityCard key={item.name} item={item} />
             ))}
           </div>
