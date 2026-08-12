@@ -18,50 +18,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   ...siteConfig,
-  metadataBase: new URL("https://www.isotopeeconomy.com"),
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: "/apple-touch-icon.png",
-    other: [
-      {
-        rel: "android-chrome",
-        url: "/android-chrome-192x192.png",
-        sizes: "192x192",
-      },
-      {
-        rel: "android-chrome",
-        url: "/android-chrome-512x512.png",
-        sizes: "512x512",
-      },
-    ],
-  },
-  manifest: "/site.webmanifest",
-  openGraph: {
-    title: "Isotope Economy",
-    description:
-      "A public resource for isotopes, research facilities, and the companies advancing nuclear, quantum, and medical isotope technologies.",
-    url: "https://www.isotopeeconomy.com",
-    siteName: "Isotope Economy",
-    images: [
-      {
-        url: "/android-chrome-512x512.png",
-        width: 512,
-        height: 512,
-        alt: "Isotope Economy",
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Isotope Economy",
-    description:
-      "A public resource for isotopes, research facilities, and the companies advancing the field.",
-    images: ["/android-chrome-512x512.png"],
+  verification: {
+    google: <meta name="google-site-verification" content="TTEldbYAYkpwCjVzbzLbkzMfuc9VKWNRj2PV0iDNdQ4" />
   },
 };
 
