@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   ...siteConfig,
   verification: {
-    google: <meta name="google-site-verification" content="TTEldbYAYkpwCjVzbzLbkzMfuc9VKWNRj2PV0iDNdQ4" />
+    google: "TTEldbYAYkpwCjVzbzLbkzMfuc9VKWNRj2PV0iDNdQ4",
   },
 };
 
