@@ -65,6 +65,14 @@ export default function IsotopesPage() {
       featured: true,
     },
     {
+      name: "Yb-176",
+      tags: ["Precursor", "Medical", "Stable"],
+      about:
+        "Stable ytterbium isotope used as target material for no-carrier-added Lu-177 production. Irradiation of enriched Yb-176 produces Lu-177 without the carrier lutetium burden of older production routes.",
+      uses:
+        "Critical precursor for n.c.a. Lu-177 used in theranostics. Supply depends on enriched target availability, reactor or accelerator access, and separation capacity, not only on demand for the finished therapeutic isotope.",
+    },
+    {
       name: "Lu-177",
       tags: ["Theranostics", "Therapy"],
       about:
