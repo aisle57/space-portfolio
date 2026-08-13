@@ -279,17 +279,6 @@ export default function CompaniesPage() {
       note:
         "Concentration point in the Co-60 network. Power-reactor harvest capacity and source processing both matter.",
      },
-     {
-      name: "Darlington",
-      tags: ["Canada", "Power reactor", "Mo-99", "Co-60"],
-      location: "Clarington, Ontario, Canada",
-      about:
-        "Power-reactor pathway supporting Mo-99 related production and expanding Co-60 output as refurbished units return to service. Part of the broader shift toward using selected commercial reactors for medical and industrial isotope supply.",
-      known:
-        "Power-reactor Mo-99 related pathways and Co-60 production tied to unit refurbishment and long-term isotope supply planning.",
-      note:
-        "Another example of commercial nuclear infrastructure entering isotope supply, not a research reactor built primarily for irradiation services.",
-     },
 
   const nationalRegional: Company[] = [
     {
