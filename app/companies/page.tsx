@@ -279,6 +279,7 @@ export default function CompaniesPage() {
       about:
         "Technology company focused on cyclotron-based production routes for medical isotopes.",
       focus: "Cyclotron production technology for medical isotopes.",
+    },
     {
       name: "Nordion",
       tags: ["Co-60", "Medical", "Industrial"],
