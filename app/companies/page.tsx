@@ -269,17 +269,27 @@ export default function CompaniesPage() {
       about:
         "Technology company focused on cyclotron-based production routes for medical isotopes.",
       focus: "Cyclotron production technology for medical isotopes.",
-    },
     {
       name: "Nordion",
       tags: ["Co-60", "Medical", "Industrial"],
       about:
-        "Major actor in cobalt-60 supply and related nuclear medicine and industrial irradiation pathways.",
+        "Major commercial processor and supplier in the cobalt-60 chain. Finished Co-60 sources for sterilization and selected medical uses depend on upstream power-reactor irradiation plus specialized source fabrication and distribution.",
       focus:
-        "Co-60 production and supply for sterilization, industrial irradiation, and selected medical uses.",
-      note: "Important to the Co-60 chain. Power-reactor production partnerships are part of the broader supply picture.",
-    },
-  ];
+        "Co-60 supply for medical device sterilization, industrial irradiation, and related medical applications, tied to power-reactor production partners.",
+      note:
+        "Concentration point in the Co-60 network. Power-reactor harvest capacity and source processing both matter.",
+     },
+     {
+      name: "Darlington",
+      tags: ["Canada", "Power reactor", "Mo-99", "Co-60"],
+      location: "Clarington, Ontario, Canada",
+      about:
+        "Power-reactor pathway supporting Mo-99 related production and expanding Co-60 output as refurbished units return to service. Part of the broader shift toward using selected commercial reactors for medical and industrial isotope supply.",
+      known:
+        "Power-reactor Mo-99 related pathways and Co-60 production tied to unit refurbishment and long-term isotope supply planning.",
+      note:
+        "Another example of commercial nuclear infrastructure entering isotope supply, not a research reactor built primarily for irradiation services.",
+     },
 
   const nationalRegional: Company[] = [
     {
