@@ -258,14 +258,15 @@ export default function FacilitiesPage() {
       knownFor: "Accelerator-produced medical and research isotopes.",
     },
     {
-      name: "Los Alamos Isotope Production Facility (IPF)",
-      tags: ["USA", "Accelerator"],
-      location: "Los Alamos, New Mexico, USA",
-      lat: 35.88,
-      lng: -106.3,
+      name: "Salem Nuclear Generating Station",
+      tags: ["USA", "Power reactor", "Co-60"],
+      location: "Lower Alloways Creek, New Jersey, USA",
       about:
-        "IPF supports accelerator-based isotope production within the U.S. national laboratory system.",
-      knownFor: "Accelerator isotope production for research and specialty needs.",
+        "Commercial PWR site selected for first commercial-scale cobalt-60 production in U.S. pressurized water reactors under publicly announced agreements involving Westinghouse, Nordion, and PSEG Nuclear. Represents a domestic power-reactor pathway for industrial and medical Co-60 supply.",
+      knownFor:
+        "Planned Co-60 production pathway in a U.S. PWR, expanding supply beyond traditional foreign and CANDU-centered sources.",
+      note:
+        "Public project only. Structurally different from research-reactor isotope production. Status depends on licensing and implementation schedules.",
     },
     {
       name: "TRIUMF",
