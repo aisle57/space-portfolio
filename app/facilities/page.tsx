@@ -233,6 +233,17 @@ export default function FacilitiesPage() {
       knownFor: "Power-reactor Mo-99 related production pathways.",
       note: "Another example of commercial nuclear infrastructure entering isotope supply, not a research reactor built primarily for irradiation services.",
     },
+    {
+      name: "Salem Nuclear Generating Station",
+      tags: ["USA", "Power reactor", "Co-60"],
+      location: "Lower Alloways Creek, New Jersey, USA",
+      about:
+        "Commercial PWR site selected for first commercial-scale cobalt-60 production in U.S. pressurized water reactors under publicly announced agreements involving Westinghouse, Nordion, and PSEG Nuclear. Represents a domestic power-reactor pathway for industrial and medical Co-60 supply.",
+      known:
+        "Planned Co-60 production pathway in a U.S. PWR, expanding supply beyond traditional foreign and CANDU-centered sources.",
+      note:
+        "Public project only. Structurally different from research-reactor isotope production. Status depends on licensing and implementation schedules.",
+    },
   ];
 
   const accelerators: Facility[] = [
