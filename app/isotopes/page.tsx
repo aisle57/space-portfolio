@@ -398,11 +398,11 @@ export default function IsotopesPage() {
     },
     {
       name: "Co-60",
-      tags: ["Industrial", "Medical"],
+      tags: ["Industrial", "Medical", "Power reactor"],
       about:
-        "Cobalt-60 is one of the most important industrial radioisotopes and is also used in selected medical applications.",
+        "Cobalt-60 is produced by irradiating cobalt-59 in a reactor until it becomes cobalt-60. Unlike short-lived medical isotopes, it has a half-life of about 5.3 years, long enough to process into sealed sources and ship globally. A large share of global supply comes from CANDU power reactors in Ontario, with processing concentrated through specialized source manufacturers such as Nordion. Other production exists in Russia, China, India, and Argentina. This is a power-reactor isotope pathway, not a research-reactor pathway.",
       uses:
-        "Industrial radiography, sterilization, and medical radiation applications.",
+        "Sterilization of single-use medical devices, industrial irradiation, and selected cancer therapy systems. Supply depends on power-reactor access, harvest logistics, and source fabrication rather than research-reactor networks.",
     },
     {
       name: "Ir-192",
