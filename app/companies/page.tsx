@@ -111,6 +111,16 @@ export default function CompaniesPage() {
       focus: "Commercial isotope products and radiopharmaceutical support systems.",
     },
     {
+      name: "Westinghouse",
+      tags: ["Co-60", "Power reactor", "Technology"],
+      about:
+        "Nuclear technology company developing pressurized water reactor methods for cobalt-60 production in partnership with source manufacturers. Extends Co-60 production beyond traditional CANDU routes into the broader PWR fleet.",
+      focus:
+        "PWR-compatible Co-60 production technology and deployment with utility partners for domestic and scalable supply.",
+      note:
+        "Important for the industrial isotope layer. Moves Co-60 production into reactor types that dominate the global power fleet.",
+    },
+    {
       name: "IBA",
       tags: ["Public", "Cyclotrons"],
       about:
