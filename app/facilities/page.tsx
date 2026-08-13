@@ -239,10 +239,8 @@ export default function FacilitiesPage() {
       location: "Lower Alloways Creek, New Jersey, USA",
       about:
         "Commercial PWR site selected for first commercial-scale cobalt-60 production in U.S. pressurized water reactors under publicly announced agreements involving Westinghouse, Nordion, and PSEG Nuclear. Represents a domestic power-reactor pathway for industrial and medical Co-60 supply.",
-      known:
-        "Planned Co-60 production pathway in a U.S. PWR, expanding supply beyond traditional foreign and CANDU-centered sources.",
       note:
-        "Public project only. Structurally different from research-reactor isotope production. Status depends on licensing and implementation schedules.",
+        "Public project only. Planned Co-60 pathway in a U.S. PWR. Structurally different from research-reactor isotope production. Status depends on licensing and implementation schedules.",
     },
   ];
 
